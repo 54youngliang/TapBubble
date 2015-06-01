@@ -1,3 +1,9 @@
 Bubble_Client/Library
 Client/Library
 /Bubble_Client/Library
+/Bubble_Client/Temp
+
+
+Bubble_Client/*.csproj
+
+Bubble_Client/*.sln
