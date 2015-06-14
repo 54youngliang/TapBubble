@@ -27,6 +27,34 @@ public class AppMain : MonoBehaviour {
 		}
 	}
 
+	[SerializeField]
+	private GameOverWindow _GameOverWindow;
+	public GameOverWindow GameOverWindow
+	{
+		get
+		{
+			return _GameOverWindow;
+		}
+	}
+
+	[SerializeField]
+	private LevelPassedWindow _LevelPassedWindow;
+	public LevelPassedWindow levelPassedWindow
+	{
+		get
+		{
+			return _LevelPassedWindow;
+		}
+	}
+	[SerializeField]
+	private PauseWindow _pauseWindow;
+	public PauseWindow pauseWindow
+	{
+		get
+		{
+			return _pauseWindow;
+		}
+	}
 	//[SerializeField]
 
 
@@ -78,6 +106,32 @@ public class AppMain : MonoBehaviour {
 	}
 
 
+	public int CurrentLevel
+	{
+		get
+		{
+			return PlayerPrefs.GetInt("current_level", 1);
+		}
+		set
+		{
+			PlayerPrefs.SetInt("current_level", value);
+		}
+	}
+
+	void OnApplicationPause(bool isPause)
+	{
+		//TODO
+		if(isPause)
+		{
+			//pauseWindow.Show(CurrentLevel);
+			//pauseWindow.gameObject.SetActive(true);
+		}
+		else
+		{
+			pauseWindow.Show(CurrentLevel);
+			pauseWindow.gameObject.SetActive(true);
+		}
+	}
 
 	// Update is called once per frame
 	void Update () {

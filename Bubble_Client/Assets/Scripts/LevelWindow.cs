@@ -8,6 +8,7 @@ public class LevelWindow : MonoBehaviour {
 	public GameObject levelItemPrefab;
 	public Transform grid;
 	public GameObject levelBgPrefab;
+	public GameObject background;
 
 	private List<LevelView> viewList;
 	// Use this for initialization
@@ -40,10 +41,10 @@ public class LevelWindow : MonoBehaviour {
 		UIGrid uiGrid = grid.GetComponent<UIGrid>();
 		uiGrid.Reposition();
 
-		GetComponent<GestureEvent>().OnRight = ShowHome;
+		background.GetComponent<GestureEvent>().OnRight = ShowHome;
 	}
 
-	private void ShowHome()
+	public void ShowHome()
 	{
 		var width = AppMain.Instance.uiRoot.manualWidth;
 //		this.transform.localPosition = new Vector3(0, 0, 0);
