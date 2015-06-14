@@ -7,12 +7,12 @@ PlayerSettings:
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
-  targetGlesGraphics: 1
+  targetGlesGraphics: -1
   targetIOSGraphics: -1
   targetResolution: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Client
+  productName: Bubble_Client
   cloudProjectId: 
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -34,8 +34,8 @@ PlayerSettings:
   displayResolutionDialog: 1
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
-  allowedAutorotateToLandscapeRight: 0
-  allowedAutorotateToLandscapeLeft: 0
+  allowedAutorotateToLandscapeRight: 1
+  allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
   use32BitDisplayBuffer: 1
   disableDepthAndStencilBuffers: 0
@@ -81,7 +81,7 @@ PlayerSettings:
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
-  productGUID: a7038aff6934f4ea8aa2c08653ffcb31
+  productGUID: 3a0f964fa8c2a4325ad811bfada340cc
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
@@ -134,11 +134,7 @@ PlayerSettings:
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons:
-  - m_BuildTarget: 
-    m_Icons:
-    - m_Icon: {fileID: 0}
-      m_Size: 128
+  m_BuildTargetIcons: []
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
@@ -201,7 +197,7 @@ PlayerSettings:
   ps4ApplicationParam2: 0
   ps4ApplicationParam3: 0
   ps4ApplicationParam4: 0
-  ps4Passcode: 3ScDwV8OV7RpdZOjXwfBGsVD57WrI9sZ
+  ps4Passcode: BnlPcxvBTnn6w1aqTzPeWfKiux2BMgoM
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -225,7 +221,7 @@ PlayerSettings:
   psp2LiveAreaTrialPath: 
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
-  psp2PackagePassword: 
+  psp2PackagePassword: Pu2t84eWAuoGJaj3U5tGllBKTJJ35zhX
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0
@@ -257,7 +253,7 @@ PlayerSettings:
   psmSplashimage: {fileID: 0}
   spritePackerPolicy: 
   scriptingDefineSymbols: {}
-  metroPackageName: Client
+  metroPackageName: Bubble_Client
   metroPackageLogo: 
   metroPackageLogo140: 
   metroPackageLogo180: 
@@ -268,7 +264,7 @@ PlayerSettings:
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Client
+  metroApplicationDescription: Bubble_Client
   metroStoreTileLogo80: 
   metroStoreTileLogo: 
   metroStoreTileLogo140: 
@@ -386,7 +382,11 @@ PlayerSettings:
   iOS::ScriptingBackend: 0
   boolPropertyNames:
   - WebGL::dataCaching
+  - WebGL::useEmbeddedResources
+  - XboxOne::enus
   WebGL::dataCaching: 0
+  WebGL::useEmbeddedResources: 0
+  XboxOne::enus: 1
   stringPropertyNames:
   - WebGL::emscriptenArgs
   - WebGL::template

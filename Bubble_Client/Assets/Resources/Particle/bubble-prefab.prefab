@@ -13,7 +13,6 @@ GameObject:
   - 54: {fileID: 5460964}
   - 198: {fileID: 19831698}
   - 199: {fileID: 19945770}
-  - 114: {fileID: 11404758}
   m_Layer: 5
   m_Name: bubble-prefab
   m_TagString: Untagged
@@ -77,19 +76,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11404758
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6614dc941eeb04fbe8ec747b829498db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  order: 0
-  view: 
 --- !u!114 &11424460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,7 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d10ac60a8704c5883fc13b7a797d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceNum: 1.5
+  particleDestoryTime: 10
+  spriteDestoryTime: 5
+  targetLocal: {x: .5, y: .5, z: .5}
 --- !u!114 &11497806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,8 +202,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 11441658, guid: f0029aa5b484545edaad770e0c0d9aa0, type: 2}
-  mSpriteName: bubble
+  mAtlas: {fileID: 11407202, guid: 8ffb01608f50f45a5adef5aa3a332baf, type: 2}
+  mSpriteName: bubble2
   mFillCenter: 1
 --- !u!198 &19831698
 ParticleSystem:
