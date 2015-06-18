@@ -49,10 +49,9 @@ public class HomeWindow : MonoBehaviour {
 		if (buttonHasScaled) {
 			gameController.BeginMission ();
 		} else {
-			TweenScale scale = TweenScale.Begin (playButton.gameObject, 1f, Vector3.zero);
-			playButton.enabled = false;
-			scale.AddOnFinished(HiddenPlayButton);
-			scale.AddOnFinished(gameController.BeginMission);
+			TweenS s = TweenS.Add(playButton.gameObject, 1f, Vector3.zero);
+			s.OnComplete+=HiddenPlayButton;
+			s.OnComplete+=gameController.BeginMission;
 			buttonHasScaled = true;
 		}
 	}
