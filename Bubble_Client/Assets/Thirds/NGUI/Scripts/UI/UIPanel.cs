@@ -85,14 +85,14 @@ public class UIPanel : UIRect
 	/// so that the geometry is drawn in the proper order. You can alter this behaviour.
 	/// </summary>
 
-	public RenderQueue renderQueue = RenderQueue.Automatic;
+	public RenderQueue renderQueue = RenderQueue.StartAt;
 
 	/// <summary>
 	/// Render queue used by the panel. The default value of '3000' is the equivalent of "Transparent".
 	/// This property is only used if 'renderQueue' is set to something other than "Automatic".
 	/// </summary>
 
-	public int startingRenderQueue = 3000;
+	public int startingRenderQueue = 2500;
 
 	/// <summary>
 	/// List of widgets managed by this panel. Do not attempt to modify this list yourself.

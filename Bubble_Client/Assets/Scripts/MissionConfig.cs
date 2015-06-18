@@ -5,39 +5,38 @@ using System.Collections.Generic;
 public class MissionConfig {
 
 	public int id=1;
-	public int ballNum=1;
-	public int addRate=1;
-
-	public int decrRate=1;
-	public int mutlRate=1;
-	public int deviRate=1;
-	public int reaganRate=1;
+	public int ballNum=3;
+	public int gameTime = 60;	
 
 	public int[] rateArray = new int[5];
 
-	public List<Bubble> randomBubbleList(){
+	public List<BubbleInit> randomBubbleList(){
 
 		string question = "";
 		string rightAnswer = "";
 
-		List<Bubble> ballList = new List<Bubble>();
+		List<BubbleInit> ballList = new List<BubbleInit>();
 
 		for(int i = 1;i<=ballNum;i++){
-			ballList.Add(randomBubble());
+			ballList.Add(randomBubble(i));
 		}
 
-//		ballList.Sort ();
+
+		ballList.Sort ((x,y) => x.result.CompareTo(y.result));
+
 		for (int i = 0; i<ballList.Count; i++) {
-			Bubble temp = (Bubble)ballList[i];
+			BubbleInit temp = (BubbleInit)ballList[i];
 			temp.order=i;
 		}
 		return ballList;
 	}
 
-	private Bubble randomBubble(){
-		Bubble b = new Bubble ();
-		b.result = Random.Range (0, 100);
+	private BubbleInit randomBubble(int times){
+		BubbleInit b = new BubbleInit ();
+		b.result = 10*times+Random.Range (0, 10);
 		b.view = b.result + "";
+		b.localScale = new Vector3 (1.5f, 1.5f, 1.5f);
+		b.localPosition = new Vector3(Random.Range(-300,300),Random.Range(-300,300),0);
 		return b;
 //		int total = 0;
 //		int[] tmpRateArray = new int[rateArray.Length];

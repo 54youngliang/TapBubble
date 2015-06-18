@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class LevelPassedWindow : MonoBehaviour {
 
 	public List<UISprite> StarList;
+	public HomeWindow homeWindow;
 
 	public UILabel LevelLabel;
 
@@ -19,6 +20,9 @@ public class LevelPassedWindow : MonoBehaviour {
 
 	public void GoNextLevel()
 	{
+		Debug.Log ("Click to Next Level");
+		this.gameObject.SetActive (false);
+		AppMain.Instance.HomeWindow.BeginMission ();
 	}
 
 	public void ShowHome()
@@ -27,5 +31,7 @@ public class LevelPassedWindow : MonoBehaviour {
 
 	public void StartAgain()
 	{
+		this.gameObject.SetActive (false);
+		AppMain.Instance.HomeWindow.gameController.BeginMission ();
 	}
 }

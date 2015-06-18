@@ -5,6 +5,11 @@ public class PauseWindow : MonoBehaviour {
 
 	public UILabel LevelLabel;
 
+	void Start()
+	{
+		LevelLabel.text = AppMain.Instance.MaxLevel+"";
+	}
+
 	public void Show(int level)
 	{
 		LevelLabel.text = level.ToString();
@@ -12,9 +17,11 @@ public class PauseWindow : MonoBehaviour {
 
 	public void ShowHome()
 	{
+
 	}
 	
-	public void Goon()
+	public void BeginMission()
 	{
+		AppMain.Instance.HomeWindow.FirstBeginMission ();
 	}
 }

@@ -128,8 +128,8 @@ public class AppMain : MonoBehaviour {
 		}
 		else
 		{
-			pauseWindow.Show(CurrentLevel);
-			pauseWindow.gameObject.SetActive(true);
+			//pauseWindow.Show(CurrentLevel);
+			//pauseWindow.gameObject.SetActive(true);
 		}
 	}
 

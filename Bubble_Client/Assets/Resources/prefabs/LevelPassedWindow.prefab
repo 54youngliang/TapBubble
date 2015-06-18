@@ -27,8 +27,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 492252}
   - 114: {fileID: 11406446}
-  - 65: {fileID: 6566642}
   - 114: {fileID: 11473202}
+  - 50: {fileID: 5008746}
+  - 58: {fileID: 5867266}
   m_Layer: 5
   m_Name: NextButton
   m_TagString: Untagged
@@ -85,7 +86,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &173202
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +269,21 @@ Transform:
   - {fileID: 447614}
   m_Father: {fileID: 454004}
   m_RootOrder: 6
+--- !u!50 &5008746
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119708}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!54 &5407548
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -283,6 +299,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!58 &5867266
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119708}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 3.0999999, y: 0}
+  serializedVersion: 2
+  m_Radius: 73.9000015
 --- !u!65 &6507094
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -294,18 +323,6 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 100, y: 100, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &6566642
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119708}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 200, y: 200, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &6599112
 BoxCollider:
@@ -380,7 +397,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 200
   mHeight: 200
-  mDepth: 0
+  mDepth: 3
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -438,7 +455,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
-  mText: 16
+  mText: 
   mFontSize: 50
   mFontStyle: 0
   mAlignment: 0
@@ -528,6 +545,7 @@ MonoBehaviour:
   - {fileID: 11487830}
   - {fileID: 11448446}
   - {fileID: 11446914}
+  homeWindow: {fileID: 0}
   LevelLabel: {fileID: 11415496}
 --- !u!114 &11442472
 MonoBehaviour:

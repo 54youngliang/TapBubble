@@ -46,8 +46,9 @@ public class TouchEventListener : MonoBehaviour
         BoxCollider colider = gameObject.GetComponent<BoxCollider>();
         if (colider == null)
         {
-            gameObject.AddComponent<BoxCollider>().size = objectSize();
+           // gameObject.AddComponent<BoxCollider>().size = objectSize();
         }    
+
     }
 	
     Vector2 objectSize()
