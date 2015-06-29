@@ -63,6 +63,9 @@ public class LevelWindow : MonoBehaviour {
 
 	private void OnLevelClick(int level)
 	{
+		AppMain.Instance.CurrentLevel = level;
+		AppMain.Instance.HomeWindow.gameObject.transform.localPosition = Vector3.zero;
+		AppMain.Instance.HomeWindow.BeginMission ();
 		Debug.LogFormat("Click level:{0}" , level);
 	}
 

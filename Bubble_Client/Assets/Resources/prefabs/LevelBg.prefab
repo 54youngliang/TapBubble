@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 466494}
-  - 65: {fileID: 6573534}
   - 114: {fileID: 11475496}
   - 114: {fileID: 11467522}
+  - 61: {fileID: 6190006}
   m_Layer: 5
   m_Name: LevelBg
   m_TagString: Untagged
@@ -30,18 +30,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!65 &6573534
-BoxCollider:
+--- !u!61 &6190006
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154822}
+  m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 720, y: 1280, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 720, y: 1280}
 --- !u!114 &11467522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,7 +96,7 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
-  mTexture: {fileID: 2800000, guid: cab77f91f4876403caa3f3ffd55d45ab, type: 3}
+  mTexture: {fileID: 2800000, guid: d8c8c4596c0f94c8ab85a1ee80ddba6d, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}

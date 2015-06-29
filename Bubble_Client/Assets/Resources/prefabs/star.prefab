@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 484834}
   - 114: {fileID: 11447230}
   - 114: {fileID: 11458874}
-  - 65: {fileID: 6585194}
+  - 61: {fileID: 6114994}
   m_Layer: 5
   m_Name: star
   m_TagString: Untagged
@@ -146,18 +146,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 484834}
   m_RootOrder: 3
---- !u!65 &6585194
-BoxCollider:
+--- !u!61 &6114994
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108456}
+  m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 150, y: 150, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 150, y: 150}
 --- !u!114 &11406598
 MonoBehaviour:
   m_ObjectHideFlags: 1

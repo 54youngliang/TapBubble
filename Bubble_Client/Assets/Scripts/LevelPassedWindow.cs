@@ -22,6 +22,7 @@ public class LevelPassedWindow : MonoBehaviour {
 	{
 		Debug.Log ("Click to Next Level");
 		this.gameObject.SetActive (false);
+		AppMain.Instance.CurrentLevel += 1;
 		AppMain.Instance.HomeWindow.BeginMission ();
 	}
 

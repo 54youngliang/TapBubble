@@ -4,48 +4,49 @@ using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
 
-	public HomeWindow homeWindow;
+
 	public GameObject bubblePrefab;
 	public GameObject countDown;
+	public UILabel missionTitle;
+	public GameObject clickReward;
 	private List<Bubble> bubbleList = new List<Bubble>();
 
-	private MissionConfig missionConfig;
 	
 	int restGameTime;
+	MissionMeta missionMeta;
 
 	public void BeginMission()
 	{
-		int missionId = AppMain.Instance.MaxLevel + 1;
-		BeginMission (missionId);
-	}
-
-	public void BeginMission(int missionId)
-	{
-		MissionConfig missionConfig = getMissionConfig (missionId);
-		this.missionConfig = missionConfig;
-		AppearBubbles ();
+		int missionId = AppMain.Instance.CurrentLevel;
+		this.missionMeta = MissionConfig.getMissionMeta (missionId);
+		missionTitle.text = "Mission:" + missionId;
+		AppearBubbles (missionMeta);
 		countDown.SetActive (true);
-		restGameTime = missionConfig.gameTime;
+		restGameTime = missionMeta.time;
 		RefreshCountDownTime ();
 		InvokeRepeating ("RefreshCountDownTime", 1,1);
-	}
 
+		clickReward.GetComponent<TouchEventListener>().onClick=ClickReward;
+	}
 
 	private void RefreshCountDownTime()
 	{
 		UILabel uiLabel = countDown.GetComponent<UILabel> ();
 		uiLabel.text = restGameTime + "";
 		restGameTime -= 1;
+		if (restGameTime < 0) {
+			MissionFailed();
+		}
 
 	}
 
-	private void AppearBubbles()
+	private void AppearBubbles(MissionMeta missionMeta)
 	{
-		List<BubbleInit> bubbleInitList = missionConfig.randomBubbleList ();
+		List<BubbleInit> bubbleInitList = missionMeta.randomBubbleInit ();
 		
 		foreach (BubbleInit bubbleInit in bubbleInitList) {
 			// init bubble
-			GameObject gameObject = GameObjectUtil.CloneGameObjectWithScale(bubblePrefab,this.transform,bubbleInit.localScale);
+			GameObject gameObject = GameObjectUtil.CloneGameObjectWithScale(bubblePrefab,this.transform,new Vector3(1.5f,1.5f,1.5f));
 			Bubble bubble = gameObject.GetComponent<Bubble>();
 			bubble.AppearNum(bubbleInit);
 		//	TweenXY.Add(gameObject,1f,bubbleInit.localPosition);
@@ -59,7 +60,7 @@ public class GameController : MonoBehaviour {
 		Debug.Log ("ButtonClick");
 		Bubble bubble = gameObject.GetComponent<Bubble> ();
 
-		if (bubble == bubbleList [0]) {
+		if (bubble.bubbleInit.result == bubbleList [0].bubbleInit.result) {
 			bubbleList.Remove (bubble);
 			bubble.BeginDestory ();
 			if(bubbleList.Count == 0)
@@ -71,14 +72,35 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
+	private void ClickReward(GameObject gameObject,Vector2 vector2)
+	{
+		Debug.Log ("click reward");
+		this.restGameTime += 10;
+		Destroy (gameObject);
+	}
+
 	private void MissionComplete()
 	{
-		Debug.Log ("Mission Complete:" + missionConfig.id);
+		Debug.Log ("Mission Complete:" + missionMeta.missionId);
 		CancelInvoke ("RefreshCountDownTime");
 		countDown.SetActive (false);
-		homeWindow.MissionComplete (AppMain.Instance.MaxLevel,3);
-		AppMain.Instance.SetStar (missionConfig.id, 3);
-		AppMain.Instance.MaxLevel =missionConfig.id;
+		AppMain.Instance.HomeWindow.MissionComplete (AppMain.Instance.MaxLevel,3);
+
+		int star = 0;
+		if (restGameTime >= missionMeta.level3) {
+			star = 3;
+		} else if (restGameTime >= missionMeta.level2) {
+			star = 2;
+		} else if (restGameTime >= missionMeta.level1) {
+			star = 1;
+		}
+		AppMain.Instance.SetStar (missionMeta.missionId, star);
+		if (AppMain.Instance.CurrentLevel > AppMain.Instance.MaxLevel) 
+		{
+			AppMain.Instance.MaxLevel =AppMain.Instance.CurrentLevel;
+		}
+
+
 	}
 
 	private void MissionFailed()
@@ -86,7 +108,7 @@ public class GameController : MonoBehaviour {
 		CancelInvoke ("RefreshCountDownTime");
 		DestoryAllBubble();
 		countDown.SetActive (false);
-		homeWindow.MissionFailed();
+		AppMain.Instance.HomeWindow.MissionFailed();
 		bubbleList.Clear ();
 	}
 
@@ -94,13 +116,6 @@ public class GameController : MonoBehaviour {
 		foreach (Bubble bubble in bubbleList) {
 			bubble.BeginDestory();
 		}
-	}
-
-	private MissionConfig getMissionConfig(int mission)
-	{
-		MissionConfig config = new MissionConfig ();
-		config.id = mission;
-		return config;
 	}
 
 }

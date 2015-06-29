@@ -1,84 +1,39 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
+using System.IO;
 
 public class MissionConfig {
 
-	public int id=1;
-	public int ballNum=3;
-	public int gameTime = 60;	
+	private static Dictionary<int,MissionMeta> missionMetaMap = new Dictionary<int, MissionMeta>();
 
-	public int[] rateArray = new int[5];
+	public static MissionMeta getMissionMeta(int missionId){
 
-	public List<BubbleInit> randomBubbleList(){
-
-		string question = "";
-		string rightAnswer = "";
-
-		List<BubbleInit> ballList = new List<BubbleInit>();
-
-		for(int i = 1;i<=ballNum;i++){
-			ballList.Add(randomBubble(i));
+		if (missionMetaMap.Count == 0) {
+			XmlDocument xmlDoc = new XmlDocument();
+			xmlDoc.Load(Application.dataPath+"/mission.xml");
+			XmlNodeList nodeList = xmlDoc.SelectSingleNode("mission").ChildNodes;
+			foreach(XmlNode xmlNode in nodeList){
+				XmlElement xe = (XmlElement) xmlNode;
+				MissionMeta meta = new MissionMeta();
+				meta.missionId = int.Parse(xe.GetAttribute("mission_id"));
+				//meta.bubbleNum = int.Parse(xe.GetAttribute("bubble_num"));
+				meta.positiveNum = int.Parse(xe.GetAttribute("postivie_num"));
+				meta.negativeNum = int.Parse(xe.GetAttribute("negative_num"));
+				meta.easyOperation = int.Parse(xe.GetAttribute("easy_op"));
+				meta.hardOperation = int.Parse(xe.GetAttribute("hard_op"));
+				meta.radical = int.Parse(xe.GetAttribute("redical_num"));
+				meta.time = int.Parse(xe.GetAttribute("time"));
+				meta.level3 = int.Parse(xe.GetAttribute("level3"));
+				meta.level2 = int.Parse(xe.GetAttribute("level2"));
+				meta.level1 = int.Parse(xe.GetAttribute("level1"));
+				missionMetaMap.Add(meta.missionId,meta);
+			}
 		}
 
-
-		ballList.Sort ((x,y) => x.result.CompareTo(y.result));
-
-		for (int i = 0; i<ballList.Count; i++) {
-			BubbleInit temp = (BubbleInit)ballList[i];
-			temp.order=i;
-		}
-		return ballList;
-	}
-
-	private BubbleInit randomBubble(int times){
-		BubbleInit b = new BubbleInit ();
-		b.result = 10*times+Random.Range (0, 10);
-		b.view = b.result + "";
-		b.localScale = new Vector3 (1.5f, 1.5f, 1.5f);
-		b.localPosition = new Vector3(Random.Range(-300,300),Random.Range(-300,300),0);
-		return b;
-//		int total = 0;
-//		int[] tmpRateArray = new int[rateArray.Length];
-//		for (int i =0; i<rateArray.Length; i++) {
-//			int num = rateArray[i];
-//			total +=num;
-//			tmpRateArray[i]=total;
-//		}
-//
-//		int randomNum = Random.Range (0, total);
-//
-//		int functionType = 0;
-//		for (int i =0; i<tmpRateArray.Length; i++) {
-//			int tmpRateNum = tmpRateArray[i];
-//			if(tmpRateNum > randomNum){
-//				functionType=i;
-//				break;
-//			}
-//		}
-//
-//		Bubble bubble = new Bubble ();
-//
-//		if (functionType == 1) {
-//			// jiafa
-//			int add1 = Random.Range(add1Min,add1Max);
-//			int add2 = Random.Range(add2Min,add2Max);
-//			bubble.result=add1+add2;
-//			bubble.view=bubble.result+"";
-//		} else if (functionType == 2) {
-//			int decr1 = Random.Range(decr1Min,decr1Max);
-//			int decr2 = Random.Range(decr2Min,decr2Max);
-//			// jianfa
-//		} else if (functionType == 3) {
-//			// chengfa
-//		
-//		} else if (functionType == 4) {
-//			// chufa
-//		} else if (functionType == 5) {
-//			//reagan
-//		}
+		return missionMetaMap[missionId];
 
 	}
-
 
 }

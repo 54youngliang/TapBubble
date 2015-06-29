@@ -49,7 +49,7 @@ public class HomeWindow : MonoBehaviour {
 		if (buttonHasScaled) {
 			gameController.BeginMission ();
 		} else {
-			TweenS s = TweenS.Add(playButton.gameObject, 1f, Vector3.zero);
+			TweenSXY s = TweenSXY.Add(playButton.gameObject, 0.5f, Vector2.zero);
 			s.OnComplete+=HiddenPlayButton;
 			s.OnComplete+=gameController.BeginMission;
 			buttonHasScaled = true;
