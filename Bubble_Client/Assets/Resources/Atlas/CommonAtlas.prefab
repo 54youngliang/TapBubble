@@ -42,8 +42,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 0f160ab6c67ba4a4aa499442a5f41b31, type: 2}
   mSprites:
   - name: again
-    x: 838
-    y: 787
+    x: 1931
+    y: 1936
     width: 112
     height: 112
     borderLeft: 0
@@ -55,21 +55,34 @@ MonoBehaviour:
     paddingTop: 8
     paddingBottom: 8
   - name: begin
-    x: 0
-    y: 153
-    width: 112
-    height: 112
+    x: 1695
+    y: 534
+    width: 150
+    height: 105
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 8
-    paddingRight: 8
-    paddingTop: 8
-    paddingBottom: 8
+    paddingLeft: 14
+    paddingRight: 5
+    paddingTop: 16
+    paddingBottom: 9
+  - name: bubble_d
+    x: 1695
+    y: 1207
+    width: 184
+    height: 178
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 31
+    paddingTop: 32
+    paddingBottom: 31
   - name: bubble1
-    x: 0
-    y: 266
+    x: 1695
+    y: 1386
     width: 215
     height: 216
     borderLeft: 0
@@ -81,8 +94,8 @@ MonoBehaviour:
     paddingTop: 39
     paddingBottom: 22
   - name: bubble2
-    x: 613
-    y: 739
+    x: 1920
+    y: 1648
     width: 71
     height: 69
     borderLeft: 0
@@ -94,8 +107,8 @@ MonoBehaviour:
     paddingTop: 24
     paddingBottom: 11
   - name: cloud1
-    x: 0
-    y: 483
+    x: 613
+    y: 130
     width: 506
     height: 254
     borderLeft: 0
@@ -108,7 +121,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: cloud2
     x: 0
-    y: 738
+    y: 98
     width: 612
     height: 286
     borderLeft: 0
@@ -119,9 +132,61 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: count_d
+    x: 1830
+    y: 642
+    width: 134
+    height: 133
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 5
+    paddingTop: 6
+    paddingBottom: 5
+  - name: earth_d
+    x: 0
+    y: 385
+    width: 1694
+    height: 1663
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 171
+    paddingRight: 183
+    paddingTop: 180
+    paddingBottom: 205
+  - name: game_over
+    x: 0
+    y: 17
+    width: 438
+    height: 80
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 9
+    paddingRight: 4
+    paddingTop: 32
+    paddingBottom: 27
+  - name: help
+    x: 1831
+    y: 777
+    width: 135
+    height: 135
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 10
+    paddingTop: 6
+    paddingBottom: 9
   - name: home_button
-    x: 113
-    y: 165
+    x: 1920
+    y: 1718
     width: 94
     height: 100
     borderLeft: 0
@@ -132,35 +197,113 @@ MonoBehaviour:
     paddingRight: 17
     paddingTop: 14
     paddingBottom: 14
-  - name: map
-    x: 685
-    y: 761
-    width: 50
-    height: 47
+  - name: home_d
+    x: 1695
+    y: 776
+    width: 135
+    height: 136
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
+    paddingLeft: 6
+    paddingRight: 10
+    paddingTop: 5
+    paddingBottom: 10
+  - name: home_n
+    x: 1831
+    y: 913
+    width: 135
+    height: 136
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 10
+    paddingTop: 5
+    paddingBottom: 10
+  - name: map
+    x: 1931
+    y: 1825
+    width: 114
+    height: 110
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 2
     paddingTop: 3
-    paddingBottom: 0
+    paddingBottom: 3
+  - name: map_label
+    x: 1911
+    y: 1419
+    width: 75
+    height: 46
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 8
+    paddingRight: 6
+    paddingTop: 15
+    paddingBottom: 6
   - name: music
-    x: 838
-    y: 900
-    width: 104
-    height: 124
+    x: 1695
+    y: 913
+    width: 135
+    height: 136
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 10
+    paddingTop: 5
+    paddingBottom: 10
+  - name: play_back
+    x: 1695
+    y: 1819
+    width: 235
+    height: 229
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 37
+    paddingRight: 42
+    paddingTop: 42
+    paddingBottom: 40
+  - name: restart_d
+    x: 1695
+    y: 640
+    width: 134
+    height: 135
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
     paddingLeft: 7
-    paddingRight: 17
-    paddingTop: 2
-    paddingBottom: 2
+    paddingRight: 11
+    paddingTop: 5
+    paddingBottom: 10
+  - name: restart_n
+    x: 1911
+    y: 1466
+    width: 136
+    height: 136
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 8
+    paddingRight: 7
+    paddingTop: 7
+    paddingBottom: 7
   - name: star
-    x: 613
-    y: 809
+    x: 1695
+    y: 1603
     width: 224
     height: 215
     borderLeft: 0
@@ -171,6 +314,45 @@ MonoBehaviour:
     paddingRight: 15
     paddingTop: 19
     paddingBottom: 22
+  - name: star_1
+    x: 1695
+    y: 1050
+    width: 148
+    height: 156
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 3
+    paddingTop: 4
+    paddingBottom: 15
+  - name: star_2
+    x: 1844
+    y: 1051
+    width: 148
+    height: 155
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 3
+    paddingTop: 4
+    paddingBottom: 11
+  - name: star_3
+    x: 1880
+    y: 1229
+    width: 167
+    height: 156
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 8
+    paddingRight: 20
+    paddingTop: 4
+    paddingBottom: 16
   mPixelSize: 1
   mReplacement: {fileID: 0}
   mCoordinates: 0

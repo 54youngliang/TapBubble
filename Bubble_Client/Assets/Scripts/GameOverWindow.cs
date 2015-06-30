@@ -12,6 +12,11 @@ public class GameOverWindow : MonoBehaviour {
 		AppMain.Instance.HomeWindow.ShowHomeWindow ();
 	}
 
+	public void ShowGameOverWindow()
+	{
+		LevelLabel.text = AppMain.Instance.CurrentLevel + "";
+	}
+
 	public void StartAgain()
 	{
 		AppMain.Instance.HomeWindow.BeginMission ();

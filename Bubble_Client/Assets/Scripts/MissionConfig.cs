@@ -9,10 +9,12 @@ public class MissionConfig {
 	private static Dictionary<int,MissionMeta> missionMetaMap = new Dictionary<int, MissionMeta>();
 
 	public static MissionMeta getMissionMeta(int missionId){
-
+		Debug.Log ("get Mission Config" + missionId);
 		if (missionMetaMap.Count == 0) {
 			XmlDocument xmlDoc = new XmlDocument();
-			xmlDoc.Load(Application.dataPath+"/mission.xml");
+			TextAsset assets = Resources.Load("mission") as TextAsset;
+//			xmlDoc.Load(Application.streamingAssetsPath+"/mission.xml");
+			xmlDoc.LoadXml(assets.text);
 			XmlNodeList nodeList = xmlDoc.SelectSingleNode("mission").ChildNodes;
 			foreach(XmlNode xmlNode in nodeList){
 				XmlElement xe = (XmlElement) xmlNode;

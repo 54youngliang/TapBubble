@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 465664}
@@ -262,7 +262,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 11407202, guid: 8ffb01608f50f45a5adef5aa3a332baf, type: 2}
-  mSpriteName: home_button
+  mSpriteName: home_d
   mFillCenter: 1
 --- !u!114 &11439574
 MonoBehaviour:

@@ -14,7 +14,9 @@ public class MissionMeta {
 	public int level1;
 	public int level2;
 	public int level3;
-	
+
+	private static int[] excludeNum = {19,16,61,91,18,81,66,99};
+
 	public List<BubbleInit> randomBubbleInit(){
 		List<BubbleInit> resultList = new List<BubbleInit> ();
 
@@ -104,12 +106,24 @@ public class MissionMeta {
 		return resultList;
 	}
 
-	private static int[] singleDigit={-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,7,8,9};
-
 	private BubbleInit PositiveNumberBubble(int tensMin,int tensMax)
 	{
-		int tens = Random.Range (tensMin, tensMax+1);
-		int num = tens*10 + Random.Range (0, 10);
+		int num = 0;
+		for (;;) {
+			int tens = Random.Range (tensMin, tensMax+1);
+			num = tens*10 + Random.Range (0, 10);
+			bool hasExclude=false;
+			foreach(int aa in excludeNum)
+			{
+				if( aa == num){
+					hasExclude=true;
+				}
+			}
+			if(!hasExclude){
+				break;
+			}
+		}
+
 		BubbleInit init = new BubbleInit ();
 		init.result = num;
 		init.view = num + "";

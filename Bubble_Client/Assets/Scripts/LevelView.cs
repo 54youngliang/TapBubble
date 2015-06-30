@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class LevelView : MonoBehaviour {
 
 	public UILabel LabelLevel;
-	public List<GameObject> StarList;
+	public UISprite BackSprite;
 	public System.Action<int> OnItemClick;
 	// Use this for initialization
 	void Start () {
@@ -50,11 +50,15 @@ public class LevelView : MonoBehaviour {
 		{
 			if (_star != value)
 			{
-				_star = value;
-				for(int i = 0; i < StarList.Count; i ++)
-				{
-					StarList[i].SetActive(i < value);
+				string _spriteName = "";
+				if(value == 1){
+					_spriteName="star_1";
+				}else if (value == 2){
+					_spriteName="star_2";
+				}else if (value == 3){
+					_spriteName="star_3";
 				}
+				BackSprite.spriteName=_spriteName;
 			}
 		}
 	}

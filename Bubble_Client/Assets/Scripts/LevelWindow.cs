@@ -46,10 +46,12 @@ public class LevelWindow : MonoBehaviour {
 
 	public void ShowHome()
 	{
+		Debug.Log ("Map click Home Button");
 		var width = AppMain.Instance.uiRoot.manualWidth;
 //		this.transform.localPosition = new Vector3(0, 0, 0);
 		this.gameObject.SetActive(true);
 		AppMain.Instance.HomeWindow.gameObject.SetActive(true);
+		AppMain.Instance.HomeWindow.ShowHomeWindow ();
 		Tween tween = TweenX.Add(this.gameObject, 0.5f, width);
 		tween.OnComplete += OnShowHomeComplete;
 		

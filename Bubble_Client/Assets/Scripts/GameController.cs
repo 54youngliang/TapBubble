@@ -17,16 +17,16 @@ public class GameController : MonoBehaviour {
 
 	public void BeginMission()
 	{
+
 		int missionId = AppMain.Instance.CurrentLevel;
 		this.missionMeta = MissionConfig.getMissionMeta (missionId);
-		missionTitle.text = "Mission:" + missionId;
 		AppearBubbles (missionMeta);
 		countDown.SetActive (true);
 		restGameTime = missionMeta.time;
 		RefreshCountDownTime ();
 		InvokeRepeating ("RefreshCountDownTime", 1,1);
 
-		clickReward.GetComponent<TouchEventListener>().onClick=ClickReward;
+
 	}
 
 	private void RefreshCountDownTime()
@@ -93,12 +93,13 @@ public class GameController : MonoBehaviour {
 			star = 2;
 		} else if (restGameTime >= missionMeta.level1) {
 			star = 1;
-		}
+		} 
 		AppMain.Instance.SetStar (missionMeta.missionId, star);
 		if (AppMain.Instance.CurrentLevel > AppMain.Instance.MaxLevel) 
 		{
 			AppMain.Instance.MaxLevel =AppMain.Instance.CurrentLevel;
 		}
+		AppMain.Instance.levelPassedWindow.Show (AppMain.Instance.CurrentLevel, star);
 
 
 	}
