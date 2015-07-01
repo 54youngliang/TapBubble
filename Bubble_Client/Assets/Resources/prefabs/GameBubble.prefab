@@ -70,9 +70,9 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124930}
-  m_Mass: 1
-  m_LinearDrag: .00999999978
-  m_AngularDrag: .0500000007
+  m_Mass: .300000012
+  m_LinearDrag: 0
+  m_AngularDrag: .0299999993
   m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -86,7 +86,7 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124930}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7a35e51e869f6446489fc1ac2e4973a5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -1331,7 +1331,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_LinearDrag
-      value: .00999999978
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: .300000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AngularDrag
+      value: .0299999993
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

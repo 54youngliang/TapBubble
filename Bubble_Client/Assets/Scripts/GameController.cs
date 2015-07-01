@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour {
 				gameObject.GetComponent<UISprite>().spriteName="bubble_d2";
 			}
 			gameObject.GetComponent<TouchEventListener>().onClick=ButtonClick;
-			gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(Random.Range(-20,20),Random.Range(-20,20),0f));
+			gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(Random.Range(-5,5),Random.Range(-5,5),0f));
 		}
 	}
 
@@ -96,12 +96,15 @@ public class GameController : MonoBehaviour {
 		} else if (restGameTime >= missionMeta.level1) {
 			star = 1;
 		} 
+		Debug.Log ("MissionComplete" + missionMeta.missionId + ",star:" + star);
+		AppMain.Instance.levelPassedWindow.Show (missionMeta.missionId, star);
 		AppMain.Instance.SetStar (missionMeta.missionId, star);
 		if (AppMain.Instance.CurrentLevel > AppMain.Instance.MaxLevel) 
 		{
 			AppMain.Instance.MaxLevel =AppMain.Instance.CurrentLevel;
 		}
-		AppMain.Instance.levelPassedWindow.Show (AppMain.Instance.CurrentLevel, star);
+		AppMain.Instance.CurrentLevel += 1;
+
 
 
 	}

@@ -17,7 +17,9 @@ public class HomeWindow : MonoBehaviour {
 	private bool buttonHasScaled=false;
 	private bool inGame;
 
-	private bool isFirstBegin=true;	
+
+	private Vector3 missionTitleVector=new Vector3 (-110f,50f,0f) ;
+	private Vector3 backgroundVector;
 
 	void Start () {
 		PlayerPrefs.DeleteAll ();
@@ -25,6 +27,7 @@ public class HomeWindow : MonoBehaviour {
 		playButtonOriginScale = playButton.transform.localScale;
 		AppMain.Instance.CurrentLevel = AppMain.Instance.MaxLevel;
 		MissionTitle.GetComponent<UILabel>().text = AppMain.Instance.MaxLevel+"";
+		backgroundVector = background.transform.localPosition;
 	}
 
 	public void ShowHomeWindow()
@@ -36,12 +39,13 @@ public class HomeWindow : MonoBehaviour {
 		mapGameObject.SetActive (false);
 		MissionTitle.SetActive(true);
 		MissionTitle.GetComponent<UILabel> ().text = AppMain.Instance.CurrentLevel + "";
-		MissionTitle.transform.position = new Vector3 (-110f,50f,0f);
+		MissionTitle.transform.localPosition = missionTitleVector;
 		mapGameObject.SetActive (true);
 		playButton.transform.localScale = playButtonOriginScale;
 		buttonHasScaled = false;
 		playButton.GetComponent<UIButton>().enabled = true;
 		playButton.SetActive (true);
+		background.transform.localPosition = backgroundVector;
 	}
 
 	public void FirstBeginMission()
@@ -51,13 +55,16 @@ public class HomeWindow : MonoBehaviour {
 		playButton.GetComponent<UIButton> ().enabled = false;
 		buttomButtons.SetActive (false);
 		countDown.SetActive (true);
-		if (isFirstBegin) {
+		if (background.transform.localPosition == backgroundVector) {
+			backgroundVector = background.transform.localPosition;
 			TweenY tween = TweenY.Add (background, 1f, 300f);
-			isFirstBegin = false;
 			//-138,74
 			TweenXY titleTween = TweenXY.Add (MissionTitle, 1f, new Vector2 (-138f, 480f));
 			tween.OnComplete += BeginMission;
 		} else {
+			if(MissionTitle.transform.localPosition == missionTitleVector){
+				TweenXY titleTween = TweenXY.Add (MissionTitle, 1f, new Vector2 (-138f, 480f));
+			}
 			BeginMission();
 		}
 

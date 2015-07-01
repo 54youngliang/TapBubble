@@ -20,88 +20,28 @@ public class MissionMeta {
 	public List<BubbleInit> randomBubbleInit(){
 		List<BubbleInit> resultList = new List<BubbleInit> ();
 
-		Dictionary<int,int> tmpCache = new Dictionary<int,int >();
-	
-		for (int i = 0; i<positiveNum; i++) 
-		{
-			int tens = 0;
-			if(missionId == 1){
-				// diyiguan,0~9,10~19……90~99，每个区间只出现1个数。
-
-				for(;;){
-					tens = Random.Range(0,10);
-					if(!tmpCache.ContainsKey(tens)){
-						break;
-					}
-
-				}
-				resultList.Add(PositiveNumberBubble(tens,tens));
-			}else if (missionId == 2){
-				//有1个区间出现2组数。
-				for(;;){
-					tens = Random.Range(0,10);
-					if(!tmpCache.ContainsKey(tens)){
-						break;
-					}else{
-						int twiceTimes = 0;
-						foreach(int amount in tmpCache.Values){
-							if(amount >=2){
-								twiceTimes+=1;
-							}
-						}
-						if(twiceTimes < 1){
-							break;
-						}
-					}
-				}		
-				resultList.Add(PositiveNumberBubble(tens,tens));
-			}else if (missionId == 3){
-				//有2个区间出现2组数。
-				for(;;){
-					tens = Random.Range(0,10);
-					if(!tmpCache.ContainsKey(tens)){
-						break;
-					}else{
-						int twiceTimes = 0;
-						foreach(int amount in tmpCache.Values){
-							if(amount >=2){
-								twiceTimes+=1;
-							}
-						}
-						if(twiceTimes < 2){
-							break;
-						}
-					}
-				}		
-				resultList.Add(PositiveNumberBubble(tens,tens));
-			}else{
-				resultList.Add(PositiveNumberBubble(0,9));
-			}
-			int existAmount=0;
-			if(tmpCache.ContainsKey(tens))
+		Dictionary<double,int> tmpCache = new Dictionary<double,int >();
+		
+			for (int i = 0; i<positiveNum; i++) 
 			{
-				existAmount = tmpCache[tens];
-				existAmount +=1;
+				resultList.Add(PositiveNumberBubble(0,9,tmpCache));
 			}
-			tmpCache[tens]=existAmount;
-
-		}
-		for (int i =0; i<negativeNum; i++) 
-		{
-			resultList.Add(NegativeNumberBubble());
-		}
-		for (int i=0; i<easyOperation; i++) 
-		{
-			resultList.Add(EasyOpBubble());
-		}
-		for (int i=0; i<hardOperation; i++) 
-		{
-			resultList.Add(HardOpBubble());
-		}
-		for (int i=0; i<radical; i++) 
-		{
-			resultList.Add(RadicalBubble());
-		}
+			for (int i =0; i<negativeNum; i++) 
+			{
+				resultList.Add(NegativeNumberBubble(tmpCache));
+			}
+			for (int i=0; i<easyOperation; i++) 
+			{
+				resultList.Add(EasyOpBubble(tmpCache));
+			}
+			for (int i=0; i<hardOperation; i++) 
+			{
+				resultList.Add(HardOpBubble(tmpCache));
+			}
+			for (int i=0; i<radical; i++) 
+			{
+				resultList.Add(RadicalBubble(tmpCache));
+			}
 
 		resultList.Sort ((x,y) => x.result.CompareTo(y.result));
 		
@@ -113,20 +53,28 @@ public class MissionMeta {
 		return resultList;
 	}
 
-	private BubbleInit PositiveNumberBubble(int tensMin,int tensMax)
+	private BubbleInit PositiveNumberBubble(int tensMin,int tensMax,Dictionary<double,int>  alreadyMap)
 	{
 		int num = 0;
 		for (;;) {
-			int tens = Random.Range (tensMin, tensMax+1);
-			num = tens*10 + Random.Range (0, 10);
-			bool hasExclude=false;
-			foreach(int aa in excludeNum)
-			{
-				if( aa == num){
-					hasExclude=true;
+		 
+			for (;;) {
+				int tens = Random.Range (tensMin, tensMax + 1);
+				num = tens * 10 + Random.Range (0, 10);
+				bool hasExclude = false;
+				foreach (int aa in excludeNum) {
+					if (aa == num) {
+						hasExclude = true;
+					}
+				}
+				if (!hasExclude) {
+					break;
 				}
 			}
-			if(!hasExclude){
+			if(alreadyMap.ContainsKey(num)){
+				continue;
+			}else{
+				alreadyMap[num]=1;
 				break;
 			}
 		}
@@ -137,89 +85,117 @@ public class MissionMeta {
 		return init;
 	}
 
-	private BubbleInit NegativeNumberBubble()
+	private BubbleInit NegativeNumberBubble(Dictionary<double,int> alreadyMap)
 	{
-		int num = Random.Range (-99, 0);
+		int num = 0;
+		for (;;) {
+			num = Random.Range (-99, 0);
+			if(alreadyMap.ContainsKey(num)){
+				continue;
+			}else{
+				alreadyMap[num]=1;
+				break;
+			}
+		}
+
 		BubbleInit init = new BubbleInit ();
 		init.result = num;
 		init.view = num + "";
 		return init;
 	}
 
-	private BubbleInit EasyOpBubble()
+	private BubbleInit EasyOpBubble(Dictionary<double,int>  alreadyMap)
 	{
 		int opNum = Random.Range (0, 5) % 4;
 		double result=0;
 		string view="";
-		if (opNum == 0) {
-			// +
-			int num1 = Random.Range(-9,10);
-			int num2 = Random.Range(-9,10);
-			result = num1+num2;
-			view = num1+"+"+num2;
-		} else if (opNum == 1) {
-			// -
-			int num1 = Random.Range(0,10);
-			int num2 = Random.Range(-9,10);
-			result = num1+num2;
-			view = num1+"-"+num2;
-		} else if (opNum == 2) {
-			// *
-			int num1 = Random.Range(-9,10);
-			int num2 = Random.Range(-9,10);
-			result = num1+num2;
-			view = num1+"X"+num2;
-		} else if (opNum == 3) {
-			// ÷
-			int num1 = Random.Range(-9,10);
-			int num2 = Random.Range(-9,10);
-			if(num2 ==0){
-				result = double.MaxValue;
-			}else{
+		for (;;) {
+			if (opNum == 0) {
+				// +
+				int num1 = Random.Range(-9,10);
+				int num2 = Random.Range(-9,10);
 				result = num1+num2;
+				view = num1+"+"+num2;
+			} else if (opNum == 1) {
+				// -
+				int num1 = Random.Range(0,10);
+				int num2 = Random.Range(-9,10);
+				result = num1+num2;
+				view = num1+"-"+num2;
+			} else if (opNum == 2) {
+				// *
+				int num1 = Random.Range(-9,10);
+				int num2 = Random.Range(-9,10);
+				result = num1+num2;
+				view = num1+"X"+num2;
+			} else if (opNum == 3) {
+				// ÷
+				int num1 = Random.Range(-9,10);
+				int num2 = Random.Range(-9,10);
+				if(num2 ==0){
+					result = double.MaxValue;
+				}else{
+					result = num1+num2;
+				}
+				view = num1+"÷"+num2;
 			}
-			view = num1+"÷"+num2;
+			if(alreadyMap.ContainsKey(result)){
+				continue;
+			}else{
+				alreadyMap[result]=1;
+				break;
+			}
 		}
+
 		BubbleInit init = new BubbleInit ();
 		init.result = result;
 		init.view = view;
 		return init;
 	}
 
-	private BubbleInit HardOpBubble()
+	private BubbleInit HardOpBubble(Dictionary<double,int>  alreadyMap)
 	{
 		int opNum = Random.Range (0, 5) % 4;
 		double result=0;
 		string view="";
-		if (opNum == 0) {
-			// +
-			int num1 = Random.Range(-10,11);
-			int num2 = Random.Range(-20,21);
-			result = num1+num2;
-			view = num1+"+"+num2;
-		} else if (opNum == 1) {
-			// -
-			int num1 = Random.Range(-10,11);
-			int num2 = Random.Range(-20,21);
-			result = num1+num2;
-			view = num1+"-"+num2;
-		} else if (opNum == 2) {
-			// *
-			int num1 = Random.Range(-10,11);
-			int num2 = Random.Range(-20,21);
-			result = num1+num2;
-			view = num1+"X"+num2;
-		} else if (opNum == 3) {
-			// ÷
-			int num1 = Random.Range(-10,11);
-			int num2 = Random.Range(-20,21);
-			if(num2 ==0){
-				result = double.MaxValue;
-			}else{
+		for (;;) {
+			if (opNum == 0) {
+				// +
+				int num1 = Random.Range(-10,11);
+				int num2 = Random.Range(-20,21);
 				result = num1+num2;
+				view = num1+"+"+num2;
+			} else if (opNum == 1) {
+				// -
+				int num1 = Random.Range(-10,11);
+				int num2 = Random.Range(-20,21);
+				result = num1+num2;
+				view = num1+"-"+num2;
+			} else if (opNum == 2) {
+				// *
+				int num1 = Random.Range(-10,11);
+				int num2 = Random.Range(-20,21);
+				result = num1+num2;
+				view = num1+"X"+num2;
+			} else if (opNum == 3) {
+				// ÷
+				int num1 = Random.Range(-10,11);
+				int num2 = Random.Range(-20,21);
+				if(num2 ==0){
+					result = double.MaxValue;
+				}else{
+					result = num1+num2;
+				}
+				view = num1+"÷"+num2;
 			}
-			view = num1+"÷"+num2;
+			if(alreadyMap.ContainsKey(result)){
+				continue;
+			}else{
+				alreadyMap[result]=1;
+				break;
+			}
 		}
+
 		BubbleInit init = new BubbleInit ();
 		init.result = result;
 		init.view = view;
@@ -227,11 +203,23 @@ public class MissionMeta {
 
 	}
 
-	private BubbleInit RadicalBubble()
+	private BubbleInit RadicalBubble(Dictionary<double,int>  alreadyMap)
 	{
-		float num = Random.Range (0f, 99f);
-		double result = Mathf.Sqrt (num);
-		string view = "√"+num;
+		double result = 0;
+		string view = "";
+		for (;;) {
+			int num = Random.Range (0, 99);
+			result = Mathf.Sqrt (num);
+			view = "√"+num;
+			if(alreadyMap.ContainsKey(result)){
+				continue;
+			}else{
+				alreadyMap[result]=1;
+				break;
+			}
+		
+		}
+
 		BubbleInit init = new BubbleInit ();
 		init.result = result;
 		init.view = view;
