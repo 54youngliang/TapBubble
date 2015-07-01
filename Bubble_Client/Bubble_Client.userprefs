@@ -1,18 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MissionConfig.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelPassedWindow.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameController.cs" Line="101" Column="4" />
-      <File FileName="Assets/Scripts/HomeWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="11" Column="32" />
+      <File FileName="Assets/Scripts/HomeWindow.cs" Line="53" Column="30" />
       <File FileName="Assets/Scripts/Bubble.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MissionMeta.cs" Line="123" Column="11" />
+      <File FileName="Assets/Scripts/MissionMeta.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AppMain.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EarthRolling.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GameOverWindow.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LevelPassedWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelPassedWindow.cs" Line="23" Column="37" />
       <File FileName="Assets/Scripts/LevelView.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LevelWindow.cs" Line="41" Column="23" />
-      <File FileName="Assets/Scripts/MissionConfig.cs" Line="16" Column="25" />
+      <File FileName="Assets/Scripts/LevelWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MissionConfig.cs" Line="15" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

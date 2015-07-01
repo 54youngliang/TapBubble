@@ -23,11 +23,13 @@ public class LevelPassedWindow : MonoBehaviour {
 		Debug.Log ("Click to Next Level");
 		this.gameObject.SetActive (false);
 		AppMain.Instance.CurrentLevel += 1;
-		AppMain.Instance.HomeWindow.BeginMission ();
+		TweenRZ.Add (AppMain.Instance.HomeWindow.background.GetComponent<Background>().earth, 1f, 30f).OnComplete+= AppMain.Instance.HomeWindow.BeginMission;
 	}
 
 	public void ShowHome()
 	{
+		this.gameObject.SetActive (false);
+		AppMain.Instance.HomeWindow.ShowHomeWindow ();
 	}
 
 	public void StartAgain()

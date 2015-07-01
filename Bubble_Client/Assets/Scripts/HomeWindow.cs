@@ -14,10 +14,11 @@ public class HomeWindow : MonoBehaviour {
 	public GameObject MissionTitle;
 
 	private Vector3 playButtonOriginScale ;
-	private bool backgroundHasMoved=false;
 	private bool buttonHasScaled=false;
 	private bool inGame;
-	
+
+	private bool isFirstBegin=true;	
+
 	void Start () {
 		PlayerPrefs.DeleteAll ();
 		background.GetComponent<GestureEvent>().OnLeft = ShowLevelWindow;
@@ -45,13 +46,21 @@ public class HomeWindow : MonoBehaviour {
 
 	public void FirstBeginMission()
 	{
+
 		UpdatePauseWindow (false);
-		TweenY tween = TweenY.Add (background, 1f, 300f);
-		//-138,74
-		TweenXY titleTween = TweenXY.Add (MissionTitle, 1f, new Vector2 (-138f, 480f));
-		tween.OnComplete += BeginMission;
-		backgroundHasMoved = true;
+		playButton.GetComponent<UIButton> ().enabled = false;
 		buttomButtons.SetActive (false);
+		countDown.SetActive (true);
+		if (isFirstBegin) {
+			TweenY tween = TweenY.Add (background, 1f, 300f);
+			isFirstBegin = false;
+			//-138,74
+			TweenXY titleTween = TweenXY.Add (MissionTitle, 1f, new Vector2 (-138f, 480f));
+			tween.OnComplete += BeginMission;
+		} else {
+			BeginMission();
+		}
+
 		mapGameObject.SetActive (false);
 	}
 
@@ -63,7 +72,6 @@ public class HomeWindow : MonoBehaviour {
 		UpdatePauseWindow (false);
 		UpdateShowLevelComplete (false);
 		inGame = true;
-		countDown.SetActive (true);
 		if (buttonHasScaled) {
 			gameController.BeginMission ();
 		} else {
@@ -72,6 +80,7 @@ public class HomeWindow : MonoBehaviour {
 			s.OnComplete+=gameController.BeginMission;
 			buttonHasScaled = true;
 		}
+
 	}
 
 	public void MissionFailed()

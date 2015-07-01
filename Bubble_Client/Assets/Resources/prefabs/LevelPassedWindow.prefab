@@ -129,7 +129,8 @@ GameObject:
   - 4: {fileID: 409874}
   - 114: {fileID: 11459782}
   - 114: {fileID: 11403446}
-  - 65: {fileID: 6507094}
+  - 50: {fileID: 5010370}
+  - 61: {fileID: 6141184}
   m_Layer: 5
   m_Name: HomeButton
   m_TagString: Untagged
@@ -285,6 +286,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!50 &5010370
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193112}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!54 &5407548
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -313,18 +330,19 @@ CircleCollider2D:
   m_Offset: {x: 3.0999999, y: 0}
   serializedVersion: 2
   m_Radius: 73.9000015
---- !u!65 &6507094
-BoxCollider:
+--- !u!61 &6141184
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193112}
+  m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 152, y: 152, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 152, y: 152}
 --- !u!65 &6599112
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -678,7 +696,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3005
+  startingRenderQueue: 3004
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0

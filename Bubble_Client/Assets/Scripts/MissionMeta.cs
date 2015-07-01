@@ -21,22 +21,23 @@ public class MissionMeta {
 		List<BubbleInit> resultList = new List<BubbleInit> ();
 
 		Dictionary<int,int> tmpCache = new Dictionary<int,int >();
-
+	
 		for (int i = 0; i<positiveNum; i++) 
 		{
+			int tens = 0;
 			if(missionId == 1){
 				// diyiguan,0~9,10~19……90~99，每个区间只出现1个数。
-				int tens = 0;
+
 				for(;;){
 					tens = Random.Range(0,10);
 					if(!tmpCache.ContainsKey(tens)){
 						break;
 					}
+
 				}
 				resultList.Add(PositiveNumberBubble(tens,tens));
 			}else if (missionId == 2){
 				//有1个区间出现2组数。
-				int tens = 0;
 				for(;;){
 					tens = Random.Range(0,10);
 					if(!tmpCache.ContainsKey(tens)){
@@ -56,7 +57,6 @@ public class MissionMeta {
 				resultList.Add(PositiveNumberBubble(tens,tens));
 			}else if (missionId == 3){
 				//有2个区间出现2组数。
-				int tens = 0;
 				for(;;){
 					tens = Random.Range(0,10);
 					if(!tmpCache.ContainsKey(tens)){
@@ -77,6 +77,13 @@ public class MissionMeta {
 			}else{
 				resultList.Add(PositiveNumberBubble(0,9));
 			}
+			int existAmount=0;
+			if(tmpCache.ContainsKey(tens))
+			{
+				existAmount = tmpCache[tens];
+				existAmount +=1;
+			}
+			tmpCache[tens]=existAmount;
 
 		}
 		for (int i =0; i<negativeNum; i++) 

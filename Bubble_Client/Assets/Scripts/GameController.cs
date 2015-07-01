@@ -17,7 +17,6 @@ public class GameController : MonoBehaviour {
 
 	public void BeginMission()
 	{
-
 		int missionId = AppMain.Instance.CurrentLevel;
 		this.missionMeta = MissionConfig.getMissionMeta (missionId);
 		AppearBubbles (missionMeta);
@@ -25,7 +24,6 @@ public class GameController : MonoBehaviour {
 		restGameTime = missionMeta.time;
 		RefreshCountDownTime ();
 		InvokeRepeating ("RefreshCountDownTime", 1,1);
-
 
 	}
 
