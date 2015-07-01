@@ -237,7 +237,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 457462}
-  - 114: {fileID: 11426056}
   - 114: {fileID: 11472478}
   - 114: {fileID: 11471718}
   m_Layer: 5
@@ -331,7 +330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &415182
 Transform:
   m_ObjectHideFlags: 1
@@ -499,7 +498,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 179012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -64, z: 0}
+  m_LocalPosition: {x: -2, y: 64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 476282}
@@ -986,17 +985,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationTime: 120
---- !u!114 &11426056
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 179012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0efc973786739430ba07eadb03fa7000, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11429452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1373,21 +1361,21 @@ MonoBehaviour:
   bottomAnchor:
     target: {fileID: 431630}
     relative: 0
-    absolute: -16
+    absolute: -49
   topAnchor:
     target: {fileID: 431630}
     relative: 0
-    absolute: 16
+    absolute: 51
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mWidth: 720
-  mHeight: 32
+  mHeight: 100
   mDepth: 10
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 22.5
+  aspectRatio: 7.19999981
 --- !u!114 &11471718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1422,7 +1410,7 @@ MonoBehaviour:
   bottomAnchor:
     target: {fileID: 431630}
     relative: 1
-    absolute: -1280
+    absolute: -1024
   topAnchor:
     target: {fileID: 431630}
     relative: 1
@@ -1431,12 +1419,12 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mWidth: 720
-  mHeight: 1280
+  mHeight: 1024
   mDepth: -2
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .5625
+  aspectRatio: .703125
   mType: 2
   mFillDirection: 4
   mFillAmount: 1
@@ -1453,7 +1441,7 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
-  mTexture: {fileID: 2800000, guid: b0501ae6ba9284c569f8b843b103e45d, type: 3}
+  mTexture: {fileID: 2800000, guid: 3524f54e51cd44e00b5cd2027326ec30, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}

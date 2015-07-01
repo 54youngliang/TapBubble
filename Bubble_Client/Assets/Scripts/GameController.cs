@@ -49,8 +49,12 @@ public class GameController : MonoBehaviour {
 			bubble.AppearNum(bubbleInit);
 		//	TweenXY.Add(gameObject,1f,bubbleInit.localPosition);
 			bubbleList.Add(bubble);
+			int random = Random.Range(0,2);
+			if(random == 1){
+				gameObject.GetComponent<UISprite>().spriteName="bubble_d2";
+			}
 			gameObject.GetComponent<TouchEventListener>().onClick=ButtonClick;
-			gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(Random.Range(-10,10),Random.Range(-10,10),0f));
+			gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(Random.Range(-20,20),Random.Range(-20,20),0f));
 		}
 	}
 

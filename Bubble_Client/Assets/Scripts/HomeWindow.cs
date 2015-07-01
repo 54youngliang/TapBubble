@@ -21,7 +21,7 @@ public class HomeWindow : MonoBehaviour {
 
 	void Start () {
 		PlayerPrefs.DeleteAll ();
-		background.GetComponent<GestureEvent>().OnLeft = ShowLevelWindow;
+		//background.GetComponent<GestureEvent>().OnLeft = ShowLevelWindow;
 		playButtonOriginScale = playButton.transform.localScale;
 		AppMain.Instance.CurrentLevel = AppMain.Instance.MaxLevel;
 		MissionTitle.GetComponent<UILabel>().text = AppMain.Instance.MaxLevel+"";
@@ -113,7 +113,7 @@ public class HomeWindow : MonoBehaviour {
 		var width = AppMain.Instance.uiRoot.manualWidth;
 		AppMain.Instance.LevelWindow.transform.localPosition = new Vector3(width, 0, 0);
 		AppMain.Instance.LevelWindow.gameObject.SetActive(true);
-		TweenX.Add(AppMain.Instance.LevelWindow.gameObject, 0.5f, 0f).OnComplete += ShowLevelWindow;
+		TweenX.Add(AppMain.Instance.LevelWindow.gameObject, 0.5f, 0f);
 		TweenX.Add(this.gameObject, 0.5f, -width);
 	}
 

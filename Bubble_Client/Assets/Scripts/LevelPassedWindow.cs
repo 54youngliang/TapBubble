@@ -23,7 +23,9 @@ public class LevelPassedWindow : MonoBehaviour {
 		Debug.Log ("Click to Next Level");
 		this.gameObject.SetActive (false);
 		AppMain.Instance.CurrentLevel += 1;
-		TweenRZ.Add (AppMain.Instance.HomeWindow.background.GetComponent<Background>().earth, 1f, 30f).OnComplete+= AppMain.Instance.HomeWindow.BeginMission;
+		GameObject earth = AppMain.Instance.HomeWindow.background.GetComponent<Background> ().earth;
+		float z = earth.transform.localEulerAngles.z;
+		TweenRZ.Add (earth, 1f,(z+30f) ).OnComplete+= AppMain.Instance.HomeWindow.BeginMission;
 	}
 
 	public void ShowHome()
