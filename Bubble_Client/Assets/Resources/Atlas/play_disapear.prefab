@@ -1,0 +1,760 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &151354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400118}
+  - 114: {fileID: 11408320}
+  m_Layer: 0
+  m_Name: play_disapear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400118
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11408320
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: c50671fc30bf14bb3b07d87d9f91e41d, type: 2}
+  mSprites:
+  - name: disappear1
+    x: 3851
+    y: 1815
+    width: 239
+    height: 233
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 49
+    paddingRight: 38
+    paddingTop: 30
+    paddingBottom: 27
+  - name: disappear10
+    x: 2285
+    y: 133
+    width: 241
+    height: 174
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 46
+    paddingRight: 39
+    paddingTop: 47
+    paddingBottom: 69
+  - name: disappear11
+    x: 2285
+    y: 308
+    width: 242
+    height: 177
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 50
+    paddingRight: 34
+    paddingTop: 44
+    paddingBottom: 69
+  - name: disappear12
+    x: 3107
+    y: 1568
+    width: 109
+    height: 176
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 188
+    paddingRight: 29
+    paddingTop: 40
+    paddingBottom: 74
+  - name: disappear13
+    x: 0
+    y: 82
+    width: 58
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 200
+    paddingRight: 68
+    paddingTop: 43
+    paddingBottom: 173
+  - name: disappear14
+    x: 0
+    y: 7
+    width: 58
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 200
+    paddingRight: 68
+    paddingTop: 43
+    paddingBottom: 173
+  - name: disappear2
+    x: 2285
+    y: 486
+    width: 228
+    height: 217
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 55
+    paddingRight: 43
+    paddingTop: 43
+    paddingBottom: 30
+  - name: disappear3
+    x: 2285
+    y: 704
+    width: 228
+    height: 217
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 55
+    paddingRight: 43
+    paddingTop: 43
+    paddingBottom: 30
+  - name: disappear4
+    x: 2285
+    y: 1191
+    width: 262
+    height: 268
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 30
+    paddingRight: 34
+    paddingTop: 7
+    paddingBottom: 15
+  - name: disappear5
+    x: 2285
+    y: 922
+    width: 262
+    height: 268
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 30
+    paddingRight: 34
+    paddingTop: 7
+    paddingBottom: 15
+  - name: disappear6
+    x: 3579
+    y: 1764
+    width: 271
+    height: 284
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 27
+    paddingRight: 28
+    paddingTop: 2
+    paddingBottom: 4
+  - name: disappear7
+    x: 2285
+    y: 1460
+    width: 271
+    height: 284
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 27
+    paddingRight: 28
+    paddingTop: 2
+    paddingBottom: 4
+  - name: disappear8
+    x: 2557
+    y: 1466
+    width: 274
+    height: 278
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 24
+    paddingRight: 28
+    paddingTop: 2
+    paddingBottom: 10
+  - name: disappear9
+    x: 2832
+    y: 1466
+    width: 274
+    height: 278
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 24
+    paddingRight: 28
+    paddingTop: 2
+    paddingBottom: 10
+  - name: play1
+    x: 1590
+    y: 1419
+    width: 323
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 222
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play10
+    x: 2932
+    y: 1752
+    width: 323
+    height: 296
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 222
+    paddingTop: 165
+    paddingBottom: 139
+  - name: play11
+    x: 2608
+    y: 1746
+    width: 323
+    height: 302
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 222
+    paddingTop: 159
+    paddingBottom: 139
+  - name: play12
+    x: 1937
+    y: 1742
+    width: 347
+    height: 306
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 198
+    paddingTop: 154
+    paddingBottom: 140
+  - name: play13
+    x: 1194
+    y: 163
+    width: 371
+    height: 310
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 174
+    paddingTop: 149
+    paddingBottom: 141
+  - name: play14
+    x: 0
+    y: 787
+    width: 394
+    height: 315
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 216
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 141
+  - name: play15
+    x: 0
+    y: 1103
+    width: 396
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 216
+    paddingRight: 148
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play16
+    x: 0
+    y: 1733
+    width: 401
+    height: 315
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 216
+    paddingRight: 143
+    paddingTop: 144
+    paddingBottom: 141
+  - name: play17
+    x: 1194
+    y: 1419
+    width: 394
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 216
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play18
+    x: 0
+    y: 1418
+    width: 396
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 216
+    paddingRight: 148
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play19
+    x: 1194
+    y: 789
+    width: 393
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 216
+    paddingRight: 151
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play2
+    x: 1937
+    y: 1427
+    width: 323
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 222
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play20
+    x: 798
+    y: 1419
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play21
+    x: 798
+    y: 1104
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play22
+    x: 0
+    y: 157
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play23
+    x: 798
+    y: 159
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play24
+    x: 0
+    y: 472
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play25
+    x: 798
+    y: 1734
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play26
+    x: 402
+    y: 1104
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play27
+    x: 798
+    y: 789
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play28
+    x: 402
+    y: 1419
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play29
+    x: 402
+    y: 1734
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play3
+    x: 1937
+    y: 1112
+    width: 323
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 222
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play30
+    x: 402
+    y: 474
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play31
+    x: 798
+    y: 474
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play32
+    x: 402
+    y: 159
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play33
+    x: 402
+    y: 789
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play34
+    x: 1194
+    y: 1734
+    width: 395
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play35
+    x: 1194
+    y: 1104
+    width: 394
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 216
+    paddingRight: 150
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play36
+    x: 1194
+    y: 474
+    width: 370
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 216
+    paddingRight: 174
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play37
+    x: 1590
+    y: 1734
+    width: 346
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 216
+    paddingRight: 198
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play38
+    x: 1937
+    y: 797
+    width: 322
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 216
+    paddingRight: 222
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play39
+    x: 1937
+    y: 482
+    width: 322
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 216
+    paddingRight: 222
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play4
+    x: 1590
+    y: 1104
+    width: 323
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 222
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play40
+    x: 1590
+    y: 474
+    width: 323
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 222
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play5
+    x: 1590
+    y: 789
+    width: 323
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 222
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play6
+    x: 1590
+    y: 159
+    width: 323
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 222
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play7
+    x: 1937
+    y: 167
+    width: 322
+    height: 314
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 216
+    paddingRight: 222
+    paddingTop: 144
+    paddingBottom: 142
+  - name: play8
+    x: 2285
+    y: 1745
+    width: 322
+    height: 303
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 215
+    paddingRight: 223
+    paddingTop: 157
+    paddingBottom: 140
+  - name: play9
+    x: 3256
+    y: 1756
+    width: 322
+    height: 292
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 216
+    paddingRight: 222
+    paddingTop: 170
+    paddingBottom: 138
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 151354}
+  m_IsPrefabParent: 1

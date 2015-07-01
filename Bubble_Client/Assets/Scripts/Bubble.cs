@@ -6,7 +6,6 @@ public class Bubble: MonoBehaviour {
 	public float BubbleScaleTime = 5f;
 	public UISprite uiSprite;
 	public UILabel uiLabel;
-	public Vector3 targetLocal = new Vector3(0.5f, 0.5f, 0.5f);
 	public BubbleInit bubbleInit;
 
 	bool needDestory = false;
@@ -27,24 +26,41 @@ public class Bubble: MonoBehaviour {
 		this.bubbleInit = bubbleInit;
 		uiLabel.text = bubbleInit.view;
 	}
-	
+
+	int type = 0;
 	public void BeginDestory(){
-		TweenScale scale = TweenScale.Begin (this.gameObject, BubbleScaleTime, this.transform.localScale*0.5f);
-		scale.AddOnFinished(DispearBubble);
-		scale.AddOnFinished(PlayParticleSystem);
+		uiLabel.enabled = false;
+		type = Random.Range (1, 3);
+		float refreshTime = 0.02f;
+		InvokeRepeating("Disappear",0,refreshTime);
+
+		//TweenScale scale = TweenScale.Begin (this.gameObject, BubbleScaleTime, this.transform.localScale*0.5f);
+		//scale.AddOnFinished(DispearBubble);
+		//scale.AddOnFinished(PlayParticleSystem);
 	}
-	
+
+
+	int disNum=1;
+	private void Disappear(){
+			if (disNum > 17) {
+				DispearBubble();
+				CancelInvoke ("Disappear");
+			}
+			uiSprite.spriteName = "sheep" + (10000*type + disNum);
+			disNum += 1;
+	}
+
 	private void DispearBubble(){
 		uiSprite.enabled = false;
-		uiLabel.enabled = false;
+		Destroy (this.gameObject);
 	}
 	
-	private void PlayParticleSystem(){
-		ParticleSystem ps = this.gameObject.GetComponent<ParticleSystem>();
-		ps.GetComponent<Renderer> ().sortingLayerName = "Foreground";
-		ps.Play();
-		needDestory = true;
-		destoryTime = 10;
-	}
+//	private void PlayParticleSystem(){
+//		ParticleSystem ps = this.gameObject.GetComponent<ParticleSystem>();
+//		ps.GetComponent<Renderer> ().sortingLayerName = "Foreground";
+//		ps.Play();
+//		needDestory = true;
+//		destoryTime = 15;
+//	}
 	
 }

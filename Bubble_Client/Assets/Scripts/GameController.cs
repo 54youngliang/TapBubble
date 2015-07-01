@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour {
 		countDown.SetActive (true);
 		restGameTime = missionMeta.time;
 		RefreshCountDownTime ();
-		InvokeRepeating ("RefreshCountDownTime", 1,1);
+		InvokeRepeating ("RefreshCountDownTime", 1,1f);
 
 	}
 
@@ -44,15 +44,13 @@ public class GameController : MonoBehaviour {
 		
 		foreach (BubbleInit bubbleInit in bubbleInitList) {
 			// init bubble
-			GameObject gameObject = GameObjectUtil.CloneGameObjectWithScale(bubblePrefab,this.transform,new Vector3(1.5f,1.5f,1.5f));
+			Vector3 vector = new Vector3(-113,31,0);
+			GameObject gameObject = GameObjectUtil.CloneGameObjectWithScale(bubblePrefab,this.transform,new Vector3(2f,2f,2f));
+			gameObject.transform.localPosition=vector;
 			Bubble bubble = gameObject.GetComponent<Bubble>();
 			bubble.AppearNum(bubbleInit);
 		//	TweenXY.Add(gameObject,1f,bubbleInit.localPosition);
 			bubbleList.Add(bubble);
-			int random = Random.Range(0,2);
-			if(random == 1){
-				gameObject.GetComponent<UISprite>().spriteName="bubble_d2";
-			}
 			gameObject.GetComponent<TouchEventListener>().onClick=ButtonClick;
 			gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(Random.Range(-5,5),Random.Range(-5,5),0f));
 		}

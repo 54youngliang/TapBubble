@@ -6,7 +6,7 @@ public class HomeWindow : MonoBehaviour {
 
 	[SerializeField]
 	public GameObject background;
-	public GameObject playButton;
+	public PlayButton playButton;
 	public GameController gameController;
 	public GameObject countDown;
 	public GameObject buttomButtons;
@@ -23,6 +23,7 @@ public class HomeWindow : MonoBehaviour {
 
 	void Start () {
 		PlayerPrefs.DeleteAll ();
+		playButton.playAnimation.StartAnimation ();
 		//background.GetComponent<GestureEvent>().OnLeft = ShowLevelWindow;
 		playButtonOriginScale = playButton.transform.localScale;
 		AppMain.Instance.CurrentLevel = AppMain.Instance.MaxLevel;
@@ -32,6 +33,8 @@ public class HomeWindow : MonoBehaviour {
 
 	public void ShowHomeWindow()
 	{
+		playButton.playAnimation.StartAnimation ();
+		playButton.playLabel.enabled = true;
 		UpdateGameOverWindowStatus (false);
 		UpdatePauseWindow (false);
 		UpdateShowLevelComplete (false);
@@ -44,13 +47,13 @@ public class HomeWindow : MonoBehaviour {
 		playButton.transform.localScale = playButtonOriginScale;
 		buttonHasScaled = false;
 		playButton.GetComponent<UIButton>().enabled = true;
-		playButton.SetActive (true);
+		playButton.gameObject.SetActive (true);
 		background.transform.localPosition = backgroundVector;
 	}
 
 	public void FirstBeginMission()
 	{
-
+		playButton.playAnimation.StopAnimation ();
 		UpdatePauseWindow (false);
 		playButton.GetComponent<UIButton> ().enabled = false;
 		buttomButtons.SetActive (false);
@@ -73,6 +76,7 @@ public class HomeWindow : MonoBehaviour {
 
 	public void BeginMission()
 	{
+		playButton.playLabel.enabled = false;
 		MissionTitle.SetActive (true);
 		MissionTitle.GetComponent<UILabel> ().text = AppMain.Instance.CurrentLevel + "";
 		UpdateGameOverWindowStatus (false);
@@ -82,11 +86,19 @@ public class HomeWindow : MonoBehaviour {
 		if (buttonHasScaled) {
 			gameController.BeginMission ();
 		} else {
-			TweenSXY s = TweenSXY.Add(playButton, 0.5f, Vector2.zero);
-			s.OnComplete+=HiddenPlayButton;
-			s.OnComplete+=gameController.BeginMission;
+			PlayButtonDisappearAndBeginMission();
+//			TweenSXY s = TweenSXY.Add(playButton, 0.5f, Vector2.zero);
+//			s.OnComplete+=HiddenPlayButton;
+//			s.OnComplete+=gameController.BeginMission;
 			buttonHasScaled = true;
 		}
+
+	}
+
+	public void PlayButtonDisappearAndBeginMission(){
+		playButton.playAnimation.StartDisapear ();
+		gameController.BeginMission ();
+		HiddenPlayButton ();
 
 	}
 
@@ -108,7 +120,7 @@ public class HomeWindow : MonoBehaviour {
 	}
 
 	private void HiddenPlayButton(){
-		playButton.SetActive (false);
+		//playButton.SetActive (false);
 	}
 
 	public void ShowLevelWindow()
