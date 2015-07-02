@@ -118,6 +118,18 @@ public class AppMain : MonoBehaviour {
 		}
 	}
 
+	public int HasHelp
+	{
+		get
+		{
+			return PlayerPrefs.GetInt("help");
+		}
+		set
+		{
+			PlayerPrefs.SetInt("help", 1);
+		}
+	}
+
 	void OnApplicationPause(bool isPause)
 	{
 		//TODO

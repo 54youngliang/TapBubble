@@ -12,14 +12,14 @@ public class PlayAnimation : MonoBehaviour {
 		StartAnimation ();
 	}
 
+	int nowPic = 1;
 	public void StartAnimation(){
 		if (!hasStarted) {
+			nowPic =1;
 			hasStarted = true;
 			InvokeRepeating ("refresh", 0, 0.06f);
 		}
 	}
-
-	int nowPic = 1;
 
 	public void refresh(){
 		if (nowPic > 40) {
@@ -31,16 +31,17 @@ public class PlayAnimation : MonoBehaviour {
 
 	public void StopAnimation(){
 		uiSprite.spriteName = "play" + 1;
-			hasStarted = false;
-			CancelInvoke ("refresh");
+		hasStarted = false;
+		CancelInvoke ("refresh");
 
-	}
-	
-	public void StartDisapear(){
-		InvokeRepeating ("RefreshDisapear", 0, 0.1f);
 	}
 
 	private int disNum = 1;
+	public void StartDisapear(){
+		disNum = 1;
+		InvokeRepeating ("RefreshDisapear", 0, 0.1f);
+	}
+	
 	private void RefreshDisapear(){
 		if(disNum>14){
 			CancelInvoke("RefreshDisapear");

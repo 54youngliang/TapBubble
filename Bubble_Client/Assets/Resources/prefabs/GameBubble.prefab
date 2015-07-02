@@ -87,7 +87,7 @@ CircleCollider2D:
   m_Material: {fileID: 6200000, guid: 7a35e51e869f6446489fc1ac2e4973a5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -1.83000004, y: -7.63000011}
   serializedVersion: 2
   m_Radius: 29.2199993
 --- !u!114 &11408458
@@ -131,13 +131,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: .00043252678, b: .00043252678, a: 1}
   mPivot: 4
-  mWidth: 66
-  mHeight: 73
+  mWidth: 51
+  mHeight: 38
   mDepth: 11
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .904109597
+  aspectRatio: 1.34210527
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11468640, guid: 07a52893052c74d9f8c191590311c56c, type: 2}

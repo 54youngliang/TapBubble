@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour {
 		foreach (BubbleInit bubbleInit in bubbleInitList) {
 			// init bubble
 			Vector3 vector = new Vector3(-113,31,0);
-			GameObject gameObject = GameObjectUtil.CloneGameObjectWithScale(bubblePrefab,this.transform,new Vector3(2f,2f,2f));
+			GameObject gameObject = GameObjectUtil.CloneGameObjectWithScale(bubblePrefab,this.transform,new Vector3(2.5f,2.5f,2.5f));
 			gameObject.transform.localPosition=vector;
 			Bubble bubble = gameObject.GetComponent<Bubble>();
 			bubble.AppearNum(bubbleInit);

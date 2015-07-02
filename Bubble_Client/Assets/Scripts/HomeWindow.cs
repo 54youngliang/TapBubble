@@ -12,6 +12,7 @@ public class HomeWindow : MonoBehaviour {
 	public GameObject buttomButtons;
 	public GameObject mapGameObject;
 	public GameObject MissionTitle;
+	public HelpButton helpButton;
 
 	private Vector3 playButtonOriginScale ;
 	private bool buttonHasScaled=false;
@@ -22,7 +23,15 @@ public class HomeWindow : MonoBehaviour {
 	private Vector3 backgroundVector;
 
 	void Start () {
-		PlayerPrefs.DeleteAll ();
+		//PlayerPrefs.DeleteAll ();
+		int aa = AppMain.Instance.HasHelp;
+		if (AppMain.Instance.HasHelp <= 0) {
+			helpButton.UpdateInfoStaus (true);
+			AppMain.Instance.HasHelp=1;
+		} else {
+			helpButton.UpdateInfoStaus (false);
+		}
+
 		playButton.playAnimation.StartAnimation ();
 		//background.GetComponent<GestureEvent>().OnLeft = ShowLevelWindow;
 		playButtonOriginScale = playButton.transform.localScale;
@@ -33,6 +42,7 @@ public class HomeWindow : MonoBehaviour {
 
 	public void ShowHomeWindow()
 	{
+
 		playButton.playAnimation.StartAnimation ();
 		playButton.playLabel.enabled = true;
 		UpdateGameOverWindowStatus (false);
