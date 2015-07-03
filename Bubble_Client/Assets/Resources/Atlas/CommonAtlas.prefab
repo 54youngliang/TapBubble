@@ -55,8 +55,8 @@ MonoBehaviour:
     paddingTop: 27
     paddingBottom: 29
   - name: count_d
-    x: 236
-    y: 13
+    x: 520
+    y: 704
     width: 133
     height: 133
     borderLeft: 0
@@ -81,32 +81,6 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 5
   - name: help_d
-    x: 236
-    y: 147
-    width: 133
-    height: 133
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 2
-    paddingRight: 6
-    paddingTop: 2
-    paddingBottom: 6
-  - name: help_n
-    x: 236
-    y: 281
-    width: 133
-    height: 133
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 2
-    paddingRight: 6
-    paddingTop: 2
-    paddingBottom: 6
-  - name: home_d
     x: 788
     y: 704
     width: 133
@@ -119,9 +93,35 @@ MonoBehaviour:
     paddingRight: 6
     paddingTop: 2
     paddingBottom: 6
+  - name: help_n
+    x: 236
+    y: 549
+    width: 133
+    height: 133
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 6
+    paddingTop: 2
+    paddingBottom: 6
+  - name: home_d
+    x: 236
+    y: 415
+    width: 133
+    height: 133
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 6
+    paddingTop: 2
+    paddingBottom: 6
   - name: home_n
-    x: 520
-    y: 704
+    x: 236
+    y: 281
     width: 133
     height: 133
     borderLeft: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
     paddingBottom: 40
   - name: restart_d
     x: 236
-    y: 549
+    y: 147
     width: 133
     height: 133
     borderLeft: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
     paddingBottom: 6
   - name: restart_n
     x: 236
-    y: 415
+    y: 13
     width: 133
     height: 133
     borderLeft: 0
@@ -223,45 +223,6 @@ MonoBehaviour:
     paddingRight: 6
     paddingTop: 2
     paddingBottom: 6
-  - name: result_star_1
-    x: 834
-    y: 840
-    width: 177
-    height: 184
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 13
-    paddingRight: 16
-    paddingTop: 13
-    paddingBottom: 14
-  - name: result_star_2
-    x: 497
-    y: 838
-    width: 336
-    height: 186
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 19
-    paddingRight: 22
-    paddingTop: 18
-    paddingBottom: 17
-  - name: result_star_3
-    x: 0
-    y: 838
-    width: 496
-    height: 186
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 19
-    paddingRight: 22
-    paddingTop: 18
-    paddingBottom: 17
   - name: star_1
     x: 0
     y: 128
@@ -301,6 +262,45 @@ MonoBehaviour:
     paddingRight: 22
     paddingTop: 2
     paddingBottom: 18
+  - name: success_1
+    x: 834
+    y: 840
+    width: 177
+    height: 184
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 165
+    paddingRight: 163
+    paddingTop: 2
+    paddingBottom: 11
+  - name: success_2
+    x: 497
+    y: 838
+    width: 336
+    height: 186
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 84
+    paddingRight: 85
+    paddingTop: 5
+    paddingBottom: 6
+  - name: success_3
+    x: 0
+    y: 838
+    width: 496
+    height: 186
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 6
+    paddingTop: 5
+    paddingBottom: 6
   mPixelSize: 1
   mReplacement: {fileID: 0}
   mCoordinates: 0

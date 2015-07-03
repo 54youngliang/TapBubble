@@ -1,3 +1,0 @@
-# view AndroidManifest.xml #generated:5
--keep class com.happyelements.lab.chihiro.UnityPlayerActivity { <init>(...); }
-

@@ -37,14 +37,17 @@ public class PlayAnimation : MonoBehaviour {
 	}
 
 	private int disNum = 1;
+	public bool dispearRunning = false;
 	public void StartDisapear(){
 		disNum = 1;
-		InvokeRepeating ("RefreshDisapear", 0, 0.1f);
+		dispearRunning = true;
+		InvokeRepeating ("RefreshDisapear", 0, 0.05f);
 	}
 	
 	private void RefreshDisapear(){
 		if(disNum>14){
 			CancelInvoke("RefreshDisapear");
+			dispearRunning = false;
 		}
 		uiSprite.spriteName = "disappear" + disNum;
 		disNum += 1;

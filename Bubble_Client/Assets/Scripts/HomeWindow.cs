@@ -13,6 +13,11 @@ public class HomeWindow : MonoBehaviour {
 	public GameObject mapGameObject;
 	public GameObject MissionTitle;
 	public HelpButton helpButton;
+	public GameObject MusicButton;
+	public GameObject NameLabel;
+	public GameObject NextLevelButton;
+	public GameObject Title;
+	public GameObject Map;
 
 	private Vector3 playButtonOriginScale ;
 	private bool buttonHasScaled=false;
@@ -24,14 +29,11 @@ public class HomeWindow : MonoBehaviour {
 
 	void Start () {
 		//PlayerPrefs.DeleteAll ();
-		int aa = AppMain.Instance.HasHelp;
 		if (AppMain.Instance.HasHelp <= 0) {
-			helpButton.UpdateInfoStaus (true);
-			AppMain.Instance.HasHelp=1;
+			DisplayHelp ();
 		} else {
-			helpButton.UpdateInfoStaus (false);
+			HiddenHelp();
 		}
-
 		playButton.playAnimation.StartAnimation ();
 		//background.GetComponent<GestureEvent>().OnLeft = ShowLevelWindow;
 		playButtonOriginScale = playButton.transform.localScale;
@@ -40,11 +42,42 @@ public class HomeWindow : MonoBehaviour {
 		backgroundVector = background.transform.localPosition;
 	}
 
+	bool displayHelpStatus=false;
+
+	public void ChangeHelpStatus(){
+		displayHelpStatus = !displayHelpStatus;
+		if (displayHelpStatus) {
+			DisplayHelp ();
+		} else {
+			HiddenHelp();
+		}
+	}
+
+	public void DisplayHelp(){
+		Title.SetActive (false);
+		Map.SetActive (false);
+		helpButton.UpdateInfoStaus (true);
+		AppMain.Instance.HasHelp=1;
+		MusicButton.SetActive (false);
+		NameLabel.SetActive (false);
+		displayHelpStatus = true;
+	}
+
+	public void HiddenHelp(){
+		Title.SetActive (true);
+		Map.SetActive (true);
+		helpButton.UpdateInfoStaus (false);
+		MusicButton.SetActive (true);
+		NameLabel.SetActive (true);
+		displayHelpStatus = false;
+	}
+
 	public void ShowHomeWindow()
 	{
-
+		HiddenHelp ();
 		playButton.playAnimation.StartAnimation ();
 		playButton.playLabel.enabled = true;
+		NextLevelButton.SetActive (false);
 		UpdateGameOverWindowStatus (false);
 		UpdatePauseWindow (false);
 		UpdateShowLevelComplete (false);
@@ -92,23 +125,19 @@ public class HomeWindow : MonoBehaviour {
 		UpdateGameOverWindowStatus (false);
 		UpdatePauseWindow (false);
 		UpdateShowLevelComplete (false);
+		AppMain.Instance.levelPassedWindow.gameObject.SetActive (false);
 		inGame = true;
 		if (buttonHasScaled) {
-			gameController.BeginMission ();
+			NextLevelButton.GetComponent<NextButton>().label.SetActive(false);
+			NextLevelButton.GetComponent<PlayAnimation>().StartDisapear();
+			gameController.BeginNextMission();
+			needHiddenNextButton=true;
 		} else {
-			PlayButtonDisappearAndBeginMission();
-//			TweenSXY s = TweenSXY.Add(playButton, 0.5f, Vector2.zero);
-//			s.OnComplete+=HiddenPlayButton;
-//			s.OnComplete+=gameController.BeginMission;
+			playButton.playAnimation.StartDisapear ();
+			gameController.BeginMission ();
+			needHiddenPlayButton = true;
 			buttonHasScaled = true;
 		}
-
-	}
-
-	public void PlayButtonDisappearAndBeginMission(){
-		playButton.playAnimation.StartDisapear ();
-		gameController.BeginMission ();
-		HiddenPlayButton ();
 
 	}
 
@@ -129,8 +158,36 @@ public class HomeWindow : MonoBehaviour {
 		inGame = false;
 	}
 
+	// yincang plays
+	public bool needHiddenPlayButton=false;
 	private void HiddenPlayButton(){
-		//playButton.SetActive (false);
+		if (needHiddenPlayButton) {
+			if(!playButton.playAnimation.dispearRunning){
+				playButton.gameObject.SetActive (false);
+				needHiddenPlayButton=false;
+			}
+		}
+
+	}
+
+	// yincang next
+	public bool needHiddenNextButton=false;
+	private void HiddenNextButton(){
+		if (needHiddenNextButton) {
+			if(!NextLevelButton.GetComponent<PlayAnimation>().dispearRunning){
+				NextLevelButton.gameObject.SetActive (false);
+				needHiddenPlayButton=false;
+			}
+		}
+	}
+
+	void Update(){
+		if (needHiddenPlayButton) {
+			HiddenPlayButton();
+		}
+		if (needHiddenNextButton) {
+			HiddenNextButton();
+		}
 	}
 
 	public void ShowLevelWindow()

@@ -139,17 +139,17 @@ PlayerSettings:
       m_Size: 128
   - m_BuildTarget: Android
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: 16203a44ae2004c1e8e3bdd7401fb4ac, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 34825746edf7a40bea2c2374eec57619, type: 3}
       m_Size: 192
-    - m_Icon: {fileID: 2800000, guid: 3570bf2e373dc4e209fa5af4bd3375ba, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 62499df194fd142d98174c0c8b1bf2c4, type: 3}
       m_Size: 144
-    - m_Icon: {fileID: 2800000, guid: ce10beb7b9fe04235984239504ef4626, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 207895a1a4c874669b2cd44e1da7be89, type: 3}
       m_Size: 96
-    - m_Icon: {fileID: 2800000, guid: bbce5ec906ed140b7a02a40981316f8d, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 0efb8073c450c44cba3785834932aef7, type: 3}
       m_Size: 72
-    - m_Icon: {fileID: 2800000, guid: d650b7e45fb154bf59589df1599caf54, type: 3}
+    - m_Icon: {fileID: 2800000, guid: d29dc2d3422af46debf37a7b700e0c27, type: 3}
       m_Size: 48
-    - m_Icon: {fileID: 2800000, guid: 2003688f62dbf4970a12081b1a9b00ce, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 7af997535cdb54671b7860700302d340, type: 3}
       m_Size: 36
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []

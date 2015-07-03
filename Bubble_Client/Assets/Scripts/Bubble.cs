@@ -10,8 +10,17 @@ public class Bubble: MonoBehaviour {
 
 	bool needDestory = false;
 	int destoryTime = int.MaxValue;
-
+	
+	int forceTime = 20;
 	void Update(){
+		forceTime -= 1;
+		if (forceTime == 0) {
+			this.gameObject.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (Random.Range (-0.5f, 0.5f), Random.Range (-0.5f, 0.5f)));
+			forceTime=20;
+		}
+		Vector3 v = this.gameObject.transform.localEulerAngles;
+		TweenZ.Add (this.gameObject, 2f, 360f);
+
 		if (needDestory) 
 		{
 			destoryTime-=1;

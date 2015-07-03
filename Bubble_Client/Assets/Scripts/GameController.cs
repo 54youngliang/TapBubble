@@ -9,7 +9,11 @@ public class GameController : MonoBehaviour {
 	public GameObject countDown;
 	public UILabel missionTitle;
 	public GameObject clickReward;
+	public GameObject playButton;
+	public GameObject nextPlayButton;
 	private List<Bubble> bubbleList = new List<Bubble>();
+	public GameObject musicButton;
+	public GameObject homeButton;
 
 	
 	int restGameTime;
@@ -17,15 +21,32 @@ public class GameController : MonoBehaviour {
 
 	public void BeginMission()
 	{
+		musicButton.SetActive (true);
+		homeButton.SetActive (true);
 		int missionId = AppMain.Instance.CurrentLevel;
 		this.missionMeta = MissionConfig.getMissionMeta (missionId);
-		AppearBubbles (missionMeta);
+		AppearBubbles (missionMeta,playButton.transform.localPosition);
 		countDown.SetActive (true);
 		restGameTime = missionMeta.time;
 		RefreshCountDownTime ();
 		InvokeRepeating ("RefreshCountDownTime", 1,1f);
 
 	}
+
+	public void BeginNextMission()
+	{
+		musicButton.SetActive (true);
+		homeButton.SetActive (true);
+		int missionId = AppMain.Instance.CurrentLevel;
+		this.missionMeta = MissionConfig.getMissionMeta (missionId);
+		AppearBubbles (missionMeta,nextPlayButton.transform.localPosition);
+		countDown.SetActive (true);
+		restGameTime = missionMeta.time;
+		RefreshCountDownTime ();
+		InvokeRepeating ("RefreshCountDownTime", 1,1f);
+		
+	}
+
 
 	private void RefreshCountDownTime()
 	{
@@ -38,7 +59,7 @@ public class GameController : MonoBehaviour {
 
 	}
 
-	private void AppearBubbles(MissionMeta missionMeta)
+	private void AppearBubbles(MissionMeta missionMeta,Vector3 position)
 	{
 		List<BubbleInit> bubbleInitList = missionMeta.randomBubbleInit ();
 		
@@ -46,6 +67,8 @@ public class GameController : MonoBehaviour {
 			// init bubble
 			Vector3 vector = new Vector3(-113,31,0);
 			GameObject gameObject = GameObjectUtil.CloneGameObjectWithScale(bubblePrefab,this.transform,new Vector3(2.5f,2.5f,2.5f));
+			Vector3 newPosition = new Vector3(position.x+Random.Range(-20,20),position.y+Random.Range(-20,20),0);
+			gameObject.transform.localPosition=newPosition;
 			gameObject.transform.localPosition=vector;
 			Bubble bubble = gameObject.GetComponent<Bubble>();
 			bubble.AppearNum(bubbleInit);
@@ -81,6 +104,8 @@ public class GameController : MonoBehaviour {
 
 	private void MissionComplete()
 	{
+		musicButton.SetActive (false);
+		homeButton.SetActive (false);
 		Debug.Log ("Mission Complete:" + missionMeta.missionId);
 		CancelInvoke ("RefreshCountDownTime");
 		countDown.SetActive (false);
@@ -103,17 +128,31 @@ public class GameController : MonoBehaviour {
 		}
 		AppMain.Instance.CurrentLevel += 1;
 
-
-
 	}
 
 	private void MissionFailed()
 	{
+		musicButton.SetActive (false);
+		homeButton.SetActive (false);
 		CancelInvoke ("RefreshCountDownTime");
 		DestoryAllBubble();
+		countDown.GetComponent<UILabel> ().text = "";
 		countDown.SetActive (false);
 		AppMain.Instance.HomeWindow.MissionFailed();
 		bubbleList.Clear ();
+	}
+
+	public void MissionExit(){
+		foreach (Bubble bubble in bubbleList) {
+			Destroy(bubble.gameObject);
+		}
+		CancelInvoke ("RefreshCountDownTime");
+		bubbleList.Clear ();
+		musicButton.SetActive (false);
+		homeButton.SetActive (false);
+		countDown.GetComponent<UILabel> ().text = "";
+		countDown.SetActive (false);
+		AppMain.Instance.HomeWindow.ShowHomeWindow ();
 	}
 
 	private void DestoryAllBubble(){

@@ -19,30 +19,39 @@ public class MissionMeta {
 
 	public List<BubbleInit> randomBubbleInit(){
 		List<BubbleInit> resultList = new List<BubbleInit> ();
+		Dictionary<double,int> tmpCache = new Dictionary<double,int > ();
 
-		Dictionary<double,int> tmpCache = new Dictionary<double,int >();
+		if (missionId <4) {
+			int tensMax = 0;
+			if(missionId == 1){
+				tensMax = 0;
+			}else if (missionId == 2){
+				tensMax = 2;
+			}else {
+				tensMax = 5;
+			}
+			for (int i = 1; i<=6; i++) {
+				resultList.Add (PositiveNumberBubble (0, tensMax, tmpCache));
+			}
+		} else {
+
 		
-			for (int i = 0; i<positiveNum; i++) 
-			{
-				resultList.Add(PositiveNumberBubble(0,9,tmpCache));
+			for (int i = 0; i<positiveNum; i++) {
+				resultList.Add (PositiveNumberBubble (0, 9, tmpCache));
 			}
-			for (int i =0; i<negativeNum; i++) 
-			{
-				resultList.Add(NegativeNumberBubble(tmpCache));
+			for (int i =0; i<negativeNum; i++) {
+				resultList.Add (NegativeNumberBubble (tmpCache));
 			}
-			for (int i=0; i<easyOperation; i++) 
-			{
-				resultList.Add(EasyOpBubble(tmpCache));
+			for (int i=0; i<easyOperation; i++) {
+				resultList.Add (EasyOpBubble (tmpCache));
 			}
-			for (int i=0; i<hardOperation; i++) 
-			{
-				resultList.Add(HardOpBubble(tmpCache));
+			for (int i=0; i<hardOperation; i++) {
+				resultList.Add (HardOpBubble (tmpCache));
 			}
-			for (int i=0; i<radical; i++) 
-			{
-				resultList.Add(RadicalBubble(tmpCache));
+			for (int i=0; i<radical; i++) {
+				resultList.Add (RadicalBubble (tmpCache));
 			}
-
+		}
 		resultList.Sort ((x,y) => x.result.CompareTo(y.result));
 		
 		for (int i = 0; i<resultList.Count; i++) {
@@ -120,13 +129,13 @@ public class MissionMeta {
 				// -
 				int num1 = Random.Range(0,10);
 				int num2 = Random.Range(0,10);
-				result = num1+num2;
+				result = num1-num2;
 				view = num1+"-"+num2;
 			} else if (opNum == 2) {
 				// *
-				int num1 = Random.Range(-9,10);
-				int num2 = Random.Range(-9,10);
-				result = num1+num2;
+				int num1 = Random.Range(0,10);
+				int num2 = Random.Range(0,10);
+				result = num1*num2;
 				view = num1+"X"+num2;
 			} else if (opNum == 3) {
 				// ÷
@@ -135,7 +144,7 @@ public class MissionMeta {
 				if(num2 ==0){
 					result = double.MaxValue;
 				}else{
-					result = num1+num2;
+					result = 1.0f*num1/num2;
 				}
 				view = num1+"÷"+num2;
 			}

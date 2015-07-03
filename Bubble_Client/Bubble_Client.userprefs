@@ -1,16 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Thirds/NGUI/Scripts/Internal/UIWidget.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../Boys/client/trunk/Assets/RawData/config/LocalConfig.txt.bytes">
     <Files>
-      <File FileName="Assets/Scripts/LevelWindow.cs" Line="15" Column="17" />
-      <File FileName="Assets/Scripts/HomeWindow.cs" Line="41" Column="23" />
-      <File FileName="Assets/Scripts/PlayAnimation.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Bubble.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/BubbleInit.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MissionConfig.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MissionMeta.cs" Line="172" Column="19" />
-      <File FileName="Assets/HelpButton.cs" Line="15" Column="2" />
-      <File FileName="Assets/Thirds/NGUI/Scripts/Internal/UIWidget.cs" Line="1098" Column="1" />
+      <File FileName="../../../Boys/client/trunk/Assets/RawData/config/LocalConfig.txt.bytes" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
