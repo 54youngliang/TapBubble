@@ -21,32 +21,20 @@ public class GameController : MonoBehaviour {
 
 	public void BeginMission()
 	{
+		AppMain.Instance.InGame = true;
+		Debug.Log (AppMain.Instance.InGame + "-------------");
+		AppMain.Instance.AudioController.PlayBgm ();
 		musicButton.SetActive (true);
 		homeButton.SetActive (true);
 		int missionId = AppMain.Instance.CurrentLevel;
 		this.missionMeta = MissionConfig.getMissionMeta (missionId);
-		AppearBubbles (missionMeta,playButton.transform.localPosition);
+		AppearBubbles (missionMeta, playButton.transform.localPosition);
 		countDown.SetActive (true);
 		restGameTime = missionMeta.time;
 		RefreshCountDownTime ();
-		InvokeRepeating ("RefreshCountDownTime", 1,1f);
+		InvokeRepeating ("RefreshCountDownTime", 1, 1f);
 
 	}
-
-	public void BeginNextMission()
-	{
-		musicButton.SetActive (true);
-		homeButton.SetActive (true);
-		int missionId = AppMain.Instance.CurrentLevel;
-		this.missionMeta = MissionConfig.getMissionMeta (missionId);
-		AppearBubbles (missionMeta,nextPlayButton.transform.localPosition);
-		countDown.SetActive (true);
-		restGameTime = missionMeta.time;
-		RefreshCountDownTime ();
-		InvokeRepeating ("RefreshCountDownTime", 1,1f);
-		
-	}
-
 
 	private void RefreshCountDownTime()
 	{
@@ -105,6 +93,8 @@ public class GameController : MonoBehaviour {
 
 	private void MissionComplete()
 	{
+		AppMain.Instance.InGame = false;
+		AppMain.Instance.AudioController.StopBgm ();
 		musicButton.SetActive (false);
 		homeButton.SetActive (false);
 		Debug.Log ("Mission Complete:" + missionMeta.missionId);
@@ -133,6 +123,8 @@ public class GameController : MonoBehaviour {
 
 	private void MissionFailed()
 	{
+		AppMain.Instance.InGame = false;
+		AppMain.Instance.AudioController.StopBgm ();
 		musicButton.SetActive (false);
 		homeButton.SetActive (false);
 		CancelInvoke ("RefreshCountDownTime");
@@ -144,6 +136,8 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void MissionExit(){
+		AppMain.Instance.InGame = false;
+		AppMain.Instance.AudioController.StopBgm ();
 		foreach (Bubble bubble in bubbleList) {
 			Destroy(bubble.gameObject);
 		}

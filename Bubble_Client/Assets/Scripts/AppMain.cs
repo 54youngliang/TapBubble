@@ -90,6 +90,7 @@ public class AppMain : MonoBehaviour {
 	void Awake () {
 		_instance = this;
 		_uiRoot = this.GetComponent<UIRoot>();
+		InGame = false;
 	}
 
 
@@ -139,6 +140,34 @@ public class AppMain : MonoBehaviour {
 		{
 			PlayerPrefs.SetInt("help", 1);
 		}
+	}
+
+	public bool Music
+	{
+		get
+		{
+			return PlayerPrefs.GetInt("music") >0;
+		}
+
+		set
+		{
+			PlayerPrefs.SetInt("music",value ? 1:0);
+		}
+
+	}
+
+	public bool InGame
+	{
+		get
+		{
+			return PlayerPrefs.GetInt("InGame") > 0;
+		}
+		
+		set
+		{
+			PlayerPrefs.SetInt("InGame",value ? 1 : 0);
+		}
+		
 	}
 
 	void OnApplicationPause(bool isPause)

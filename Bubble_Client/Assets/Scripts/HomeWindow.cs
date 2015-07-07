@@ -130,7 +130,7 @@ public class HomeWindow : MonoBehaviour {
 		if (buttonHasScaled) {
 			NextLevelButton.GetComponent<NextButton>().label.SetActive(false);
 			NextLevelButton.GetComponent<PlayAnimation>().StartDisapear();
-			gameController.BeginNextMission();
+			gameController.BeginMission();
 			needHiddenNextButton=true;
 		} else {
 			playButton.playAnimation.StartDisapear ();

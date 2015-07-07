@@ -1,66 +1,95 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &190978
+--- !u!1 &166882
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 497924}
-  - 114: {fileID: 11429492}
-  - 114: {fileID: 11490574}
-  - 61: {fileID: 6152890}
-  - 114: {fileID: 11427268}
+  - 4: {fileID: 425734}
+  - 114: {fileID: 11408846}
+  - 114: {fileID: 11481612}
+  - 114: {fileID: 11496662}
+  - 114: {fileID: 11450038}
+  - 50: {fileID: 5067914}
+  - 58: {fileID: 5864306}
   m_Layer: 5
-  m_Name: AgainButton
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &497924
+  m_IsActive: 1
+--- !u!4 &425734
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190978}
+  m_GameObject: {fileID: 166882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 91, y: -111, z: 0}
+  m_LocalPosition: {x: -258, y: -450, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6152890
-BoxCollider2D:
+--- !u!50 &5067914
+Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190978}
+  m_GameObject: {fileID: 166882}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &5864306
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166882}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 152, y: 150}
---- !u!114 &11427268
+  m_Radius: 35.9700012
+--- !u!114 &11408846
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190978}
+  m_GameObject: {fileID: 166882}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c446269f6a971490194e6b6ba1a3211d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11429492
+--- !u!114 &11450038
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190978}
+  m_GameObject: {fileID: 166882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5caecb20fb3744024aa53c51ac50e7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11481612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166882}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
@@ -85,13 +114,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 152
-  mHeight: 150
-  mDepth: 0
-  autoResizeBoxCollider: 1
+  mWidth: 144
+  mHeight: 140
+  mDepth: 3
+  autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.01333332
+  aspectRatio: 1.02857149
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -103,20 +132,20 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 11499182, guid: 8ffb01608f50f45a5adef5aa3a332baf, type: 2}
-  mSpriteName: restart_d
+  mSpriteName: music_d
   mFillCenter: 1
---- !u!114 &11490574
+--- !u!114 &11496662
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190978}
+  m_GameObject: {fileID: 166882}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tweenTarget: {fileID: 190978}
+  tweenTarget: {fileID: 166882}
   hover: {r: .882352948, g: .784313738, b: .588235319, a: 1}
   pressed: {r: .717647076, g: .639215708, b: .482352942, a: 1}
   disabledColor: {r: .5, g: .5, b: .5, a: 1}
@@ -130,8 +159,8 @@ MonoBehaviour:
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
   onClick:
-  - mTarget: {fileID: 0}
-    mMethodName: StartAgain
+  - mTarget: {fileID: 11450038}
+    mMethodName: Click
     mParameters: []
     oneShot: 0
 --- !u!1001 &100100000
@@ -143,5 +172,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 190978}
+  m_RootGameObject: {fileID: 166882}
   m_IsPrefabParent: 1
