@@ -15,6 +15,17 @@ public class AppMain : MonoBehaviour {
 
 	}
 
+	[SerializeField]
+	private AudioController _AudioController;
+	public AudioController AudioController
+	{
+		get
+		{
+			return _AudioController;
+		}
+		
+	}
+
 
 	[SerializeField]
 	private LevelWindow _LevelWindow;
@@ -143,6 +154,11 @@ public class AppMain : MonoBehaviour {
 			//pauseWindow.Show(CurrentLevel);
 			//pauseWindow.gameObject.SetActive(true);
 		}
+	}
+
+	public bool IsDay(){
+		int hour = System.DateTime.Now.Hour;
+		return false;
 	}
 
 	// Update is called once per frame

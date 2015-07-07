@@ -43,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 194, y: 0, z: 0}
+  m_LocalPosition: {x: 194.000015, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 468628}
@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: -11, z: 0}
+  m_LocalPosition: {x: 0, y: 13.5299997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 427404}
@@ -131,18 +131,18 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: .00043252678, b: .00043252678, a: 1}
   mPivot: 4
-  mWidth: 51
+  mWidth: 112
   mHeight: 38
   mDepth: 11
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.34210527
+  aspectRatio: 2.94736838
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11468640, guid: 07a52893052c74d9f8c191590311c56c, type: 2}
+  mFont: {fileID: 11481582, guid: 17312af3df75f46f881a8221c670ec92, type: 2}
   mText: 11
-  mFontSize: 37
+  mFontSize: 12
   mFontStyle: 0
   mAlignment: 2
   mEncoding: 1
@@ -278,6 +278,11 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mFont
+      value: 
+      objectReference: {fileID: 11481582, guid: 17312af3df75f46f881a8221c670ec92,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 124930}

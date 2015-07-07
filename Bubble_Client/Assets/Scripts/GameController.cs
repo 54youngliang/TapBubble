@@ -82,6 +82,7 @@ public class GameController : MonoBehaviour {
 	private void ButtonClick(GameObject gameObject,Vector2 vector2){
 		Debug.Log ("ButtonClick");
 		Bubble bubble = gameObject.GetComponent<Bubble> ();
+		AppMain.Instance.AudioController.PlaySheep ();
 
 		if (bubble.bubbleInit.result == bubbleList [0].bubbleInit.result) {
 			bubbleList.Remove (bubble);

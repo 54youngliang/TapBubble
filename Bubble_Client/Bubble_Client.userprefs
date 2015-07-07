@@ -1,8 +1,23 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../Boys/client/trunk/Assets/RawData/config/LocalConfig.txt.bytes">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AudioController.cs">
     <Files>
-      <File FileName="../../../Boys/client/trunk/Assets/RawData/config/LocalConfig.txt.bytes" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Bubble.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelPassedWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/HomeWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayAnimation.cs" Line="32" Column="30" />
+      <File FileName="Assets/Scripts/BubbleInit.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MissionConfig.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MissionMeta.cs" Line="1" Column="1" />
+      <File FileName="Assets/Thirds/NGUI/Scripts/Internal/UIWidget.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AppMain.cs" Line="19" Column="43" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="87" Column="1" />
+      <File FileName="Assets/Thirds/Uween/Scripts/Tween.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/NextButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/font/number.fnt" Line="18" Column="19" />
+      <File FileName="Assets/Scripts/AudioController.cs" Line="12" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

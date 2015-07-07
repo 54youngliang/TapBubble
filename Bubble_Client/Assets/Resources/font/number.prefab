@@ -1,0 +1,222 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &138528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 489526}
+  - 114: {fileID: 11481582}
+  m_Layer: 0
+  m_Name: number
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &489526
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11481582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4eb3a400afab046abb8471a9d746d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mMat: {fileID: 2100000, guid: 0f160ab6c67ba4a4aa499442a5f41b31, type: 2}
+  mUVRect:
+    serializedVersion: 2
+    x: -.0029296875
+    y: -.217773438
+    width: .5
+    height: .5
+  mFont:
+    mSize: 32
+    mBase: 26
+    mWidth: 512
+    mHeight: 512
+    mSpriteName: number_0
+    mSaved:
+    - index: 42
+      x: 256
+      y: 38
+      width: 60
+      height: 97
+      offsetX: 0
+      offsetY: 38
+      advance: 60
+      channel: 15
+      kerning: 
+    - index: 43
+      x: 317
+      y: 38
+      width: 57
+      height: 97
+      offsetX: 0
+      offsetY: 38
+      advance: 57
+      channel: 15
+      kerning: 
+    - index: 45
+      x: 420
+      y: 136
+      width: 32
+      height: 135
+      offsetX: 0
+      offsetY: 0
+      advance: 32
+      channel: 15
+      kerning: 
+    - index: 47
+      x: 375
+      y: 38
+      width: 57
+      height: 97
+      offsetX: 0
+      offsetY: 38
+      advance: 57
+      channel: 15
+      kerning: 
+    - index: 48
+      x: 193
+      y: 38
+      width: 62
+      height: 97
+      offsetX: 0
+      offsetY: 38
+      advance: 62
+      channel: 15
+      kerning: 
+    - index: 49
+      x: 322
+      y: 136
+      width: 48
+      height: 135
+      offsetX: 0
+      offsetY: 0
+      advance: 48
+      channel: 15
+      kerning: 
+    - index: 50
+      x: 112
+      y: 180
+      width: 52
+      height: 109
+      offsetX: 0
+      offsetY: 0
+      advance: 52
+      channel: 15
+      kerning: 
+    - index: 51
+      x: 371
+      y: 136
+      width: 48
+      height: 135
+      offsetX: 0
+      offsetY: 0
+      advance: 48
+      channel: 15
+      kerning: 
+    - index: 52
+      x: 218
+      y: 136
+      width: 51
+      height: 135
+      offsetX: 0
+      offsetY: 0
+      advance: 51
+      channel: 15
+      kerning: 
+    - index: 53
+      x: 165
+      y: 180
+      width: 52
+      height: 109
+      offsetX: 0
+      offsetY: 0
+      advance: 52
+      channel: 15
+      kerning: 
+    - index: 54
+      x: 270
+      y: 136
+      width: 51
+      height: 135
+      offsetX: 0
+      offsetY: 0
+      advance: 51
+      channel: 15
+      kerning: 
+    - index: 55
+      x: 433
+      y: 38
+      width: 53
+      height: 97
+      offsetX: 0
+      offsetY: 38
+      advance: 55
+      channel: 15
+      kerning: 
+    - index: 56
+      x: 3
+      y: 180
+      width: 52
+      height: 109
+      offsetX: 3
+      offsetY: 0
+      advance: 55
+      channel: 15
+      kerning: 
+    - index: 57
+      x: 56
+      y: 180
+      width: 55
+      height: 109
+      offsetX: 0
+      offsetY: 0
+      advance: 55
+      channel: 15
+      kerning: 
+    - index: 126
+      x: 3
+      y: 38
+      width: 189
+      height: 141
+      offsetX: 3
+      offsetY: 38
+      advance: 192
+      channel: 15
+      kerning: 
+  mAtlas: {fileID: 11499182, guid: 8ffb01608f50f45a5adef5aa3a332baf, type: 2}
+  mReplacement: {fileID: 0}
+  mSymbols: []
+  mDynamicFont: {fileID: 0}
+  mDynamicFontSize: 16
+  mDynamicFontStyle: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 138528}
+  m_IsPrefabParent: 1

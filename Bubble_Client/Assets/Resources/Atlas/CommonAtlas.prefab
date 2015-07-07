@@ -41,9 +41,178 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 0f160ab6c67ba4a4aa499442a5f41b31, type: 2}
   mSprites:
+  - name: '-'
+    x: 981
+    y: 871
+    width: 26
+    height: 10
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 3
+    paddingTop: 61
+    paddingBottom: 64
+  - name: +
+    x: 743
+    y: 790
+    width: 45
+    height: 47
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 6
+    paddingTop: 48
+    paddingBottom: 40
+  - name: "\xF7"
+    x: 789
+    y: 791
+    width: 45
+    height: 46
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 8
+    paddingTop: 46
+    paddingBottom: 43
+  - name: 0
+    x: 632
+    y: 775
+    width: 53
+    height: 62
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 5
+    paddingTop: 39
+    paddingBottom: 34
+  - name: 1
+    x: 213
+    y: 171
+    width: 39
+    height: 66
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 5
+    paddingTop: 37
+    paddingBottom: 32
+  - name: 2
+    x: 282
+    y: 449
+    width: 48
+    height: 68
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 3
+    paddingTop: 36
+    paddingBottom: 31
+  - name: 3
+    x: 981
+    y: 882
+    width: 42
+    height: 66
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 5
+    paddingTop: 37
+    paddingBottom: 32
+  - name: 4
+    x: 282
+    y: 372
+    width: 44
+    height: 71
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 3
+    paddingTop: 36
+    paddingBottom: 28
+  - name: 5
+    x: 236
+    y: 372
+    width: 45
+    height: 71
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 5
+    paddingTop: 34
+    paddingBottom: 30
+  - name: 6
+    x: 981
+    y: 949
+    width: 41
+    height: 75
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 5
+    paddingRight: 5
+    paddingTop: 32
+    paddingBottom: 28
+  - name: 7
+    x: 236
+    y: 518
+    width: 51
+    height: 67
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 2
+    paddingTop: 38
+    paddingBottom: 30
+  - name: 8
+    x: 288
+    y: 519
+    width: 46
+    height: 66
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 6
+    paddingTop: 37
+    paddingBottom: 32
+  - name: 9
+    x: 236
+    y: 444
+    width: 45
+    height: 73
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 6
+    paddingTop: 36
+    paddingBottom: 26
   - name: bubble_d
-    x: 0
-    y: 442
+    x: 515
+    y: 607
     width: 168
     height: 165
     borderLeft: 0
@@ -54,9 +223,22 @@ MonoBehaviour:
     paddingRight: 31
     paddingTop: 27
     paddingBottom: 29
+  - name: bubble_n
+    x: 0
+    y: 145
+    width: 212
+    height: 210
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 37
+    paddingRight: 36
+    paddingTop: 42
+    paddingBottom: 34
   - name: count_d
-    x: 520
-    y: 704
+    x: 616
+    y: 188
     width: 133
     height: 133
     borderLeft: 0
@@ -68,8 +250,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 8
   - name: count_n
-    x: 370
-    y: 459
+    x: 213
+    y: 238
     width: 121
     height: 117
     borderLeft: 0
@@ -80,11 +262,50 @@ MonoBehaviour:
     paddingRight: 5
     paddingTop: 1
     paddingBottom: 5
+  - name: current_level
+    x: 852
+    y: 626
+    width: 171
+    height: 146
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 10
+    paddingRight: 9
+    paddingTop: 25
+    paddingBottom: 19
+  - name: fb_d
+    x: 616
+    y: 322
+    width: 135
+    height: 132
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 6
+    paddingTop: 2
+    paddingBottom: 5
+  - name: fb_n
+    x: 480
+    y: 56
+    width: 135
+    height: 132
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 6
+    paddingTop: 2
+    paddingBottom: 5
   - name: help_d
-    x: 788
-    y: 704
-    width: 133
-    height: 133
+    x: 480
+    y: 189
+    width: 135
+    height: 132
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -92,12 +313,12 @@ MonoBehaviour:
     paddingLeft: 2
     paddingRight: 6
     paddingTop: 2
-    paddingBottom: 6
+    paddingBottom: 5
   - name: help_n
-    x: 236
-    y: 549
-    width: 133
-    height: 133
+    x: 142
+    y: 12
+    width: 135
+    height: 132
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -105,12 +326,12 @@ MonoBehaviour:
     paddingLeft: 2
     paddingRight: 6
     paddingTop: 2
-    paddingBottom: 6
+    paddingBottom: 5
   - name: home_d
-    x: 236
-    y: 415
-    width: 133
-    height: 133
+    x: 337
+    y: 148
+    width: 135
+    height: 132
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -118,75 +339,127 @@ MonoBehaviour:
     paddingLeft: 2
     paddingRight: 6
     paddingTop: 2
-    paddingBottom: 6
+    paddingBottom: 5
   - name: home_n
-    x: 236
-    y: 281
+    x: 337
+    y: 15
+    width: 135
+    height: 132
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 6
+    paddingTop: 2
+    paddingBottom: 5
+  - name: map_d
+    x: 616
+    y: 74
+    width: 116
+    height: 113
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 2
+    paddingTop: 3
+    paddingBottom: 2
+  - name: map_n
+    x: 888
+    y: 322
     width: 133
-    height: 133
+    height: 132
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 2
-    paddingRight: 6
-    paddingTop: 2
-    paddingBottom: 6
-  - name: map
-    x: 0
-    y: 3
-    width: 128
-    height: 124
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 2
-    paddingRight: 6
-    paddingTop: 2
-    paddingBottom: 7
-  - name: music_d
-    x: 385
-    y: 704
-    width: 134
-    height: 133
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 2
-    paddingRight: 5
-    paddingTop: 2
-    paddingBottom: 6
-  - name: music_n
-    x: 654
-    y: 704
-    width: 133
-    height: 133
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 2
-    paddingRight: 6
-    paddingTop: 2
-    paddingBottom: 6
-  - name: play
-    x: 370
-    y: 577
-    width: 150
-    height: 105
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 12
+    paddingLeft: 7
     paddingRight: 7
-    paddingTop: 14
-    paddingBottom: 11
+    paddingTop: 7
+    paddingBottom: 5
+  - name: music_d
+    x: 480
+    y: 455
+    width: 135
+    height: 132
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 6
+    paddingTop: 2
+    paddingBottom: 5
+  - name: music_n
+    x: 616
+    y: 455
+    width: 135
+    height: 132
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 6
+    paddingTop: 2
+    paddingBottom: 5
+  - name: no_music_d
+    x: 752
+    y: 455
+    width: 135
+    height: 132
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 6
+    paddingTop: 2
+    paddingBottom: 5
+  - name: no_music_n
+    x: 888
+    y: 455
+    width: 135
+    height: 132
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 6
+    paddingTop: 2
+    paddingBottom: 5
+  - name: number_0
+    x: 0
+    y: 773
+    width: 483
+    height: 251
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 26
+    paddingTop: 38
+    paddingBottom: 223
+  - name: play
+    x: 484
+    y: 777
+    width: 147
+    height: 60
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 2
+    paddingTop: 3
+    paddingBottom: 2
   - name: play_back
     x: 0
-    y: 608
+    y: 356
     width: 235
     height: 229
     borderLeft: 0
@@ -197,11 +470,24 @@ MonoBehaviour:
     paddingRight: 42
     paddingTop: 42
     paddingBottom: 40
+  - name: reagan
+    x: 750
+    y: 235
+    width: 183
+    height: 86
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 9
+    paddingRight: 0
+    paddingTop: 64
+    paddingBottom: 29
   - name: restart_d
-    x: 236
-    y: 147
-    width: 133
-    height: 133
+    x: 480
+    y: 322
+    width: 135
+    height: 132
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -209,12 +495,12 @@ MonoBehaviour:
     paddingLeft: 2
     paddingRight: 6
     paddingTop: 2
-    paddingBottom: 6
+    paddingBottom: 5
   - name: restart_n
-    x: 236
-    y: 13
-    width: 133
-    height: 133
+    x: 752
+    y: 322
+    width: 135
+    height: 132
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -222,49 +508,62 @@ MonoBehaviour:
     paddingLeft: 2
     paddingRight: 6
     paddingTop: 2
-    paddingBottom: 6
-  - name: star_1
+    paddingBottom: 5
+  - name: star_0
     x: 0
-    y: 128
-    width: 148
-    height: 156
+    y: 6
+    width: 141
+    height: 138
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 2
-    paddingRight: 5
-    paddingTop: 2
-    paddingBottom: 18
+    paddingLeft: 22
+    paddingRight: 27
+    paddingTop: 24
+    paddingBottom: 28
+  - name: star_1
+    x: 337
+    y: 434
+    width: 142
+    height: 153
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 22
+    paddingRight: 26
+    paddingTop: 24
+    paddingBottom: 13
   - name: star_2
-    x: 236
-    y: 683
-    width: 148
-    height: 154
+    x: 337
+    y: 281
+    width: 141
+    height: 152
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 2
-    paddingRight: 5
-    paddingTop: 2
+    paddingLeft: 23
+    paddingRight: 26
+    paddingTop: 24
     paddingBottom: 14
   - name: star_3
-    x: 0
-    y: 285
+    x: 684
+    y: 619
     width: 167
-    height: 156
+    height: 153
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 6
-    paddingRight: 22
-    paddingTop: 2
-    paddingBottom: 18
+    paddingLeft: 10
+    paddingRight: 13
+    paddingTop: 24
+    paddingBottom: 13
   - name: success_1
-    x: 834
-    y: 840
+    x: 337
+    y: 588
     width: 177
     height: 184
     borderLeft: 0
@@ -276,8 +575,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 11
   - name: success_2
-    x: 497
-    y: 838
+    x: 0
+    y: 586
     width: 336
     height: 186
     borderLeft: 0
@@ -289,7 +588,7 @@ MonoBehaviour:
     paddingTop: 5
     paddingBottom: 6
   - name: success_3
-    x: 0
+    x: 484
     y: 838
     width: 496
     height: 186
@@ -301,6 +600,19 @@ MonoBehaviour:
     paddingRight: 6
     paddingTop: 5
     paddingBottom: 6
+  - name: x
+    x: 686
+    y: 779
+    width: 56
+    height: 58
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 2
+    paddingTop: 40
+    paddingBottom: 37
   mPixelSize: 1
   mReplacement: {fileID: 0}
   mCoordinates: 0
