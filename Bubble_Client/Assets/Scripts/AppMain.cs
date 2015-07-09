@@ -187,7 +187,15 @@ public class AppMain : MonoBehaviour {
 
 	public bool IsDay(){
 		int hour = System.DateTime.Now.Hour;
-		return false;
+		//if (hour < 6 || hour > 18) {
+//			return false;
+//		}
+//		return true;
+			return true;
+	}
+
+	void Start(){
+		AppMain.Instance.AudioController.PlayBgm ();
 	}
 
 	// Update is called once per frame

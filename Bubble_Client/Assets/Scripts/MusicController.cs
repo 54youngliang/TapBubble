@@ -14,6 +14,7 @@ public class MusicController : MonoBehaviour {
 		bool music = AppMain.Instance.Music;
 		if (music) {
 			uiSprite.spriteName="music";
+
 		} else {
 			uiSprite.spriteName="no_music";
 		}
@@ -22,6 +23,7 @@ public class MusicController : MonoBehaviour {
 		} else {
 			uiSprite.spriteName += "_n";
 		}
+		this.gameObject.GetComponent<UIButton> ().normalSprite = uiSprite.spriteName;
 	}
 
 	public void Click()
@@ -29,16 +31,13 @@ public class MusicController : MonoBehaviour {
 		bool music = AppMain.Instance.Music;
 		if (music) {
 			// tingzhi yinyue
-			AppMain.Instance.AudioController.Stop ();
+			AppMain.Instance.AudioController.StopAll();
 			AppMain.Instance.Music = false;
 		} else {
 			AppMain.Instance.Music = true;
-			if(AppMain.Instance.InGame){
-				AppMain.Instance.AudioController.PlayBgm();
-			}
+			AppMain.Instance.AudioController.StartAll();
 		}
 		UpdateSprite ();
-
 
 	}
 }

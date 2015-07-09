@@ -43,8 +43,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 194.000015, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: 194, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 468628}
   m_Father: {fileID: 0}
@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 13.5299997, z: 0}
+  m_LocalPosition: {x: 7.5999999, y: 43.4500008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 427404}
@@ -87,9 +87,9 @@ CircleCollider2D:
   m_Material: {fileID: 6200000, guid: 7a35e51e869f6446489fc1ac2e4973a5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -1.83000004, y: -7.63000011}
+  m_Offset: {x: 5.32999992, y: 13.3999996}
   serializedVersion: 2
-  m_Radius: 29.2199993
+  m_Radius: 64.8499985
 --- !u!114 &11408458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,7 +142,7 @@ MonoBehaviour:
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11481582, guid: 17312af3df75f46f881a8221c670ec92, type: 2}
   mText: 11
-  mFontSize: 12
+  mFontSize: 30
   mFontStyle: 0
   mAlignment: 2
   mEncoding: 1
@@ -196,13 +196,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 150
-  mHeight: 142
+  mWidth: 334
+  mHeight: 320
   mDepth: 10
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.05633807
+  aspectRatio: 1.04375005
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -213,8 +213,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 11431962, guid: 6a0d9818446d344f387dc2ae193be4dc, type: 2}
-  mSpriteName: sheep10001
+  mAtlas: {fileID: 11448446, guid: 26d338045c5e444d7bfb93b043b332ed, type: 2}
+  mSpriteName: dis1_d0001
   mFillCenter: 1
 --- !u!114 &11476064
 MonoBehaviour:
@@ -256,11 +256,11 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: mAtlas
       value: 
-      objectReference: {fileID: 11426794, guid: e7e862565f49349508e131e264bfa6e6,
+      objectReference: {fileID: 11448446, guid: 26d338045c5e444d7bfb93b043b332ed,
         type: 2}
     - target: {fileID: 0}
       propertyPath: mSpriteName
-      value: disappear1
+      value: dis1_d0001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: mWidth
@@ -283,6 +283,18 @@ Prefab:
       value: 
       objectReference: {fileID: 11481582, guid: 17312af3df75f46f881a8221c670ec92,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.x
+      value: 5.32999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.y
+      value: 13.3999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: 64.8499985
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 124930}

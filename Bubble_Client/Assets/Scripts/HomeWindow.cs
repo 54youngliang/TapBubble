@@ -24,7 +24,7 @@ public class HomeWindow : MonoBehaviour {
 	private bool inGame;
 
 
-	private Vector3 missionTitleVector=new Vector3 (-110f,50f,0f) ;
+	private Vector3 missionTitleVector=new Vector3 (-114f,108f,0f) ;
 	private Vector3 backgroundVector;
 
 	void Start () {
@@ -34,7 +34,7 @@ public class HomeWindow : MonoBehaviour {
 		} else {
 			HiddenHelp();
 		}
-		playButton.playAnimation.StartAnimation ();
+		playButton.playAnimation.StartNormalPlay ();
 		//background.GetComponent<GestureEvent>().OnLeft = ShowLevelWindow;
 		playButtonOriginScale = playButton.transform.localScale;
 		AppMain.Instance.CurrentLevel = AppMain.Instance.MaxLevel;
@@ -75,7 +75,7 @@ public class HomeWindow : MonoBehaviour {
 	public void ShowHomeWindow()
 	{
 		HiddenHelp ();
-		playButton.playAnimation.StartAnimation ();
+		playButton.playAnimation.StartNormalPlay ();
 		playButton.playLabel.enabled = true;
 		NextLevelButton.SetActive (false);
 		UpdateGameOverWindowStatus (false);
@@ -96,7 +96,8 @@ public class HomeWindow : MonoBehaviour {
 
 	public void FirstBeginMission()
 	{
-		playButton.playAnimation.StopAnimation ();
+		AppMain.Instance.AudioController.PlaySheep ();
+		playButton.playAnimation.StopNormalPlay ();
 		UpdatePauseWindow (false);
 		playButton.GetComponent<UIButton> ().enabled = false;
 		buttomButtons.SetActive (false);
@@ -105,7 +106,7 @@ public class HomeWindow : MonoBehaviour {
 			backgroundVector = background.transform.localPosition;
 			TweenY tween = TweenY.Add (background, 1f, 300f);
 			//-138,74
-			TweenXY titleTween = TweenXY.Add (MissionTitle, 1f, new Vector2 (-138f, 480f));
+			TweenXY titleTween = TweenXY.Add (MissionTitle, 1f, new Vector2 (-138f, 532.57f));
 			tween.OnComplete += BeginMission;
 		} else {
 			if(MissionTitle.transform.localPosition == missionTitleVector){
@@ -119,6 +120,7 @@ public class HomeWindow : MonoBehaviour {
 
 	public void BeginMission()
 	{
+		AppMain.Instance.AudioController.PlaySheep ();
 		playButton.playLabel.enabled = false;
 		MissionTitle.SetActive (true);
 		MissionTitle.GetComponent<UILabel> ().text = AppMain.Instance.CurrentLevel + "";
@@ -162,7 +164,7 @@ public class HomeWindow : MonoBehaviour {
 	public bool needHiddenPlayButton=false;
 	private void HiddenPlayButton(){
 		if (needHiddenPlayButton) {
-			if(!playButton.playAnimation.dispearRunning){
+			if(!playButton.playAnimation.IsPlaying){
 				playButton.gameObject.SetActive (false);
 				needHiddenPlayButton=false;
 			}
@@ -174,7 +176,7 @@ public class HomeWindow : MonoBehaviour {
 	public bool needHiddenNextButton=false;
 	private void HiddenNextButton(){
 		if (needHiddenNextButton) {
-			if(!NextLevelButton.GetComponent<PlayAnimation>().dispearRunning){
+			if(!NextLevelButton.GetComponent<PlayAnimation>().IsPlaying){
 				NextLevelButton.gameObject.SetActive (false);
 				needHiddenPlayButton=false;
 			}

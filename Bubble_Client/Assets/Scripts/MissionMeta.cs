@@ -15,7 +15,7 @@ public class MissionMeta {
 	public int level2;
 	public int level3;
 
-	private static int[] excludeNum = {19,16,61,91,18,81,66,99};
+	private static int[] excludeNum = {6,9,19,16,61,91,18,81,66,99};
 
 	public List<BubbleInit> randomBubbleInit(){
 		List<BubbleInit> resultList = new List<BubbleInit> ();

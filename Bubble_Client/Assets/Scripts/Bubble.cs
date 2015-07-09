@@ -37,10 +37,12 @@ public class Bubble: MonoBehaviour {
 	}
 
 	int type = 0;
+	int randomType = 0;
 	public void BeginDestory(){
 		uiLabel.enabled = false;
 		type = Random.Range (1, 3);
-		float refreshTime = 0.02f;
+		float refreshTime = 0.06f;
+		randomType = Random.Range (1, 4);
 		InvokeRepeating("Disappear",0,refreshTime);
 
 		//TweenScale scale = TweenScale.Begin (this.gameObject, BubbleScaleTime, this.transform.localScale*0.5f);
@@ -50,13 +52,25 @@ public class Bubble: MonoBehaviour {
 
 
 	int disNum=1;
+
 	private void Disappear(){
-			if (disNum > 17) {
-				DispearBubble();
-				CancelInvoke ("Disappear");
-			}
-			uiSprite.spriteName = "sheep" + (10000*type + disNum);
-			disNum += 1;
+		if (disNum > 17) {
+			DispearBubble();
+			CancelInvoke ("Disappear");
+		}
+
+		string spriteName = "";
+		if (AppMain.Instance.IsDay ()) {
+			spriteName="dis"+randomType+"_d";
+		} else {
+			spriteName="dis"+randomType+"_n";
+		}
+		if (disNum >= 10) {
+			uiSprite.spriteName = spriteName + "00"+ disNum;
+		} else {
+			uiSprite.spriteName = spriteName + "000"+ disNum;
+		}
+		disNum += 1;
 	}
 
 	private void DispearBubble(){

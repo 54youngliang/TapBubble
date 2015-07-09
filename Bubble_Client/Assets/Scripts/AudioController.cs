@@ -5,36 +5,83 @@ using System.Collections.Generic;
 public class AudioController : MonoBehaviour {
 
 	public AudioSource sheep ;
-	public AudioSource bgm ;
+	public AudioSource bgmGameSource ;
+	public AudioSource bgmSource;
+
+	private AudioClip bgm_d;
+	private AudioClip bgm_n;
+	private AudioClip bgm_g;
 
 	void Start()
 	{
 
+		bgm_d = Resources.Load ("audio/bgm_d") as AudioClip;
+		bgm_n = Resources.Load ("audio/bgm_n") as AudioClip;
+		bgm_g = Resources.Load ("audio/bgm_g") as AudioClip;
+		bgmGameSource.clip = bgm_g;
+		StartAll ();
 	}
 
-	public void Stop(){
-		if (null != sheep) {
+	public void StopAll(){
+		if (sheep.isPlaying) {
 			sheep.Stop();
 		}
-		if (null != bgm) {
-			bgm.Stop();
+		if (bgmSource.isPlaying) {
+			bgmSource.Stop();
 		}
+		if (bgmGameSource.isPlaying) {
+			bgmGameSource.Stop();
+		}
+
+	}
+
+	public void StartAll(){
+		if (!AppMain.Instance.Music) {
+			return;
+		}
+		if (!bgmSource.isPlaying) {
+			if(AppMain.Instance.IsDay()){
+				bgmSource.clip = bgm_d;
+			}else{
+				bgmSource.clip = bgm_n;
+			}
+			bgmSource.Play();
+		}
+		if (AppMain.Instance.InGame && !bgmGameSource.isPlaying) {
+			bgmGameSource.Play();
+		}
+		
 	}
 
 	Dictionary<string,AudioClip> audioClipCache = new Dictionary<string,AudioClip >();
 
 	public void PlayBgm()
 	{
-		Debug.Log (AppMain.Instance.Music + ")))))");
-		if (AppMain.Instance.Music) {
-			bgm.clip = Resources.Load ("audio/bmg1") as AudioClip;
-			bgm.Play ();
+		if (!AppMain.Instance.Music) {
+			return;
+		}
+
+		AudioClip targetAudio = null;
+		if (AppMain.Instance.IsDay ()) {
+			targetAudio = bgm_d;
+		} else {
+			targetAudio = bgm_n;
+		}
+
+		bgmSource.clip = targetAudio;
+		bgmSource.Play ();
+	}
+
+	public void StartBgmGame(){
+		if (!bgmGameSource.isPlaying) {
+			bgmGameSource.Play ();
 		}
 	}
 
-	public void StopBgm()
-	{
-		bgm.Stop ();
+	public void StopBgmGame(){
+		if (bgmGameSource.isPlaying) {
+			bgmGameSource.Stop ();
+		}
 	}
 
 	public void PlaySheep()

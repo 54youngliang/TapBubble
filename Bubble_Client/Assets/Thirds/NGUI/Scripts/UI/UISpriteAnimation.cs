@@ -60,11 +60,13 @@ public class UISpriteAnimation : MonoBehaviour
 	/// Rebuild the sprite list first thing.
 	/// </summary>
 
-	protected virtual void Start () { RebuildSpriteList(); }
+	protected virtual void Start () { RebuildSpriteList (); }
 
 	/// <summary>
 	/// Advance the sprite animation process.
 	/// </summary>
+
+	float time = 0;
 
 	protected virtual void Update ()
 	{
@@ -85,6 +87,8 @@ public class UISpriteAnimation : MonoBehaviour
 
 				if (mActive)
 				{
+					Debug.Log("time------"+(Time.realtimeSinceStartup-time));
+					time = Time.realtimeSinceStartup;
 					mSprite.spriteName = mSpriteNames[mIndex];
 					if (mSnap) mSprite.MakePixelPerfect();
 				}
@@ -116,6 +120,7 @@ public class UISpriteAnimation : MonoBehaviour
 			}
 			mSpriteNames.Sort();
 		}
+		mDelta = RealTime.deltaTime;
 	}
 	
 	/// <summary>

@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour {
 
 
 	public GameObject bubblePrefab;
+	public GameObject timeSheepPrefab;
 	public GameObject countDown;
 	public UILabel missionTitle;
 	public GameObject clickReward;
@@ -18,12 +19,17 @@ public class GameController : MonoBehaviour {
 	
 	int restGameTime;
 	MissionMeta missionMeta;
+	int timeSheepNum;
+
+	public void AddRestTime(int time){
+		this.restGameTime += time;
+	}
 
 	public void BeginMission()
 	{
 		AppMain.Instance.InGame = true;
 		Debug.Log (AppMain.Instance.InGame + "-------------");
-		AppMain.Instance.AudioController.PlayBgm ();
+		AppMain.Instance.AudioController.StartBgmGame ();
 		musicButton.SetActive (true);
 		homeButton.SetActive (true);
 		int missionId = AppMain.Instance.CurrentLevel;
@@ -44,7 +50,17 @@ public class GameController : MonoBehaviour {
 		if (restGameTime < 0) {
 			MissionFailed();
 		}
-
+		if (timeSheepNum < 1) {
+			int randomNum = Random.Range (0, 100);
+			if(randomNum<50){
+				GameObject timeSheep = GameObjectUtil.CloneGameObjectWithScale(timeSheepPrefab,this.transform,new Vector3(1.0f,1.0f,1.0f));
+				timeSheep.transform.localPosition = new Vector3(-470,Random.Range(-200,200),0);
+				Vector2 targetPosition = new Vector2(450,Random.Range(-350,350));
+				TimeSheep sheepCon = timeSheep.GetComponent<TimeSheep>();
+				TweenXY.Add(timeSheep,3,targetPosition).OnComplete +=sheepCon.DestorySheep;
+				timeSheepNum+=1;
+			}
+		}
 	}
 
 	private void AppearBubbles(MissionMeta missionMeta,Vector3 position)
@@ -54,7 +70,7 @@ public class GameController : MonoBehaviour {
 		foreach (BubbleInit bubbleInit in bubbleInitList) {
 			// init bubble
 			Vector3 vector = new Vector3(-113,31,0);
-			GameObject gameObject = GameObjectUtil.CloneGameObjectWithScale(bubblePrefab,this.transform,new Vector3(2.5f,2.5f,2.5f));
+			GameObject gameObject = GameObjectUtil.CloneGameObjectWithScale(bubblePrefab,this.transform,new Vector3(1.0f,1.0f,1.0f));
 			Vector3 newPosition = new Vector3(position.x+Random.Range(-20,20),position.y+Random.Range(-20,20),0);
 			gameObject.transform.localPosition=newPosition;
 			gameObject.transform.localPosition=vector;
@@ -94,7 +110,7 @@ public class GameController : MonoBehaviour {
 	private void MissionComplete()
 	{
 		AppMain.Instance.InGame = false;
-		AppMain.Instance.AudioController.StopBgm ();
+		AppMain.Instance.AudioController.StopBgmGame ();
 		musicButton.SetActive (false);
 		homeButton.SetActive (false);
 		Debug.Log ("Mission Complete:" + missionMeta.missionId);
@@ -124,7 +140,7 @@ public class GameController : MonoBehaviour {
 	private void MissionFailed()
 	{
 		AppMain.Instance.InGame = false;
-		AppMain.Instance.AudioController.StopBgm ();
+		AppMain.Instance.AudioController.StopBgmGame ();
 		musicButton.SetActive (false);
 		homeButton.SetActive (false);
 		CancelInvoke ("RefreshCountDownTime");
@@ -137,7 +153,7 @@ public class GameController : MonoBehaviour {
 
 	public void MissionExit(){
 		AppMain.Instance.InGame = false;
-		AppMain.Instance.AudioController.StopBgm ();
+		AppMain.Instance.AudioController.StopBgmGame ();
 		foreach (Bubble bubble in bubbleList) {
 			Destroy(bubble.gameObject);
 		}
@@ -148,6 +164,10 @@ public class GameController : MonoBehaviour {
 		countDown.GetComponent<UILabel> ().text = "";
 		countDown.SetActive (false);
 		AppMain.Instance.HomeWindow.ShowHomeWindow ();
+	}
+
+	public void PlayAddTime(int time){
+		
 	}
 
 	private void DestoryAllBubble(){
