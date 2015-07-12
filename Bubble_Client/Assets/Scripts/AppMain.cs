@@ -114,7 +114,7 @@ public class AppMain : MonoBehaviour {
 
 	public int GetStar(int level)
 	{
-		return PlayerPrefs.GetInt("star_level_" + level, -1);
+		return PlayerPrefs.GetInt("star_level_" + level, 0);
 	}
 
 
@@ -142,18 +142,35 @@ public class AppMain : MonoBehaviour {
 		}
 	}
 
-	public bool Music
-	{
-		get
-		{
-			return PlayerPrefs.GetInt("music") >0;
+	public bool HasMusic(){
+		int musicStatus = PlayerPrefs.GetInt ("music");
+		if (musicStatus == 0) {
+			PlayerPrefs.SetInt("music",1);
 		}
+		return musicStatus == 1;
+	}
 
-		set
-		{
-			PlayerPrefs.SetInt("music",value ? 1:0);
+	public void MusicUpdate(bool music){
+		int musicStatus = -1;
+		if (music) {
+			musicStatus =1;
 		}
+		PlayerPrefs.SetInt ("music", musicStatus);
+	}
 
+	public static string KEY_MAX_STAR_REWARD = "max_star_reward";
+
+	public void SetBool(string key,bool value){
+		int intValue = value ? 1 : -1;
+		PlayerPrefs.SetInt(key,intValue);
+	}
+
+	public bool GetValue(string key){
+		int value = PlayerPrefs.GetInt (key);
+		if (value == 0) {
+			PlayerPrefs.SetInt(key,-1);
+		}
+		return value == 1;
 	}
 
 	public bool InGame
@@ -169,6 +186,17 @@ public class AppMain : MonoBehaviour {
 		}
 		
 	}
+
+	public int GetStarsTotal(){
+		int total = 0;
+		foreach(MissionMeta meta in MissionConfig.GetAllMissionMeta()){
+			int missionId = meta.missionId;
+			total += GetStar(missionId);
+		}
+		return total;
+	}
+
+
 
 	void OnApplicationPause(bool isPause)
 	{
@@ -187,11 +215,10 @@ public class AppMain : MonoBehaviour {
 
 	public bool IsDay(){
 		int hour = System.DateTime.Now.Hour;
-		//if (hour < 6 || hour > 18) {
-//			return false;
-//		}
-//		return true;
-			return true;
+		if (hour < 6 || hour > 18) {
+			return false;
+		}
+		return true;
 	}
 
 	void Start(){

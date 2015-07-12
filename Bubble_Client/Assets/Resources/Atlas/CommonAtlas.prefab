@@ -55,7 +55,7 @@ MonoBehaviour:
     paddingTop: 61
     paddingBottom: 64
   - name: +
-    x: 743
+    x: 911
     y: 790
     width: 45
     height: 47
@@ -68,7 +68,7 @@ MonoBehaviour:
     paddingTop: 48
     paddingBottom: 40
   - name: "\xF7"
-    x: 789
+    x: 957
     y: 791
     width: 45
     height: 46
@@ -81,7 +81,7 @@ MonoBehaviour:
     paddingTop: 46
     paddingBottom: 43
   - name: 0
-    x: 632
+    x: 800
     y: 775
     width: 53
     height: 62
@@ -236,6 +236,19 @@ MonoBehaviour:
     paddingRight: 36
     paddingTop: 42
     paddingBottom: 34
+  - name: collect...
+    x: 0
+    y: 25
+    width: 185
+    height: 119
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 1
   - name: count_d
     x: 616
     y: 188
@@ -289,8 +302,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 5
   - name: fb_n
-    x: 480
-    y: 56
+    x: 888
+    y: 322
     width: 135
     height: 132
     borderLeft: 0
@@ -302,8 +315,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 5
   - name: help_d
-    x: 480
-    y: 189
+    x: 616
+    y: 455
     width: 135
     height: 132
     borderLeft: 0
@@ -315,8 +328,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 5
   - name: help_n
-    x: 142
-    y: 12
+    x: 752
+    y: 322
     width: 135
     height: 132
     borderLeft: 0
@@ -328,8 +341,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 5
   - name: home_d
-    x: 337
-    y: 148
+    x: 480
+    y: 322
     width: 135
     height: 132
     borderLeft: 0
@@ -341,71 +354,6 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 5
   - name: home_n
-    x: 337
-    y: 15
-    width: 135
-    height: 132
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 2
-    paddingRight: 6
-    paddingTop: 2
-    paddingBottom: 5
-  - name: map_d
-    x: 616
-    y: 74
-    width: 116
-    height: 113
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 3
-    paddingRight: 2
-    paddingTop: 3
-    paddingBottom: 2
-  - name: map_n
-    x: 888
-    y: 322
-    width: 133
-    height: 132
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 7
-    paddingRight: 7
-    paddingTop: 7
-    paddingBottom: 5
-  - name: music_d
-    x: 480
-    y: 455
-    width: 135
-    height: 132
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 2
-    paddingRight: 6
-    paddingTop: 2
-    paddingBottom: 5
-  - name: music_n
-    x: 616
-    y: 455
-    width: 135
-    height: 132
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 2
-    paddingRight: 6
-    paddingTop: 2
-    paddingBottom: 5
-  - name: no_music_d
     x: 752
     y: 455
     width: 135
@@ -418,8 +366,99 @@ MonoBehaviour:
     paddingRight: 6
     paddingTop: 2
     paddingBottom: 5
-  - name: no_music_n
+  - name: level_progress_back
+    x: 632
+    y: 811
+    width: 167
+    height: 26
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 4
+    paddingTop: 2
+    paddingBottom: 8
+  - name: level_progress_fore
+    x: 632
+    y: 791
+    width: 98
+    height: 19
+    borderLeft: 0
+    borderRight: 6
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: map_d
+    x: 750
+    y: 121
+    width: 116
+    height: 113
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 2
+    paddingTop: 3
+    paddingBottom: 2
+  - name: map_n
+    x: 616
+    y: 55
+    width: 133
+    height: 132
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 7
+    paddingRight: 7
+    paddingTop: 7
+    paddingBottom: 5
+  - name: music_d
     x: 888
+    y: 455
+    width: 135
+    height: 132
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 6
+    paddingTop: 2
+    paddingBottom: 5
+  - name: music_n
+    x: 480
+    y: 189
+    width: 135
+    height: 132
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 6
+    paddingTop: 2
+    paddingBottom: 5
+  - name: no_music_d
+    x: 480
+    y: 56
+    width: 135
+    height: 132
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 6
+    paddingTop: 2
+    paddingBottom: 5
+  - name: no_music_n
+    x: 480
     y: 455
     width: 135
     height: 132
@@ -484,8 +523,8 @@ MonoBehaviour:
     paddingTop: 64
     paddingBottom: 29
   - name: restart_d
-    x: 480
-    y: 322
+    x: 337
+    y: 15
     width: 135
     height: 132
     borderLeft: 0
@@ -497,8 +536,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 5
   - name: restart_n
-    x: 752
-    y: 322
+    x: 337
+    y: 148
     width: 135
     height: 132
     borderLeft: 0
@@ -510,7 +549,7 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 5
   - name: star_0
-    x: 0
+    x: 186
     y: 6
     width: 141
     height: 138
@@ -601,7 +640,7 @@ MonoBehaviour:
     paddingTop: 5
     paddingBottom: 6
   - name: x
-    x: 686
+    x: 854
     y: 779
     width: 56
     height: 58
@@ -623,7 +662,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: mSprites.Array.data[26].borderLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mSprites.Array.data[26].borderRight
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mSprites.Array.data[26].borderBottom
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 197030}

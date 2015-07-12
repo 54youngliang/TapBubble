@@ -1,26 +1,22 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameController.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameController.cs" Line="65" Column="69" />
-      <File FileName="Assets/Scripts/PlayAnimation.cs" Line="83" Column="22" />
-      <File FileName="Assets/Scripts/AppMain.cs" Line="198" Column="43" />
-      <File FileName="Assets/Scripts/PlayButton.cs" Line="8" Column="37" />
-      <File FileName="Assets/Scripts/HomeWindow.cs" Line="167" Column="42" />
-      <File FileName="Assets/Thirds/NGUI/Scripts/UI/UISpriteAnimation.cs" Line="90" Column="10" />
-      <File FileName="Assets/Scripts/LevelPassedWindow.cs" Line="21" Column="3" />
-      <File FileName="Assets/Scripts/NextButton.cs" Line="20" Column="67" />
-      <File FileName="Assets/Scripts/MusicController.cs" Line="24" Column="32" />
-      <File FileName="Assets/Scripts/AudioController.cs" Line="58" Column="2" />
-      <File FileName="Assets/Scripts/LevelWindow.cs" Line="36" Column="23" />
-      <File FileName="Assets/Scripts/Bubble.cs" Line="52" Column="1" />
-      <File FileName="Assets/Scripts/TouchEventListener.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/facebook/FBHelper.cs" Line="4" Column="38" />
+      <File FileName="Assets/Scripts/LevelProgress.cs" Line="21" Column="54" />
+      <File FileName="Assets/Scripts/PlayAnimation.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AppMain.cs" Line="161" Column="2" />
+      <File FileName="Assets/Scripts/facebook/FBFeedParams.cs" Line="5" Column="1" />
+      <File FileName="Assets/Scripts/HomeWindow.cs" Line="207" Column="43" />
+      <File FileName="Assets/Scripts/LevelWindow.cs" Line="27" Column="24" />
+      <File FileName="Assets/Resources/mission.txt" Line="53" Column="1" />
+      <File FileName="Assets/Scripts/LevelPassedWindow.cs" Line="44" Column="11" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="168" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/youngliang/Lab/TapBubble/Bubble_Client/Assets/Scripts/MusicController.cs" line="31" />
-      <Breakpoint file="/Users/youngliang/Lab/TapBubble/Bubble_Client/Assets/Scripts/AudioController.cs" line="39" />
+      <Breakpoint file="/Users/youngliang/Lab/TapBubble/Bubble_Client/Assets/Scripts/MusicController.cs" line="33" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

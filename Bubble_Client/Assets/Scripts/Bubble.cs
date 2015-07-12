@@ -4,21 +4,25 @@ using System.Collections;
 public class Bubble: MonoBehaviour {
 	
 	public float BubbleScaleTime = 5f;
-	public UISprite uiSprite;
+	public UISprite sheepSprite;
 	public UILabel uiLabel;
 	public BubbleInit bubbleInit;
 
 	bool needDestory = false;
 	int destoryTime = int.MaxValue;
+
+	UIAtlas uiAtlas ;
 	
 	int forceTime = 20;
+
 	void Update(){
+		//RefreshAltas ();
 		forceTime -= 1;
 		if (forceTime == 0) {
 			this.gameObject.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (Random.Range (-0.5f, 0.5f), Random.Range (-0.5f, 0.5f)));
 			forceTime=20;
 		}
-		Vector3 v = this.gameObject.transform.localEulerAngles;
+
 		TweenZ.Add (this.gameObject, 2f, 360f);
 
 		if (needDestory) 
@@ -35,13 +39,12 @@ public class Bubble: MonoBehaviour {
 		this.bubbleInit = bubbleInit;
 		uiLabel.text = bubbleInit.view;
 	}
-
-	int type = 0;
+	
 	int randomType = 0;
 	public void BeginDestory(){
+		AppMain.Instance.AudioController.PlaySheep ();
 		uiLabel.enabled = false;
-		type = Random.Range (1, 3);
-		float refreshTime = 0.06f;
+		float refreshTime = 0.04f;
 		randomType = Random.Range (1, 4);
 		InvokeRepeating("Disappear",0,refreshTime);
 
@@ -52,6 +55,24 @@ public class Bubble: MonoBehaviour {
 
 
 	int disNum=1;
+	
+	public void InitSprite(){
+		bool isDay = AppMain.Instance.IsDay ();
+		string spriteName = "";
+		//RefreshAltas ();
+		if (isDay) {
+			//Resources.UnloadAsset(uiAtlas.gameObject);
+			uiAtlas = (Resources.Load ("Atlas/sheep_dis_d") as GameObject).GetComponent<UIAtlas>();
+			sheepSprite.atlas = uiAtlas;	
+			spriteName="dis1_d0001";
+		} else {
+			//	Resources.UnloadAsset(uiAtlas.gameObject);
+			uiAtlas = (Resources.Load ("Atlas/sheep_dis_n") as GameObject).GetComponent<UIAtlas>();
+			sheepSprite.atlas = uiAtlas;
+			spriteName="dis1_n0001";
+		}
+		sheepSprite.spriteName = spriteName;
+	}
 
 	private void Disappear(){
 		if (disNum > 17) {
@@ -66,15 +87,15 @@ public class Bubble: MonoBehaviour {
 			spriteName="dis"+randomType+"_n";
 		}
 		if (disNum >= 10) {
-			uiSprite.spriteName = spriteName + "00"+ disNum;
+			sheepSprite.spriteName = spriteName + "00"+ disNum;
 		} else {
-			uiSprite.spriteName = spriteName + "000"+ disNum;
+			sheepSprite.spriteName = spriteName + "000"+ disNum;
 		}
 		disNum += 1;
 	}
 
 	private void DispearBubble(){
-		uiSprite.enabled = false;
+		sheepSprite.enabled = false;
 		Destroy (this.gameObject);
 	}
 	

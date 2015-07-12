@@ -7,10 +7,12 @@ public class AudioController : MonoBehaviour {
 	public AudioSource sheep ;
 	public AudioSource bgmGameSource ;
 	public AudioSource bgmSource;
+	public AudioSource countDown;
 
 	private AudioClip bgm_d;
 	private AudioClip bgm_n;
 	private AudioClip bgm_g;
+	private AudioClip countDownClip;
 
 	void Start()
 	{
@@ -18,8 +20,18 @@ public class AudioController : MonoBehaviour {
 		bgm_d = Resources.Load ("audio/bgm_d") as AudioClip;
 		bgm_n = Resources.Load ("audio/bgm_n") as AudioClip;
 		bgm_g = Resources.Load ("audio/bgm_g") as AudioClip;
+		countDownClip = Resources.Load ("audio/time") as AudioClip;
 		bgmGameSource.clip = bgm_g;
 		StartAll ();
+	}
+
+	public void PlayCountDown(){
+		countDown.clip = countDownClip;
+		countDown.Play ();
+	}
+
+	public void StopCountDown(){
+		countDown.Stop ();
 	}
 
 	public void StopAll(){
@@ -36,7 +48,7 @@ public class AudioController : MonoBehaviour {
 	}
 
 	public void StartAll(){
-		if (!AppMain.Instance.Music) {
+		if (!AppMain.Instance.HasMusic()) {
 			return;
 		}
 		if (!bgmSource.isPlaying) {
@@ -57,7 +69,7 @@ public class AudioController : MonoBehaviour {
 
 	public void PlayBgm()
 	{
-		if (!AppMain.Instance.Music) {
+		if (!AppMain.Instance.HasMusic()) {
 			return;
 		}
 
@@ -86,7 +98,7 @@ public class AudioController : MonoBehaviour {
 
 	public void PlaySheep()
 	{
-		if (AppMain.Instance.Music) {
+		if (AppMain.Instance.HasMusic()) {
 			string clipName = "sheep" + Random.Range (1, 4);
 			AudioClip clip =null;
 			if (!audioClipCache.ContainsKey (clipName)) {

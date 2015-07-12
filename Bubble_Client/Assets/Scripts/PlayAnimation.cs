@@ -64,17 +64,14 @@ public class PlayAnimation : MonoBehaviour {
 	
 	public void StartDisapear(){
 		IsPlaying = true;
-		string spriteName = "";
 		if (AppMain.Instance.IsDay ()) {
 			if(!sheepSprite.atlas.name.Equals("play_d")){
 				sheepSprite.atlas = DayAtlas;
 			}
-			spriteName="next_d_";
 		} else {
 			if(!sheepSprite.atlas.name.Equals("play_n")){
 				sheepSprite.atlas = NightAtlas;
 			}
-			spriteName="next_n_";
 		}
 		disppearPic = 1;
 		InvokeRepeating ("RefreshDisppearPlay", 0, 0.06f);

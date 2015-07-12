@@ -97,12 +97,12 @@ public class FBHelper : MonoBehaviour {
     private void SendFeed(FBFeedParams feedParams)
     {
         FB.Feed(
-        link: "https://example.com/myapp/?storyID=thelarch",
-        linkName: "The Larch",
-        linkCaption: "I thought up a witty tagline about larches",
-        linkDescription: "There are a lot of larch trees around here, aren't there?",
-        picture: "https://example.com/myapp/assets/1/larch.jpg"
-        //callback: LogCallback
+        link: feedParams.link,
+        linkName: feedParams.linkName,
+        linkCaption: feedParams.linkCaption,
+        linkDescription: feedParams.linkDescription,
+        picture: feedParams.picture,
+        callback: feedParams.callback
     );
     }
 }

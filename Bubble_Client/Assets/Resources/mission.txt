@@ -1,53 +1,52 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <mission>
-<m mission_id="1" bubble_num="6" postivie_num="6" negative_num="0" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" />
-<m mission_id="2" bubble_num="6" postivie_num="6" negative_num="0" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" />
-<m mission_id="3" bubble_num="6" postivie_num="6" negative_num="0" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" />
-<m mission_id="4" bubble_num="6" postivie_num="6" negative_num="0" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" />
-<m mission_id="5" bubble_num="6" postivie_num="6" negative_num="0" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" />
-<m mission_id="6" bubble_num="6" postivie_num="5" negative_num="1" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" />
-<m mission_id="7" bubble_num="6" postivie_num="4" negative_num="2" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" />
-<m mission_id="8" bubble_num="6" postivie_num="3" negative_num="3" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" />
-<m mission_id="9" bubble_num="6" postivie_num="2" negative_num="4" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" />
-<m mission_id="10" bubble_num="6" postivie_num="1" negative_num="5" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" />
-<m mission_id="11" bubble_num="7" postivie_num="1" negative_num="6" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" />
-<m mission_id="12" bubble_num="7" postivie_num="0" negative_num="7" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" />
-<m mission_id="13" bubble_num="7" postivie_num="6" negative_num="0" easy_op="1" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" />
-<m mission_id="14" bubble_num="7" postivie_num="5" negative_num="1" easy_op="1" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" />
-<m mission_id="15" bubble_num="7" postivie_num="5" negative_num="0" easy_op="2" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" />
-<m mission_id="16" bubble_num="7" postivie_num="4" negative_num="1" easy_op="2" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" />
-<m mission_id="17" bubble_num="7" postivie_num="4" negative_num="0" easy_op="3" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" />
-<m mission_id="18" bubble_num="7" postivie_num="3" negative_num="1" easy_op="3" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" />
-<m mission_id="19" bubble_num="7" postivie_num="2" negative_num="1" easy_op="4" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" />
-<m mission_id="20" bubble_num="7" postivie_num="1" negative_num="2" easy_op="4" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" />
-<m mission_id="21" bubble_num="8" postivie_num="2" negative_num="1" easy_op="5" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" />
-<m mission_id="22" bubble_num="8" postivie_num="1" negative_num="2" easy_op="5" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" />
-<m mission_id="23" bubble_num="8" postivie_num="1" negative_num="1" easy_op="6" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" />
-<m mission_id="24" bubble_num="8" postivie_num="0" negative_num="2" easy_op="6" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" />
-<m mission_id="25" bubble_num="8" postivie_num="0" negative_num="1" easy_op="7" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" />
-<m mission_id="26" bubble_num="8" postivie_num="0" negative_num="0" easy_op="8" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" />
-<m mission_id="27" bubble_num="8" postivie_num="7" negative_num="0" easy_op="0" hard_op="1" redical_num="0" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="28" bubble_num="8" postivie_num="6" negative_num="1" easy_op="0" hard_op="1" redical_num="0" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="29" bubble_num="8" postivie_num="5" negative_num="1" easy_op="1" hard_op="1" redical_num="0" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="30" bubble_num="8" postivie_num="5" negative_num="1" easy_op="0" hard_op="2" redical_num="0" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="31" bubble_num="9" postivie_num="6" negative_num="0" easy_op="1" hard_op="2" redical_num="0" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="32" bubble_num="9" postivie_num="5" negative_num="1" easy_op="1" hard_op="2" redical_num="0" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="33" bubble_num="9" postivie_num="4" negative_num="1" easy_op="1" hard_op="3" redical_num="0" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="34" bubble_num="9" postivie_num="3" negative_num="2" easy_op="1" hard_op="3" redical_num="0" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="35" bubble_num="9" postivie_num="3" negative_num="1" easy_op="1" hard_op="4" redical_num="0" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="36" bubble_num="9" postivie_num="3" negative_num="0" easy_op="2" hard_op="4" redical_num="0" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="37" bubble_num="9" postivie_num="3" negative_num="0" easy_op="1" hard_op="5" redical_num="0" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="38" bubble_num="9" postivie_num="2" negative_num="1" easy_op="1" hard_op="5" redical_num="0" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="39" bubble_num="9" postivie_num="1" negative_num="1" easy_op="1" hard_op="6" redical_num="0" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="40" bubble_num="9" postivie_num="0" negative_num="0" easy_op="3" hard_op="6" redical_num="0" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="41" bubble_num="10" postivie_num="9" negative_num="0" easy_op="0" hard_op="0" redical_num="1" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="42" bubble_num="10" postivie_num="7" negative_num="1" easy_op="1" hard_op="0" redical_num="1" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="43" bubble_num="10" postivie_num="5" negative_num="1" easy_op="1" hard_op="1" redical_num="2" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="44" bubble_num="10" postivie_num="4" negative_num="1" easy_op="2" hard_op="1" redical_num="2" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="45" bubble_num="10" postivie_num="4" negative_num="2" easy_op="1" hard_op="0" redical_num="3" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="46" bubble_num="10" postivie_num="1" negative_num="3" easy_op="1" hard_op="1" redical_num="4" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="47" bubble_num="10" postivie_num="1" negative_num="2" easy_op="1" hard_op="1" redical_num="5" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="48" bubble_num="10" postivie_num="1" negative_num="1" easy_op="1" hard_op="2" redical_num="5" time="20" level3="10" level2="5" level1="0" />
-<m mission_id="49" bubble_num="10" postivie_num="1" negative_num="1" easy_op="0" hard_op="3" redical_num="5" time="20" level3="10" level2="5" level1="0" />
+<m mission_id="1" bubble_num="6" postivie_num="6" negative_num="0" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" x="-253" y="-2946" />
+<m mission_id="2" bubble_num="6" postivie_num="6" negative_num="0" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" x="-70" y="-2805" />
+<m mission_id="3" bubble_num="6" postivie_num="6" negative_num="0" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" x="189" y="-2759" />
+<m mission_id="4" bubble_num="6" postivie_num="6" negative_num="0" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" x="-34" y="-2582" />
+<m mission_id="5" bubble_num="6" postivie_num="6" negative_num="0" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" x="-246" y="-2432" />
+<m mission_id="6" bubble_num="6" postivie_num="5" negative_num="1" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" x="48" y="-2352" />
+<m mission_id="7" bubble_num="6" postivie_num="4" negative_num="2" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" x="273" y="-2245" />
+<m mission_id="8" bubble_num="6" postivie_num="3" negative_num="3" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" x="154" y="-2108" />
+<m mission_id="9" bubble_num="6" postivie_num="2" negative_num="4" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" x="-142" y="-2105" />
+<m mission_id="10" bubble_num="6" postivie_num="1" negative_num="5" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" x="-236" y="-1904" />
+<m mission_id="11" bubble_num="7" postivie_num="1" negative_num="6" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" x="-11" y="-1841" />
+<m mission_id="12" bubble_num="7" postivie_num="0" negative_num="7" easy_op="0" hard_op="0" redical_num="0" time="15" level3="10" level2="5" level1="0" x="243" y="-1832" />
+<m mission_id="13" bubble_num="7" postivie_num="6" negative_num="0" easy_op="1" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" x="142" y="-1642" />
+<m mission_id="14" bubble_num="7" postivie_num="5" negative_num="1" easy_op="1" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" x="-145" y="-1538" />
+<m mission_id="15" bubble_num="7" postivie_num="5" negative_num="0" easy_op="2" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" x="87" y="-1407" />
+<m mission_id="16" bubble_num="7" postivie_num="4" negative_num="1" easy_op="2" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" x="278" y="-1369" />
+<m mission_id="17" bubble_num="7" postivie_num="4" negative_num="0" easy_op="3" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" x="217" y="-1170" />
+<m mission_id="18" bubble_num="7" postivie_num="3" negative_num="1" easy_op="3" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" x="-97" y="-1160" />
+<m mission_id="19" bubble_num="7" postivie_num="2" negative_num="1" easy_op="4" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" x="-256" y="-1022" />
+<m mission_id="20" bubble_num="7" postivie_num="1" negative_num="2" easy_op="4" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" x="-65" y="-874" />
+<m mission_id="21" bubble_num="8" postivie_num="2" negative_num="1" easy_op="5" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" x="204" y="-873" />
+<m mission_id="22" bubble_num="8" postivie_num="1" negative_num="2" easy_op="5" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" x="48" y="-699" />
+<m mission_id="23" bubble_num="8" postivie_num="1" negative_num="1" easy_op="6" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" x="-251" y="-629" />
+<m mission_id="24" bubble_num="8" postivie_num="0" negative_num="2" easy_op="6" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" x="-87" y="-414" />
+<m mission_id="25" bubble_num="8" postivie_num="0" negative_num="1" easy_op="7" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" x="176" y="-428" />
+<m mission_id="26" bubble_num="8" postivie_num="0" negative_num="0" easy_op="8" hard_op="0" redical_num="0" time="18" level3="10" level2="5" level1="0" x="252" y="-204" />
+<m mission_id="27" bubble_num="8" postivie_num="7" negative_num="0" easy_op="0" hard_op="1" redical_num="0" time="20" level3="10" level2="5" level1="0" x="-29" y="-169" />
+<m mission_id="28" bubble_num="8" postivie_num="6" negative_num="1" easy_op="0" hard_op="1" redical_num="0" time="20" level3="10" level2="5" level1="0" x="-242" y="-33" />
+<m mission_id="29" bubble_num="8" postivie_num="5" negative_num="1" easy_op="1" hard_op="1" redical_num="0" time="20" level3="10" level2="5" level1="0" x="-4" y="127" />
+<m mission_id="30" bubble_num="8" postivie_num="5" negative_num="1" easy_op="0" hard_op="2" redical_num="0" time="20" level3="10" level2="5" level1="0" x="233" y="191" />
+<m mission_id="31" bubble_num="9" postivie_num="6" negative_num="0" easy_op="1" hard_op="2" redical_num="0" time="20" level3="10" level2="5" level1="0" x="115" y="387" />
+<m mission_id="32" bubble_num="9" postivie_num="5" negative_num="1" easy_op="1" hard_op="2" redical_num="0" time="20" level3="10" level2="5" level1="0" x="-227" y="458" />
+<m mission_id="33" bubble_num="9" postivie_num="4" negative_num="1" easy_op="1" hard_op="3" redical_num="0" time="20" level3="10" level2="5" level1="0" x="-14" y="595" />
+<m mission_id="34" bubble_num="9" postivie_num="3" negative_num="2" easy_op="1" hard_op="3" redical_num="0" time="20" level3="10" level2="5" level1="0" x="200" y="729" />
+<m mission_id="35" bubble_num="9" postivie_num="3" negative_num="1" easy_op="1" hard_op="4" redical_num="0" time="20" level3="10" level2="5" level1="0" x="-57" y="852" />
+<m mission_id="36" bubble_num="9" postivie_num="3" negative_num="0" easy_op="2" hard_op="4" redical_num="0" time="20" level3="10" level2="5" level1="0" x="-259" y="971" />
+<m mission_id="37" bubble_num="9" postivie_num="3" negative_num="0" easy_op="1" hard_op="5" redical_num="0" time="20" level3="10" level2="5" level1="0" x="-36" y="1113" />
+<m mission_id="38" bubble_num="9" postivie_num="2" negative_num="1" easy_op="1" hard_op="5" redical_num="0" time="20" level3="10" level2="5" level1="0" x="216" y="1203" />
+<m mission_id="39" bubble_num="9" postivie_num="1" negative_num="1" easy_op="1" hard_op="6" redical_num="0" time="20" level3="10" level2="5" level1="0" x="110" y="1354" />
+<m mission_id="40" bubble_num="9" postivie_num="0" negative_num="0" easy_op="3" hard_op="6" redical_num="0" time="20" level3="10" level2="5" level1="0" x="-194" y="1383" />
+<m mission_id="41" bubble_num="10" postivie_num="9" negative_num="0" easy_op="0" hard_op="0" redical_num="1" time="20" level3="10" level2="5" level1="0" x="-10" y="1583" />
+<m mission_id="42" bubble_num="10" postivie_num="7" negative_num="1" easy_op="1" hard_op="0" redical_num="1" time="20" level3="10" level2="5" level1="0" x="216" y="1717" />
+<m mission_id="43" bubble_num="10" postivie_num="5" negative_num="1" easy_op="1" hard_op="1" redical_num="2" time="20" level3="10" level2="5" level1="0" x="47" y="1850" />
+<m mission_id="44" bubble_num="10" postivie_num="4" negative_num="1" easy_op="2" hard_op="1" redical_num="2" time="20" level3="10" level2="5" level1="0" x="-263" y="1926" />
+<m mission_id="45" bubble_num="10" postivie_num="4" negative_num="2" easy_op="1" hard_op="0" redical_num="3" time="20" level3="10" level2="5" level1="0" x="-77" y="2114" />
+<m mission_id="46" bubble_num="10" postivie_num="1" negative_num="3" easy_op="1" hard_op="1" redical_num="4" time="20" level3="10" level2="5" level1="0" x="214" y="2165" />
+<m mission_id="47" bubble_num="10" postivie_num="1" negative_num="2" easy_op="1" hard_op="1" redical_num="5" time="20" level3="10" level2="5" level1="0" x="185" y="2381" />
+<m mission_id="48" bubble_num="10" postivie_num="1" negative_num="1" easy_op="1" hard_op="2" redical_num="5" time="20" level3="10" level2="5" level1="0" x="-149" y="2470" />
+<m mission_id="49" bubble_num="10" postivie_num="1" negative_num="1" easy_op="0" hard_op="3" redical_num="5" time="20" level3="10" level2="5" level1="0" x="17" y="2598" />
+<m mission_id="50" bubble_num="10" postivie_num="0" negative_num="0" easy_op="0" hard_op="0" redical_num="10" time="20" level3="10" level2="5" level1="0" x="244" y="2696" />
 </mission>
-

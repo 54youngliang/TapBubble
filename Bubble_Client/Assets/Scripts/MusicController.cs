@@ -10,31 +10,33 @@ public class MusicController : MonoBehaviour {
 		UpdateSprite ();
 	}
 
-	private void UpdateSprite(){
-		bool music = AppMain.Instance.Music;
+	public void UpdateSprite(){
+		bool music = AppMain.Instance.HasMusic();
+		string spriteName = "";
 		if (music) {
-			uiSprite.spriteName="music";
-
+			spriteName="music";
 		} else {
-			uiSprite.spriteName="no_music";
+			spriteName="no_music";
 		}
 		if (AppMain.Instance.IsDay()) {
-			uiSprite.spriteName += "_d";
+			spriteName += "_d";
 		} else {
-			uiSprite.spriteName += "_n";
+			spriteName += "_n";
 		}
+		uiSprite.spriteName = spriteName;
+		Debug.Log ("Music ===" + spriteName);
 		this.gameObject.GetComponent<UIButton> ().normalSprite = uiSprite.spriteName;
 	}
 
 	public void Click()
 	{
-		bool music = AppMain.Instance.Music;
+		bool music = AppMain.Instance.HasMusic();
 		if (music) {
 			// tingzhi yinyue
 			AppMain.Instance.AudioController.StopAll();
-			AppMain.Instance.Music = false;
+			AppMain.Instance.MusicUpdate(false);
 		} else {
-			AppMain.Instance.Music = true;
+			AppMain.Instance.MusicUpdate(true);
 			AppMain.Instance.AudioController.StartAll();
 		}
 		UpdateSprite ();

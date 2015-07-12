@@ -27,6 +27,8 @@ public class TimeSheep : MonoBehaviour {
 	}
 
 	public void StopMove(){
+		TweenXY tween = this.gameObject.GetComponent<TweenXY> ();
+		tween.enabled = false;
 		CancelInvoke ("RefreshMove");
 	}
 

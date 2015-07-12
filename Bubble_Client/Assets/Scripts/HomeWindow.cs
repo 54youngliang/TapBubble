@@ -74,9 +74,12 @@ public class HomeWindow : MonoBehaviour {
 
 	public void ShowHomeWindow()
 	{
+		needHiddenPlayButton = false;
+		MusicButton.gameObject.GetComponent<MusicController> ().UpdateSprite ();
 		HiddenHelp ();
 		playButton.playAnimation.StartNormalPlay ();
 		playButton.playLabel.enabled = true;
+		playButton.gameObject.SetActive (true);
 		NextLevelButton.SetActive (false);
 		UpdateGameOverWindowStatus (false);
 		UpdatePauseWindow (false);
@@ -106,11 +109,11 @@ public class HomeWindow : MonoBehaviour {
 			backgroundVector = background.transform.localPosition;
 			TweenY tween = TweenY.Add (background, 1f, 300f);
 			//-138,74
-			TweenXY titleTween = TweenXY.Add (MissionTitle, 1f, new Vector2 (-138f, 532.57f));
+			TweenXY.Add (MissionTitle, 1f, new Vector2 (-138f, 532.57f));
 			tween.OnComplete += BeginMission;
 		} else {
 			if(MissionTitle.transform.localPosition == missionTitleVector){
-				TweenXY titleTween = TweenXY.Add (MissionTitle, 1f, new Vector2 (-138f, 480f));
+				TweenXY.Add (MissionTitle, 1f, new Vector2 (-138f, 480f));
 			}
 			BeginMission();
 		}

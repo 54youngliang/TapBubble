@@ -14,6 +14,8 @@ public class MissionMeta {
 	public int level1;
 	public int level2;
 	public int level3;
+	public int x;
+	public int y;
 
 	private static int[] excludeNum = {6,9,19,16,61,91,18,81,66,99};
 

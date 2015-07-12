@@ -32,4 +32,15 @@ public class LevelPassedWindow : MonoBehaviour {
 		this.gameObject.SetActive (false);
 		AppMain.Instance.HomeWindow.gameController.BeginMission ();
 	}
+
+	public void Share(){
+		Debug.Log ("send feed");
+		FBFeedParams feed = new FBFeedParams ();
+		feed.link="share link";
+		feed.linkName="link name";
+		feed.linkCaption="caption";
+		feed.linkDescription="desc";
+		feed.picture="pic";
+		FBHelper.Instance.Share (feed);
+	}
 }

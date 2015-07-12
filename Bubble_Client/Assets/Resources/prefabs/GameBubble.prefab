@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5999999, y: 43.4500008, z: 0}
+  m_LocalPosition: {x: 7.5999999, y: 36.4900017, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 427404}
@@ -87,7 +87,7 @@ CircleCollider2D:
   m_Material: {fileID: 6200000, guid: 7a35e51e869f6446489fc1ac2e4973a5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 5.32999992, y: 13.3999996}
+  m_Offset: {x: 5.94999981, y: -11.1499996}
   serializedVersion: 2
   m_Radius: 64.8499985
 --- !u!114 &11408458
@@ -213,7 +213,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 11448446, guid: 26d338045c5e444d7bfb93b043b332ed, type: 2}
+  mAtlas: {fileID: 11409140, guid: 7310d5f091ee0477c970ede57d8f2afb, type: 2}
   mSpriteName: dis1_d0001
   mFillCenter: 1
 --- !u!114 &11476064
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BubbleScaleTime: .0500000007
-  uiSprite: {fileID: 11475582}
+  sheepSprite: {fileID: 11475582}
   uiLabel: {fileID: 11424460}
 --- !u!1001 &100100000
 Prefab:
@@ -256,7 +256,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: mAtlas
       value: 
-      objectReference: {fileID: 11448446, guid: 26d338045c5e444d7bfb93b043b332ed,
+      objectReference: {fileID: 11409140, guid: 7310d5f091ee0477c970ede57d8f2afb,
         type: 2}
     - target: {fileID: 0}
       propertyPath: mSpriteName

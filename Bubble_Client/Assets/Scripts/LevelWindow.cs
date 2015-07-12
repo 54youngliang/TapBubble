@@ -4,13 +4,15 @@ using System.Collections.Generic;
 
 public class LevelWindow : MonoBehaviour {
 
-	//public UIScrollView scrollView;
+	public UIScrollView scrollView;
 	public GameObject levelItemPrefab;
 	public Transform grid;
 	//public GameObject levelBgPrefab;
 	public GameObject background;
+	public GameObject levelProgress;
 
 	private List<LevelView> viewList;
+
 	// Use this for initialization
 	void Start () {
 		var width = AppMain.Instance.uiRoot.manualWidth;
@@ -20,28 +22,33 @@ public class LevelWindow : MonoBehaviour {
 	
 	private void Init()
 	{
-//		viewList = new List<LevelView>();
-//		for(int i = 0; i < 100; i ++)
-//		{
-//			//var go = GameObjectUtil.CloneGameObject(levelItemPrefab, scrollView.transform);
-//			var item = go.GetComponent<LevelView>();
-//			viewList.Add(item);
-//			int x = Random.Range(-300, 300);
-//			item.transform.localPosition = new Vector3(x, i * 200 - 360, 0);
-//			item.Level = i + 1;
-//			item.Star = PlayerPrefs.GetInt("star_level_" + i, -1);
-//			item.OnItemClick = OnLevelClick;
-//		}
-//
-//		float maxY = viewList[viewList.Count - 1].transform.localPosition.y;
-//		int ah = AppMain.Instance.uiRoot.activeHeight;
-//		int count = (int)Mathf.Ceil(maxY / ah);
-//		for(int i = 0; i < count; i ++)
-//		{
-//		//	GameObjectUtil.CloneGameObject(levelBgPrefab, grid);
-//		}
-//		UIGrid uiGrid = grid.GetComponent<UIGrid>();
-//		uiGrid.Reposition();
+		levelProgress.GetComponent<LevelProgress> ().Apprear ();
+		int totalStars = 0;
+		int alreadyStars = 0;
+		int maxLevel = AppMain.Instance.MaxLevel;
+		foreach (MissionMeta missionMeta in MissionConfig.GetAllMissionMeta()) {
+			int missionId = missionMeta.missionId;
+			totalStars+=3;
+			alreadyStars += AppMain.Instance.GetStar(missionId);
+			GameObject missionResult = GameObjectUtil.CloneGameObject(levelItemPrefab, background.transform);
+			int x = missionMeta.x;
+			int y =  missionMeta.y;
+			missionResult.transform.localPosition = new Vector3(x,y,0);
+			LevelView view = missionResult.GetComponent<LevelView>();
+			int level = AppMain.Instance.GetStar(missionId);
+			view.Star=level;
+
+			view.OnItemClick = OnLevelClick;
+			Debug.Log("xxxxxxx"+maxLevel);
+			if(missionId == maxLevel){
+				view.Sheep.SetActive(true);
+			}else{
+				view.Level=missionId;
+				view.Sheep.SetActive(false);
+			}
+		}
+		levelProgress.GetComponent<UIProgressBar>().value = (alreadyStars/totalStars);
+		levelProgress.GetComponentInChildren<UILabel> ().text = alreadyStars+"/"+totalStars;
 	}
 
 	public void ShowHome()

@@ -1,0 +1,721 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &109048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 478484}
+  - 114: {fileID: 11416680}
+  m_Layer: 0
+  m_Name: sheep_dis_n
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &478484
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11416680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 86d0b01d8912d4ff7b3c07cf9c97f827, type: 2}
+  mSprites:
+  - name: dis1_n0001
+    x: 1729
+    y: 1155
+    width: 165
+    height: 160
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 88
+    paddingRight: 80
+    paddingTop: 94
+    paddingBottom: 66
+  - name: dis1_n0002
+    x: 1461
+    y: 1609
+    width: 268
+    height: 195
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 46
+    paddingRight: 19
+    paddingTop: 77
+    paddingBottom: 48
+  - name: dis1_n0003
+    x: 753
+    y: 1604
+    width: 272
+    height: 200
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 42
+    paddingRight: 19
+    paddingTop: 80
+    paddingBottom: 40
+  - name: dis1_n0004
+    x: 1469
+    y: 1837
+    width: 280
+    height: 211
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 34
+    paddingRight: 19
+    paddingTop: 77
+    paddingBottom: 32
+  - name: dis1_n0005
+    x: 893
+    y: 1825
+    width: 291
+    height: 223
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 19
+    paddingTop: 71
+    paddingBottom: 26
+  - name: dis1_n0006
+    x: 0
+    y: 1805
+    width: 302
+    height: 243
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 12
+    paddingRight: 19
+    paddingTop: 59
+    paddingBottom: 18
+  - name: dis1_n0007
+    x: 303
+    y: 1812
+    width: 297
+    height: 236
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 17
+    paddingRight: 19
+    paddingTop: 60
+    paddingBottom: 24
+  - name: dis1_n0008
+    x: 601
+    y: 1817
+    width: 291
+    height: 231
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 19
+    paddingTop: 63
+    paddingBottom: 26
+  - name: dis1_n0009
+    x: 1185
+    y: 1828
+    width: 283
+    height: 220
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 31
+    paddingRight: 19
+    paddingTop: 74
+    paddingBottom: 26
+  - name: dis1_n0010
+    x: 1326
+    y: 1150
+    width: 200
+    height: 165
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 108
+    paddingRight: 25
+    paddingTop: 114
+    paddingBottom: 41
+  - name: dis1_n0011
+    x: 1126
+    y: 1123
+    width: 199
+    height: 192
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 92
+    paddingRight: 42
+    paddingTop: 93
+    paddingBottom: 35
+  - name: dis1_n0012
+    x: 487
+    y: 161
+    width: 207
+    height: 220
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 74
+    paddingRight: 52
+    paddingTop: 69
+    paddingBottom: 31
+  - name: dis1_n0013
+    x: 1026
+    y: 1560
+    width: 217
+    height: 244
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 66
+    paddingRight: 50
+    paddingTop: 48
+    paddingBottom: 28
+  - name: dis1_n0014
+    x: 255
+    y: 1291
+    width: 231
+    height: 264
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 60
+    paddingRight: 42
+    paddingTop: 34
+    paddingBottom: 22
+  - name: dis1_n0015
+    x: 255
+    y: 1024
+    width: 229
+    height: 266
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 61
+    paddingRight: 43
+    paddingTop: 29
+    paddingBottom: 25
+  - name: dis1_n0016
+    x: 0
+    y: 447
+    width: 228
+    height: 269
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 59
+    paddingRight: 46
+    paddingTop: 23
+    paddingBottom: 28
+  - name: dis1_n0017
+    x: 487
+    y: 1052
+    width: 234
+    height: 249
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 48
+    paddingTop: 21
+    paddingBottom: 50
+  - name: dis2_n0001
+    x: 728
+    y: 195
+    width: 170
+    height: 165
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 85
+    paddingRight: 78
+    paddingTop: 92
+    paddingBottom: 63
+  - name: dis2_n0002
+    x: 918
+    y: 1316
+    width: 189
+    height: 239
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 79
+    paddingRight: 65
+    paddingTop: 35
+    paddingBottom: 46
+  - name: dis2_n0003
+    x: 487
+    y: 603
+    width: 197
+    height: 237
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 75
+    paddingRight: 61
+    paddingTop: 37
+    paddingBottom: 46
+  - name: dis2_n0004
+    x: 255
+    y: 290
+    width: 208
+    height: 239
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 69
+    paddingRight: 56
+    paddingTop: 35
+    paddingBottom: 46
+  - name: dis2_n0005
+    x: 514
+    y: 1567
+    width: 238
+    height: 237
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 53
+    paddingRight: 42
+    paddingTop: 37
+    paddingBottom: 46
+  - name: dis2_n0006
+    x: 1730
+    y: 1565
+    width: 218
+    height: 239
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 66
+    paddingRight: 49
+    paddingTop: 35
+    paddingBottom: 46
+  - name: dis2_n0007
+    x: 255
+    y: 52
+    width: 197
+    height: 237
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 75
+    paddingRight: 61
+    paddingTop: 37
+    paddingBottom: 46
+  - name: dis2_n0008
+    x: 728
+    y: 1316
+    width: 189
+    height: 239
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 79
+    paddingRight: 65
+    paddingTop: 35
+    paddingBottom: 46
+  - name: dis2_n0009
+    x: 1327
+    y: 1317
+    width: 186
+    height: 238
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 79
+    paddingRight: 68
+    paddingTop: 36
+    paddingBottom: 46
+  - name: dis2_n0010
+    x: 1527
+    y: 1151
+    width: 201
+    height: 164
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 85
+    paddingRight: 47
+    paddingTop: 88
+    paddingBottom: 68
+  - name: dis2_n0011
+    x: 926
+    y: 1123
+    width: 199
+    height: 192
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 70
+    paddingRight: 64
+    paddingTop: 67
+    paddingBottom: 61
+  - name: dis2_n0012
+    x: 487
+    y: 382
+    width: 207
+    height: 220
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 75
+    paddingTop: 43
+    paddingBottom: 57
+  - name: dis2_n0013
+    x: 1244
+    y: 1560
+    width: 216
+    height: 244
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 44
+    paddingRight: 73
+    paddingTop: 22
+    paddingBottom: 54
+  - name: dis2_n0014
+    x: 0
+    y: 717
+    width: 232
+    height: 265
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 37
+    paddingRight: 64
+    paddingTop: 7
+    paddingBottom: 48
+  - name: dis2_n0015
+    x: 0
+    y: 180
+    width: 230
+    height: 266
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 38
+    paddingRight: 65
+    paddingTop: 2
+    paddingBottom: 52
+  - name: dis2_n0016
+    x: 255
+    y: 758
+    width: 228
+    height: 265
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 37
+    paddingRight: 68
+    paddingTop: 0
+    paddingBottom: 55
+  - name: dis2_n0017
+    x: 1750
+    y: 1805
+    width: 234
+    height: 243
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 29
+    paddingRight: 70
+    paddingTop: 0
+    paddingBottom: 77
+  - name: dis3_n0001
+    x: 728
+    y: 29
+    width: 170
+    height: 165
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 84
+    paddingRight: 79
+    paddingTop: 92
+    paddingBottom: 63
+  - name: dis3_n0002
+    x: 728
+    y: 735
+    width: 188
+    height: 190
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 80
+    paddingRight: 65
+    paddingTop: 78
+    paddingBottom: 52
+  - name: dis3_n0003
+    x: 728
+    y: 926
+    width: 197
+    height: 194
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 74
+    paddingRight: 62
+    paddingTop: 73
+    paddingBottom: 53
+  - name: dis3_n0004
+    x: 1514
+    y: 1353
+    width: 208
+    height: 202
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 68
+    paddingRight: 57
+    paddingTop: 66
+    paddingBottom: 52
+  - name: dis3_n0005
+    x: 487
+    y: 841
+    width: 238
+    height: 210
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 52
+    paddingRight: 43
+    paddingTop: 57
+    paddingBottom: 53
+  - name: dis3_n0006
+    x: 1108
+    y: 1348
+    width: 218
+    height: 207
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 64
+    paddingRight: 51
+    paddingTop: 60
+    paddingBottom: 53
+  - name: dis3_n0007
+    x: 728
+    y: 1121
+    width: 197
+    height: 194
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 74
+    paddingRight: 62
+    paddingTop: 73
+    paddingBottom: 53
+  - name: dis3_n0008
+    x: 728
+    y: 544
+    width: 188
+    height: 190
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 80
+    paddingRight: 65
+    paddingTop: 78
+    paddingBottom: 52
+  - name: dis3_n0009
+    x: 728
+    y: 361
+    width: 191
+    height: 182
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 77
+    paddingRight: 65
+    paddingTop: 85
+    paddingBottom: 53
+  - name: dis3_n0010
+    x: 0
+    y: 9
+    width: 207
+    height: 170
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 82
+    paddingRight: 44
+    paddingTop: 87
+    paddingBottom: 63
+  - name: dis3_n0011
+    x: 1723
+    y: 1357
+    width: 206
+    height: 198
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 65
+    paddingRight: 62
+    paddingTop: 66
+    paddingBottom: 56
+  - name: dis3_n0012
+    x: 255
+    y: 530
+    width: 229
+    height: 227
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 47
+    paddingRight: 57
+    paddingTop: 41
+    paddingBottom: 52
+  - name: dis3_n0013
+    x: 487
+    y: 1302
+    width: 240
+    height: 253
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 38
+    paddingRight: 55
+    paddingTop: 19
+    paddingBottom: 48
+  - name: dis3_n0014
+    x: 0
+    y: 1530
+    width: 254
+    height: 274
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 32
+    paddingRight: 47
+    paddingTop: 4
+    paddingBottom: 42
+  - name: dis3_n0015
+    x: 0
+    y: 1255
+    width: 252
+    height: 274
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 33
+    paddingRight: 48
+    paddingTop: 0
+    paddingBottom: 46
+  - name: dis3_n0016
+    x: 0
+    y: 983
+    width: 252
+    height: 271
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 31
+    paddingRight: 50
+    paddingTop: 0
+    paddingBottom: 49
+  - name: dis3_n0017
+    x: 255
+    y: 1556
+    width: 258
+    height: 248
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 22
+    paddingRight: 53
+    paddingTop: 0
+    paddingBottom: 72
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 109048}
+  m_IsPrefabParent: 1

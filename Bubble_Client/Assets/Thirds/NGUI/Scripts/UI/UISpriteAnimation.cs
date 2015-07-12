@@ -66,8 +66,6 @@ public class UISpriteAnimation : MonoBehaviour
 	/// Advance the sprite animation process.
 	/// </summary>
 
-	float time = 0;
-
 	protected virtual void Update ()
 	{
 		if (mActive && mSpriteNames.Count > 1 && Application.isPlaying && mFPS > 0)
@@ -87,8 +85,6 @@ public class UISpriteAnimation : MonoBehaviour
 
 				if (mActive)
 				{
-					Debug.Log("time------"+(Time.realtimeSinceStartup-time));
-					time = Time.realtimeSinceStartup;
 					mSprite.spriteName = mSpriteNames[mIndex];
 					if (mSnap) mSprite.MakePixelPerfect();
 				}

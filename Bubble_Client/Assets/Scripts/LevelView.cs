@@ -7,6 +7,7 @@ public class LevelView : MonoBehaviour {
 	public UILabel LabelLevel;
 	public UISprite BackSprite;
 	public System.Action<int> OnItemClick;
+	public GameObject Sheep;
 	// Use this for initialization
 	void Start () {
 	
@@ -57,6 +58,8 @@ public class LevelView : MonoBehaviour {
 					_spriteName="star_2";
 				}else if (value == 3){
 					_spriteName="star_3";
+				}else{
+					_spriteName="star_0";
 				}
 				BackSprite.spriteName=_spriteName;
 			}

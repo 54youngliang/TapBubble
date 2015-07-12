@@ -15,49 +15,98 @@ public class GameController : MonoBehaviour {
 	private List<Bubble> bubbleList = new List<Bubble>();
 	public GameObject musicButton;
 	public GameObject homeButton;
+	public UIAtlas countDayAtlas;
+	public UIAtlas countNightAtlas;
 
-	
-	int restGameTime;
+
+	float gameTime;
 	MissionMeta missionMeta;
 	int timeSheepNum;
+	UISprite countSprite ;
+	UIAtlas uiAtlas;
+	GameObject timeSheep;
+
+	void Start(){
+		gameTime += Time.deltaTime;
+		countSprite = countDown.GetComponent<UISprite> ();
+		uiAtlas = countSprite.atlas;
+	}
+
+	void Update(){
+		if (AppMain.Instance.InGame) {
+			gameTime += Time.deltaTime;
+			RefreshCountSprite ();
+			int restGameTime =(int)( missionMeta.time - gameTime);
+			if (restGameTime == 5) {
+				AppMain.Instance.AudioController.PlayCountDown();
+			}
+			ApprearSheep();
+			if (gameTime >= missionMeta.time) {
+				MissionFailed();
+			}
+		}
+	}
+
+	private void RefreshCountSprite(){
+		bool isDay = AppMain.Instance.IsDay ();
+		string spriteName = "";
+		if (isDay) {
+			if (null == countSprite.atlas || !countSprite.atlas.name.Equals("count_d")) {
+				//Resources.UnloadAsset(uiAtlas.gameObject);
+				uiAtlas = (Resources.Load ("Atlas/count_d") as GameObject).GetComponent<UIAtlas>();
+				countSprite.atlas = uiAtlas;
+			}	
+			spriteName="sun";
+		} else {
+			if (null == countSprite.atlas || !countSprite.atlas.name.Equals("count_n")) {
+			//	Resources.UnloadAsset(uiAtlas.gameObject);
+				uiAtlas = (Resources.Load ("Atlas/count_n") as GameObject).GetComponent<UIAtlas>();
+				countSprite.atlas = uiAtlas;
+			}	
+			spriteName="moon";
+		}
+		double totalTime = missionMeta.time *1.0d;
+		double framePerTime = totalTime / 31d;// mei zhen de shi jian
+		int sprite = (int)(gameTime / framePerTime) +1;
+		Debug.Log("=="+gameTime+"="+framePerTime+"=="+sprite);
+		if (sprite >= 10) {
+			spriteName += ("00" + sprite);
+		} else {
+			spriteName +=("000"+sprite);
+		}
+		countSprite.spriteName = spriteName;
+	}
 
 	public void AddRestTime(int time){
-		this.restGameTime += time;
+		this.gameTime -= time;
 	}
 
 	public void BeginMission()
 	{
+		gameTime = 0;
 		AppMain.Instance.InGame = true;
 		Debug.Log (AppMain.Instance.InGame + "-------------");
 		AppMain.Instance.AudioController.StartBgmGame ();
 		musicButton.SetActive (true);
 		homeButton.SetActive (true);
+		countDown.SetActive (true);
 		int missionId = AppMain.Instance.CurrentLevel;
 		this.missionMeta = MissionConfig.getMissionMeta (missionId);
 		AppearBubbles (missionMeta, playButton.transform.localPosition);
 		countDown.SetActive (true);
-		restGameTime = missionMeta.time;
-		RefreshCountDownTime ();
-		InvokeRepeating ("RefreshCountDownTime", 1, 1f);
 
 	}
 
-	private void RefreshCountDownTime()
+	private void ApprearSheep()
 	{
-		UILabel uiLabel = countDown.GetComponent<UILabel> ();
-		uiLabel.text = restGameTime + "";
-		restGameTime -= 1;
-		if (restGameTime < 0) {
-			MissionFailed();
-		}
-		if (timeSheepNum < 1) {
+		if (timeSheepNum < 1 && missionMeta.missionId >=10 && (int)gameTime >=10) {
 			int randomNum = Random.Range (0, 100);
-			if(randomNum<50){
-				GameObject timeSheep = GameObjectUtil.CloneGameObjectWithScale(timeSheepPrefab,this.transform,new Vector3(1.0f,1.0f,1.0f));
+			if(randomNum<10){
+				timeSheep = GameObjectUtil.CloneGameObjectWithScale(timeSheepPrefab,this.transform,new Vector3(1.0f,1.0f,1.0f));
 				timeSheep.transform.localPosition = new Vector3(-470,Random.Range(-200,200),0);
 				Vector2 targetPosition = new Vector2(450,Random.Range(-350,350));
 				TimeSheep sheepCon = timeSheep.GetComponent<TimeSheep>();
-				TweenXY.Add(timeSheep,3,targetPosition).OnComplete +=sheepCon.DestorySheep;
+				TweenXY.Add(timeSheep,6,targetPosition).OnComplete +=sheepCon.DestorySheep;
 				timeSheepNum+=1;
 			}
 		}
@@ -75,6 +124,7 @@ public class GameController : MonoBehaviour {
 			gameObject.transform.localPosition=newPosition;
 			gameObject.transform.localPosition=vector;
 			Bubble bubble = gameObject.GetComponent<Bubble>();
+			bubble.InitSprite();
 			bubble.AppearNum(bubbleInit);
 		//	TweenXY.Add(gameObject,1f,bubbleInit.localPosition);
 			bubbleList.Add(bubble);
@@ -86,7 +136,6 @@ public class GameController : MonoBehaviour {
 	private void ButtonClick(GameObject gameObject,Vector2 vector2){
 		Debug.Log ("ButtonClick");
 		Bubble bubble = gameObject.GetComponent<Bubble> ();
-		AppMain.Instance.AudioController.PlaySheep ();
 
 		if (bubble.bubbleInit.result == bubbleList [0].bubbleInit.result) {
 			bubbleList.Remove (bubble);
@@ -100,24 +149,12 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	private void ClickReward(GameObject gameObject,Vector2 vector2)
-	{
-		Debug.Log ("click reward");
-		this.restGameTime += 10;
-		Destroy (gameObject);
-	}
-
 	private void MissionComplete()
 	{
-		AppMain.Instance.InGame = false;
-		AppMain.Instance.AudioController.StopBgmGame ();
-		musicButton.SetActive (false);
-		homeButton.SetActive (false);
-		Debug.Log ("Mission Complete:" + missionMeta.missionId);
-		CancelInvoke ("RefreshCountDownTime");
-		countDown.SetActive (false);
+		EndGame ();
 		AppMain.Instance.HomeWindow.MissionComplete (AppMain.Instance.MaxLevel,3);
 
+		int restGameTime =(int)( missionMeta.time - gameTime);
 		int star = 0;
 		if (restGameTime >= missionMeta.level3) {
 			star = 3;
@@ -129,48 +166,42 @@ public class GameController : MonoBehaviour {
 		Debug.Log ("MissionComplete" + missionMeta.missionId + ",star:" + star);
 		AppMain.Instance.levelPassedWindow.Show (missionMeta.missionId, star);
 		AppMain.Instance.SetStar (missionMeta.missionId, star);
+		AppMain.Instance.CurrentLevel += 1;
 		if (AppMain.Instance.CurrentLevel > AppMain.Instance.MaxLevel) 
 		{
 			AppMain.Instance.MaxLevel =AppMain.Instance.CurrentLevel;
 		}
-		AppMain.Instance.CurrentLevel += 1;
+
 
 	}
 
 	private void MissionFailed()
 	{
+		EndGame ();
+		AppMain.Instance.HomeWindow.MissionFailed();
+	}
+
+	private void EndGame(){
+
+		AppMain.Instance.AudioController.StopCountDown ();
 		AppMain.Instance.InGame = false;
 		AppMain.Instance.AudioController.StopBgmGame ();
 		musicButton.SetActive (false);
 		homeButton.SetActive (false);
-		CancelInvoke ("RefreshCountDownTime");
-		DestoryAllBubble();
-		countDown.GetComponent<UILabel> ().text = "";
 		countDown.SetActive (false);
-		AppMain.Instance.HomeWindow.MissionFailed();
+		DestoryAllBubble();
 		bubbleList.Clear ();
 	}
 
 	public void MissionExit(){
-		AppMain.Instance.InGame = false;
-		AppMain.Instance.AudioController.StopBgmGame ();
-		foreach (Bubble bubble in bubbleList) {
-			Destroy(bubble.gameObject);
-		}
-		CancelInvoke ("RefreshCountDownTime");
-		bubbleList.Clear ();
-		musicButton.SetActive (false);
-		homeButton.SetActive (false);
-		countDown.GetComponent<UILabel> ().text = "";
-		countDown.SetActive (false);
+		EndGame ();
 		AppMain.Instance.HomeWindow.ShowHomeWindow ();
 	}
-
-	public void PlayAddTime(int time){
-		
-	}
-
+	
 	private void DestoryAllBubble(){
+		if (null != timeSheep) {
+			Destroy(timeSheep);
+		}
 		foreach (Bubble bubble in bubbleList) {
 			bubble.BeginDestory();
 		}
