@@ -84,11 +84,11 @@ public class GameController : MonoBehaviour {
 	{
 		gameTime = 0;
 		AppMain.Instance.InGame = true;
-		Debug.Log (AppMain.Instance.InGame + "-------------");
 		AppMain.Instance.AudioController.StartBgmGame ();
 		musicButton.SetActive (true);
 		homeButton.SetActive (true);
 		countDown.SetActive (true);
+		missionTitle.gameObject.SetActive (true);
 		int missionId = AppMain.Instance.CurrentLevel;
 		this.missionMeta = MissionConfig.getMissionMeta (missionId);
 		AppearBubbles (missionMeta, playButton.transform.localPosition);
@@ -117,6 +117,7 @@ public class GameController : MonoBehaviour {
 		
 		foreach (BubbleInit bubbleInit in bubbleInitList) {
 			// init bubble
+			Debug.Log("init bubble ,missionId:"+missionMeta.missionId+",result:"+bubbleInit.result+",view:"+bubbleInit.view);
 			Vector3 vector = new Vector3(-113,31,0);
 			GameObject gameObject = GameObjectUtil.CloneGameObjectWithScale(bubblePrefab,this.transform,new Vector3(1.0f,1.0f,1.0f));
 			Vector3 newPosition = new Vector3(position.x+Random.Range(-20,20),position.y+Random.Range(-20,20),0);
@@ -128,12 +129,11 @@ public class GameController : MonoBehaviour {
 		//	TweenXY.Add(gameObject,1f,bubbleInit.localPosition);
 			bubbleList.Add(bubble);
 			gameObject.GetComponent<TouchEventListener>().onClick=ButtonClick;
-			gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(Random.Range(-5,5),Random.Range(-5,5),0f));
+			gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(Random.Range(-5,8),Random.Range(-5,5),0f));
 		}
 	}
 
 	private void ButtonClick(GameObject gameObject,Vector2 vector2){
-		Debug.Log ("ButtonClick");
 		Bubble bubble = gameObject.GetComponent<Bubble> ();
 
 		if (bubble.bubbleInit.result == bubbleList [0].bubbleInit.result) {

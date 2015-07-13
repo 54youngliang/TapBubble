@@ -140,7 +140,7 @@ public class MissionMeta {
 				int num1 = Random.Range(0,10);
 				int num2 = Random.Range(0,10);
 				result = num1*num2;
-				view = num1+"X"+num2;
+				view = num1+"*"+num2;
 			} else if (opNum == 3) {
 				// ÷
 				int num1 = Random.Range(0,10);
@@ -150,13 +150,7 @@ public class MissionMeta {
 				}else{
 					result = 1.0f*num1/num2;
 				}
-				view = num1+"÷"+num2;
-			}
-			if(alreadyMap.ContainsKey(result)){
-				continue;
-			}else{
-				alreadyMap[result]=1;
-				break;
+				view = num1+"/"+num2;
 			}
 
 			bool containExclude=false;
@@ -169,6 +163,15 @@ public class MissionMeta {
 			if(containExclude){
 				continue;
 			}
+
+			if(alreadyMap.ContainsKey(result)){
+				continue;
+			}else{
+				alreadyMap[result]=1;
+				break;
+			}
+
+
 		}
 
 		BubbleInit init = new BubbleInit ();
@@ -216,7 +219,7 @@ public class MissionMeta {
 				int num1 = Random.Range(-10,11);
 				int num2 = Random.Range(-20,21);
 				result = num1*num2;
-				view = num1+"X"+num2;
+				view = num1+"*"+num2;
 			} else if (opNum == 3) {
 				// ÷
 				int num1 = Random.Range(-10,11);
@@ -226,7 +229,7 @@ public class MissionMeta {
 				}else{
 					result = 1.0f * num1/num2;
 				}
-				view = num1+"÷"+num2;
+				view = num1+"/"+num2;
 			}
 			if(alreadyMap.ContainsKey(result)){
 				continue;

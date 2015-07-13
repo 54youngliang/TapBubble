@@ -11,7 +11,7 @@ public class LevelWindow : MonoBehaviour {
 	public GameObject background;
 	public GameObject levelProgress;
 
-	private List<LevelView> viewList;
+	private List<LevelView> viewList = new List<LevelView>();
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +20,7 @@ public class LevelWindow : MonoBehaviour {
 		Init ();
 	}
 	
-	private void Init()
+	public void Init()
 	{
 		levelProgress.GetComponent<LevelProgress> ().Apprear ();
 		int totalStars = 0;
@@ -37,18 +37,32 @@ public class LevelWindow : MonoBehaviour {
 			LevelView view = missionResult.GetComponent<LevelView>();
 			int level = AppMain.Instance.GetStar(missionId);
 			view.Star=level;
+			//view.OnItemClick = OnLevelClick;
+			view.MissionId=missionId;
+			viewList.Add(view);
+		}
 
-			view.OnItemClick = OnLevelClick;
-			Debug.Log("xxxxxxx"+maxLevel);
+		levelProgress.GetComponent<UIProgressBar>().value = (alreadyStars/totalStars);
+		levelProgress.GetComponentInChildren<UILabel> ().text = alreadyStars+"/"+totalStars;
+		RefreshStatus ();
+	}
+
+	public void RefreshStatus(){
+		int maxLevel = AppMain.Instance.MaxLevel;
+		foreach(LevelView view in viewList){
+			int missionId = view.MissionId;
+			if (missionId > maxLevel) {
+				view.GetComponent<UIButton>().enabled=false;
+			}else{
+				view.GetComponent<UIButton>().enabled=true;
+			}
 			if(missionId == maxLevel){
 				view.Sheep.SetActive(true);
 			}else{
-				view.Level=missionId;
+				view.MissionId=missionId;
 				view.Sheep.SetActive(false);
 			}
 		}
-		levelProgress.GetComponent<UIProgressBar>().value = (alreadyStars/totalStars);
-		levelProgress.GetComponentInChildren<UILabel> ().text = alreadyStars+"/"+totalStars;
 	}
 
 	public void ShowHome()
@@ -72,6 +86,10 @@ public class LevelWindow : MonoBehaviour {
 
 	private void OnLevelClick(int level)
 	{
+		int maxLevel = AppMain.Instance.MaxLevel;
+		if (level > maxLevel) {
+			return;
+		}
 		AppMain.Instance.CurrentLevel = level;
 		AppMain.Instance.HomeWindow.gameObject.transform.localPosition = Vector3.zero;
 		AppMain.Instance.HomeWindow.BeginMission ();

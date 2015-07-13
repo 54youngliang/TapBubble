@@ -140,7 +140,7 @@ MonoBehaviour:
   aspectRatio: 2.94736838
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11481582, guid: 17312af3df75f46f881a8221c670ec92, type: 2}
+  mFont: {fileID: 11429844, guid: 17312af3df75f46f881a8221c670ec92, type: 2}
   mText: 11
   mFontSize: 30
   mFontStyle: 0
@@ -281,7 +281,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: mFont
       value: 
-      objectReference: {fileID: 11481582, guid: 17312af3df75f46f881a8221c670ec92,
+      objectReference: {fileID: 11429844, guid: 17312af3df75f46f881a8221c670ec92,
         type: 2}
     - target: {fileID: 0}
       propertyPath: m_Offset.x

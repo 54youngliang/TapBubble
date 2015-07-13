@@ -32,7 +32,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &107844
 GameObject:
   m_ObjectHideFlags: 1
@@ -277,7 +277,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 719, y: 2550, z: 0}
+  m_LocalPosition: {x: 718, y: 2551, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 441936}
@@ -824,7 +824,7 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
-  mTexture: {fileID: 2800000, guid: 2b75b4759c69246ecab62b31bbd44a7d, type: 3}
+  mTexture: {fileID: 2800000, guid: 2ac0c0ded8d824d4baacb562773dd58e, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 4
-  mClipRange: {x: -1.46437073, y: 53, z: 720.291382, w: 1151}
+  mClipRange: {x: -2.23928833, y: 54.4002075, z: 719.725098, w: 1151}
   mClipSoftness: {x: 4, y: 4}
   mDepth: 1
   mSortingOrder: 0

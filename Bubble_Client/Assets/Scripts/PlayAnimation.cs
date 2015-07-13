@@ -94,7 +94,7 @@ public class PlayAnimation : MonoBehaviour {
 			if(!sheepSprite.atlas.name.Equals("play_n")){
 				sheepSprite.atlas = NightAtlas;
 			}
-			spriteName="next_d";
+			spriteName="next_n";
 		}
 		if (disppearPic > 10) {
 			spriteName = spriteName + "00" + disppearPic;

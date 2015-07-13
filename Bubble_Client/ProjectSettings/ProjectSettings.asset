@@ -120,7 +120,7 @@ PlayerSettings:
   iOSLaunchScreenCustomXibPath: 
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
-  androidSplashScreen: {fileID: 2800000, guid: 5988149271e044bc09e2ca0e2dbca2bf, type: 3}
+  androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: user.keystore
   AndroidKeyaliasName: release
   AndroidTVCompatibility: 1

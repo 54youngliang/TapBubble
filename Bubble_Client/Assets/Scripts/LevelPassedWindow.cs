@@ -28,6 +28,7 @@ public class LevelPassedWindow : MonoBehaviour {
 
 	public void StartAgain()
 	{
+		AppMain.Instance.CurrentLevel -= 1;
 		AppMain.Instance.HomeWindow.NextLevelButton.SetActive (false);
 		this.gameObject.SetActive (false);
 		AppMain.Instance.HomeWindow.gameController.BeginMission ();

@@ -1,13 +1,26 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../Boys/client/trunk/Assets/Scripts/GameKit/Live2D/Live2DAvatar.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayButton.cs">
     <Files>
-      <File FileName="../../../Boys/client/trunk/Assets/Scripts/GameKit/Live2D/Live2DAnimator.cs" Line="1" Column="1" />
-      <File FileName="../../../Boys/client/trunk/Assets/Scripts/GameKit/Live2D/Live2DAvatar.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayButton.cs" Line="5" Column="1" />
+      <File FileName="Assets/Scripts/HomeWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelView.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MissionConfig.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Facebook/Scripts/FB.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AppMain.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelPassedWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MissionMeta.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DayNight.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameOverWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GestureEvent.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/youngliang/Lab/TapBubble/Bubble_Client/Assets/Scripts/LevelView.cs" line="24" />
+      <Breakpoint file="/Users/youngliang/Lab/TapBubble/Bubble_Client/Assets/Scripts/GameController.cs" line="85" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

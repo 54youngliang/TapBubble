@@ -23,7 +23,6 @@ public class DayNight : MonoBehaviour {
 		}
 		uiButton = this.gameObject.GetComponent<UIButton> ();
 		if (null != uiButton && !isDay && null != uiButton.normalSprite) {
-			Debug.Log("kkkkk"+uiButton.name);
 			uiButton.normalSprite=uiButton.normalSprite.Replace("_d","_n");
 		}
 	}

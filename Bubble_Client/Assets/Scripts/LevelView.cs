@@ -15,26 +15,29 @@ public class LevelView : MonoBehaviour {
 
 	void OnEnable()
 	{
-		Star = AppMain.Instance.GetStar(Level);
+		Star = AppMain.Instance.GetStar(MissionId);
 		UpdateLevelStatus();
 	}
 
 	public void BeginMission(){
-		AppMain.Instance.CurrentLevel = _level;
+
+		AppMain.Instance.CurrentLevel = _missionId;
+		this.gameObject.GetComponent<UIButton> ().enabled = false;
+		Debug.Log ("map sheep " + _missionId+","+AppMain.Instance.CurrentLevel);
 		AppMain.Instance.LevelWindow.ShowHome ();
 		AppMain.Instance.HomeWindow.FirstBeginMission ();
 	}
 
-	private int _level;
-	public int Level
+	private int _missionId;
+	public int MissionId
 	{
 		get
 		{
-			return _level;
+			return _missionId;
 		}
 		set
 		{
-			_level = value;
+			_missionId = value;
 			LabelLevel.text = "" + value;
 			UpdateLevelStatus();
 		}
@@ -75,16 +78,16 @@ public class LevelView : MonoBehaviour {
 	void OnClick()
 	{
 		int maxLevel = AppMain.Instance.MaxLevel;
-		if (Star > 0 || maxLevel == Level)
+		if (Star > 0 || maxLevel == MissionId)
 		{
 			if (OnItemClick != null)
 			{
-				OnItemClick(Level);
+				OnItemClick(MissionId);
 			}
 		}
 		else
 		{
-			Debug.Log("no click:" + Level);
+			Debug.Log("no click:" + MissionId);
 		}
 	}
 
