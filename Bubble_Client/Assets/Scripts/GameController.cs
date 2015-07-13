@@ -68,7 +68,6 @@ public class GameController : MonoBehaviour {
 		double totalTime = missionMeta.time *1.0d;
 		double framePerTime = totalTime / 31d;// mei zhen de shi jian
 		int sprite = (int)(gameTime / framePerTime) +1;
-		Debug.Log("=="+gameTime+"="+framePerTime+"=="+sprite);
 		if (sprite >= 10) {
 			spriteName += ("00" + sprite);
 		} else {

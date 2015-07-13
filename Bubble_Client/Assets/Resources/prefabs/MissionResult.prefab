@@ -27,6 +27,7 @@ GameObject:
   - 114: {fileID: 11447230}
   - 61: {fileID: 6114994}
   - 114: {fileID: 11453634}
+  - 114: {fileID: 11490210}
   m_Layer: 5
   m_Name: MissionResult
   m_TagString: Untagged
@@ -230,6 +231,35 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &11490210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 108456}
+  hover: {r: .882352948, g: .784313738, b: .588235319, a: 1}
+  pressed: {r: .717647076, g: .639215708, b: .482352942, a: 1}
+  disabledColor: {r: .5, g: .5, b: .5, a: 1}
+  duration: .200000003
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick:
+  - mTarget: {fileID: 11447230}
+    mMethodName: BeginMission
+    mParameters: []
+    oneShot: 0
 --- !u!114 &11498198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -288,6 +318,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: onClick.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: mFont
       value: 
       objectReference: {fileID: 11481582, guid: 17312af3df75f46f881a8221c670ec92,
@@ -305,6 +339,14 @@ Prefab:
       propertyPath: BackSprite
       value: 
       objectReference: {fileID: 11453634}
+    - target: {fileID: 0}
+      propertyPath: tweenTarget
+      value: 
+      objectReference: {fileID: 108456}
+    - target: {fileID: 0}
+      propertyPath: onClick.Array.data[0].mMethodName
+      value: BeginMission
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108456}

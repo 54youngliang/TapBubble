@@ -21,7 +21,6 @@ public class HomeWindow : MonoBehaviour {
 
 	private Vector3 playButtonOriginScale ;
 	private bool buttonHasScaled=false;
-	private bool inGame;
 
 
 	private Vector3 missionTitleVector=new Vector3 (-114f,108f,0f) ;
@@ -74,6 +73,7 @@ public class HomeWindow : MonoBehaviour {
 
 	public void ShowHomeWindow()
 	{
+
 		needHiddenPlayButton = false;
 		MusicButton.gameObject.GetComponent<MusicController> ().UpdateSprite ();
 		HiddenHelp ();
@@ -109,7 +109,7 @@ public class HomeWindow : MonoBehaviour {
 			backgroundVector = background.transform.localPosition;
 			TweenY tween = TweenY.Add (background, 1f, 300f);
 			//-138,74
-			TweenXY.Add (MissionTitle, 1f, new Vector2 (-138f, 532.57f));
+			TweenXY.Add (MissionTitle, 1f, new Vector2 (-138f, 498.57f));
 			tween.OnComplete += BeginMission;
 		} else {
 			if(MissionTitle.transform.localPosition == missionTitleVector){
@@ -131,7 +131,6 @@ public class HomeWindow : MonoBehaviour {
 		UpdatePauseWindow (false);
 		UpdateShowLevelComplete (false);
 		AppMain.Instance.levelPassedWindow.gameObject.SetActive (false);
-		inGame = true;
 		if (buttonHasScaled) {
 			NextLevelButton.GetComponent<NextButton>().label.SetActive(false);
 			NextLevelButton.GetComponent<PlayAnimation>().StartDisapear();
@@ -150,7 +149,6 @@ public class HomeWindow : MonoBehaviour {
 	{
 		MissionTitle.SetActive(false);
 		UpdateGameOverWindowStatus (true);
-		inGame = false;
 		AppMain.Instance.GameOverWindow.ShowGameOverWindow ();
 	}
 	
@@ -160,7 +158,6 @@ public class HomeWindow : MonoBehaviour {
 		AppMain.Instance.levelPassedWindow.gameObject.SetActive (true);
 		LevelPassedWindow window = AppMain.Instance.levelPassedWindow.GetComponent<LevelPassedWindow> ();
 		window.Show (level, star);
-		inGame = false;
 	}
 
 	// yincang plays
@@ -197,10 +194,7 @@ public class HomeWindow : MonoBehaviour {
 
 	public void ShowLevelWindow()
 	{
-		if (inGame) 
-		{
-			return;
-		}
+	
 		var width = AppMain.Instance.uiRoot.manualWidth;
 		AppMain.Instance.LevelWindow.transform.localPosition = new Vector3(width, 0, 0);
 		AppMain.Instance.LevelWindow.gameObject.SetActive(true);

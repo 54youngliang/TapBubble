@@ -17,7 +17,7 @@ public class MissionMeta {
 	public int x;
 	public int y;
 
-	private static int[] excludeNum = {6,9,19,16,61,91,18,81,66,99};
+	private static int[] excludeNum = {6,9,19,16,61,91,18,81,66,99,86,68,98,89};
 
 	public List<BubbleInit> randomBubbleInit(){
 		List<BubbleInit> resultList = new List<BubbleInit> ();
@@ -115,6 +115,8 @@ public class MissionMeta {
 		return init;
 	}
 
+
+	string[] excludeOpList = {"1+6","6+1","9+1","1+9","8+6","8+9","9+8","6+8","8-6","6-8","9-8","8-9"};
 	private BubbleInit EasyOpBubble(Dictionary<double,int>  alreadyMap)
 	{
 		int opNum = Random.Range (0, 5) % 4;
@@ -129,8 +131,8 @@ public class MissionMeta {
 				view = num1+"+"+num2;
 			} else if (opNum == 1) {
 				// -
-				int num1 = Random.Range(0,10);
-				int num2 = Random.Range(0,10);
+				int num1 = Random.Range(1,10);
+				int num2 = Random.Range(1,10);
 				result = num1-num2;
 				view = num1+"-"+num2;
 			} else if (opNum == 2) {
@@ -142,7 +144,7 @@ public class MissionMeta {
 			} else if (opNum == 3) {
 				// ÷
 				int num1 = Random.Range(0,10);
-				int num2 = Random.Range(0,10);
+				int num2 = Random.Range(1,10);
 				if(num2 ==0){
 					result = double.MaxValue;
 				}else{
@@ -155,6 +157,17 @@ public class MissionMeta {
 			}else{
 				alreadyMap[result]=1;
 				break;
+			}
+
+			bool containExclude=false;
+			foreach(string exclude in excludeOpList){
+				if(view.Equals(exclude)){
+					containExclude=true;
+					break;
+				}
+			}
+			if(containExclude){
+				continue;
 			}
 		}
 
@@ -178,8 +191,24 @@ public class MissionMeta {
 				view = num1+"+"+num2;
 			} else if (opNum == 1) {
 				// -
-				int num1 = Random.Range(-10,11);
-				int num2 = Random.Range(-20,21);
+				int num1=0;
+				for(;;){
+					num1 = Random.Range(-20,21);
+					if(num1 == 0){
+						continue;
+					}else{
+						break;
+					}
+				}
+				int num2=0;
+				for(;;){
+					num2 = Random.Range(-20,21);
+					if(num2 == 0){
+						continue;
+					}else{
+						break;
+					}
+				}
 				result = num1-num2;
 				view = num1+"-"+num2;
 			} else if (opNum == 2) {

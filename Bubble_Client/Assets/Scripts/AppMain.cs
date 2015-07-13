@@ -219,6 +219,7 @@ public class AppMain : MonoBehaviour {
 			return false;
 		}
 		return true;
+
 	}
 
 	void Start(){

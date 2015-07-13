@@ -19,6 +19,12 @@ public class LevelView : MonoBehaviour {
 		UpdateLevelStatus();
 	}
 
+	public void BeginMission(){
+		AppMain.Instance.CurrentLevel = _level;
+		AppMain.Instance.LevelWindow.ShowHome ();
+		AppMain.Instance.HomeWindow.FirstBeginMission ();
+	}
+
 	private int _level;
 	public int Level
 	{

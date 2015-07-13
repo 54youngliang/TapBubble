@@ -40,7 +40,7 @@ public class LevelPassedWindow : MonoBehaviour {
 		feed.linkName="link name";
 		feed.linkCaption="caption";
 		feed.linkDescription="desc";
-		feed.picture="pic";
+		feed.picture="pic url";
 		FBHelper.Instance.Share (feed);
 	}
 }

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedAppIndex: 0
   appIds:
-  - 0
+  - 831260573637270
   appLabels:
-  - App Name
+  - Count the sheep
   cookie: 1
   logging: 1
   status: 1
