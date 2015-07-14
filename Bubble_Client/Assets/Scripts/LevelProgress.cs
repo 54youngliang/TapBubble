@@ -47,8 +47,6 @@ public class LevelProgress : MonoBehaviour {
 	
 	public void Click(){
 		int totalStars = AppMain.Instance.GetStarsTotal ();
-		totalStars = 150;
-		AppMain.Instance.SetBool (AppMain.KEY_MAX_STAR_REWARD, false);
 		if (totalStars == 150 && !AppMain.Instance.GetValue (AppMain.KEY_MAX_STAR_REWARD)) {
 			UISprite sprite = sheepGameObject.GetComponent<UISprite> ();
 			sprite.atlas = get_packs;
@@ -66,11 +64,13 @@ public class LevelProgress : MonoBehaviour {
 		Debug.Log ("send feed");
 		FBFeedParams feed = new FBFeedParams ();
 		feed.link="share link";
-		feed.linkName="link name";
+		feed.linkName="Count the sheep";
 		feed.linkCaption="caption";
-		feed.linkDescription="desc";
-		feed.picture="pic";
+		int missionId = AppMain.Instance.CurrentLevel - 1;
+		feed.linkDescription=" I just got "+missionId+" stars in mission "+AppMain.Instance.GetStar(missionId)+"!";
+		feed.picture="pic url";
 		FBHelper.Instance.Share (feed);
+
 		WWW www = new WWW ("");
 		yield return www;
 		backGameObject.SetActive (false);

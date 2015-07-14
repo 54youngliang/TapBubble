@@ -14,6 +14,7 @@ public class AudioController : MonoBehaviour {
 	private AudioClip bgm_g;
 	private AudioClip countDownClip;
 
+
 	void Start()
 	{
 
@@ -23,6 +24,10 @@ public class AudioController : MonoBehaviour {
 		countDownClip = Resources.Load ("audio/time") as AudioClip;
 		bgmGameSource.clip = bgm_g;
 		StartAll ();
+	}
+
+	void Update(){
+
 	}
 
 	public void PlayCountDown(){

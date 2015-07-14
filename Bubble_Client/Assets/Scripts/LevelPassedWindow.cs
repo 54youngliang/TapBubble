@@ -38,9 +38,10 @@ public class LevelPassedWindow : MonoBehaviour {
 		Debug.Log ("send feed");
 		FBFeedParams feed = new FBFeedParams ();
 		feed.link="share link";
-		feed.linkName="link name";
+		feed.linkName="Count the sheep";
 		feed.linkCaption="caption";
-		feed.linkDescription="desc";
+		int missionId = AppMain.Instance.CurrentLevel - 1;
+		feed.linkDescription=" I just got "+missionId+" stars in mission "+AppMain.Instance.GetStar(missionId)+"!";
 		feed.picture="pic url";
 		FBHelper.Instance.Share (feed);
 	}

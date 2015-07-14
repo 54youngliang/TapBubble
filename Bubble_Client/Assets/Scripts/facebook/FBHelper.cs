@@ -13,9 +13,12 @@ public class FBHelper : MonoBehaviour {
     }
     void Awake()
     {
+		Debug.Log("-------------0");
+		this.enabled = false;
         _Instance = this;
         if(FB.IsInitialized)
         {
+			this.enabled = true;
             FB.ActivateApp();
         }
         else
@@ -23,6 +26,7 @@ public class FBHelper : MonoBehaviour {
             FB.Init(SetInit);  
         }
     }
+
 
     private void SetInit()
     {
@@ -40,8 +44,9 @@ public class FBHelper : MonoBehaviour {
     {
         // Check the pauseStatus to see if we are in the foreground
         // or background
-        if (!pauseStatus)
+        if (!pauseStatus && this.enabled)
         {
+			Debug.Log("-------------1");
             //app resume
             if (FB.IsInitialized)
             {
@@ -57,7 +62,8 @@ public class FBHelper : MonoBehaviour {
 
     void LoginCallback(FBResult result)
     {
-        Debug.Log("LoginCallback");
+        Debug.Log("LoginCallback isLoggedIn:"  + FB.IsLoggedIn + "  error:" + result.Error);
+		Debug.Log(result.ToString());
 
         if (FB.IsLoggedIn)
         {
@@ -78,6 +84,7 @@ public class FBHelper : MonoBehaviour {
     private FBFeedParams _LastFeedParams;
     public void Share(FBFeedParams feedParams)
     {
+		Debug.Log("enabled:" + this.enabled + "  loggin:" + FB.IsLoggedIn);
         if (!enabled)
         {
             Debug.Log("FB not init");
