@@ -23,7 +23,8 @@ public class HomeWindow : MonoBehaviour {
 	private bool buttonHasScaled=false;
 
 
-	private Vector3 missionTitleVector=new Vector3 (-114f,108f,0f) ;
+	private Vector3 missionTitleVector;
+	private Vector2 missionTitleTargetVector;
 	private Vector3 backgroundVector;
 
 	void Start () {
@@ -33,12 +34,17 @@ public class HomeWindow : MonoBehaviour {
 		} else {
 			HiddenHelp();
 		}
+		missionTitleVector = MissionTitle.gameObject.transform.localPosition;
 		playButton.playAnimation.StartNormalPlay ();
 		//background.GetComponent<GestureEvent>().OnLeft = ShowLevelWindow;
 		playButtonOriginScale = playButton.transform.localScale;
 		AppMain.Instance.CurrentLevel = AppMain.Instance.MaxLevel;
 		MissionTitle.GetComponent<UILabel>().text = AppMain.Instance.MaxLevel+"";
 		backgroundVector = background.transform.localPosition;
+
+		Vector3 count = countDown.transform.position;
+		Vector3 vector = MissionTitle.transform.worldToLocalMatrix.MultiplyVector (count);
+		missionTitleTargetVector = new  Vector2 (vector.x+130, vector.y-11);
 	}
 
 	bool displayHelpStatus=false;
@@ -109,11 +115,11 @@ public class HomeWindow : MonoBehaviour {
 			backgroundVector = background.transform.localPosition;
 			TweenY tween = TweenY.Add (background, 1f, 300f);
 			//-138,74
-			TweenXY.Add (MissionTitle, 1f, new Vector2 (-138f, 498.57f));
+			TweenXY.Add (MissionTitle, 1f, missionTitleTargetVector);
 			tween.OnComplete += BeginMission;
 		} else {
 			if(MissionTitle.transform.localPosition == missionTitleVector){
-				TweenXY.Add (MissionTitle, 1f, new Vector2 (-138f, 480f));
+				TweenXY.Add (MissionTitle, 1f, missionTitleTargetVector);
 			}
 			BeginMission();
 		}
@@ -196,6 +202,7 @@ public class HomeWindow : MonoBehaviour {
 	{
 	
 		var width = AppMain.Instance.uiRoot.manualWidth;
+		AppMain.Instance.LevelWindow.RefreshStatus ();
 		AppMain.Instance.LevelWindow.transform.localPosition = new Vector3(width, 0, 0);
 		AppMain.Instance.LevelWindow.gameObject.SetActive(true);
 		TweenX.Add(AppMain.Instance.LevelWindow.gameObject, 0.5f, 0f);

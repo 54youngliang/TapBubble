@@ -24,10 +24,7 @@ public class AudioController : MonoBehaviour {
 		countDownClip = Resources.Load ("audio/time") as AudioClip;
 		bgmGameSource.clip = bgm_g;
 		StartAll ();
-	}
-
-	void Update(){
-
+		isDay = AppMain.Instance.IsDay ();
 	}
 
 	public void PlayCountDown(){
@@ -90,6 +87,9 @@ public class AudioController : MonoBehaviour {
 	}
 
 	public void StartBgmGame(){
+		if (!AppMain.Instance.HasMusic()) {
+			return;
+		}
 		if (!bgmGameSource.isPlaying) {
 			bgmGameSource.Play ();
 		}
@@ -114,6 +114,22 @@ public class AudioController : MonoBehaviour {
 			}
 			sheep.clip = clip;
 			sheep.Play ();
+		}
+	}
+
+
+	int checkNum = 0;
+	bool isDay ;
+	void Update(){
+		if (checkNum <= 50) {
+			checkNum+=1;
+		}
+		checkNum = 0;
+		bool isDayNew = AppMain.Instance.IsDay ();
+		if (isDayNew != isDay) {
+			StopBgmGame();
+			StartBgmGame();
+			isDay = isDayNew;
 		}
 	}
 

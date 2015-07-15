@@ -269,6 +269,7 @@ public sealed class FB : ScriptableObject
 
     public static void ActivateApp()
     {
+		Debug.Log("FB activate App:"+AppId);
         FacebookImpl.ActivateApp(AppId);
     }
 
@@ -389,6 +390,7 @@ public sealed class FB : ScriptableObject
         public static IEnumerator LoadFacebookClass(string className, LoadedDllCallback callback)
         {
             var url = string.Format(IntegratedPluginCanvasLocation.DllUrl, className);
+			Debug.Log ("FB SDK url" + url);
             var www = new WWW(url);
             FbDebug.Log("loading dll: " + url);
             yield return www;

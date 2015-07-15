@@ -122,7 +122,7 @@ PlayerSettings:
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: user.keystore
-  AndroidKeyaliasName: release
+  AndroidKeyaliasName: sheep
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 0

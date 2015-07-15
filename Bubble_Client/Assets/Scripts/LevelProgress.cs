@@ -58,12 +58,12 @@ public class LevelProgress : MonoBehaviour {
 			spriteAnimation.framesPerSecond=25;
 			backGameObject.SetActive(true);
 		}
+		backGameObject.SetActive (false);
 	}
 
 	public IEnumerator Download(){
-		Debug.Log ("send feed");
+
 		FBFeedParams feed = new FBFeedParams ();
-		feed.link="share link";
 		feed.linkName="Count the sheep";
 		feed.linkCaption="caption";
 		int missionId = AppMain.Instance.CurrentLevel - 1;
@@ -71,9 +71,9 @@ public class LevelProgress : MonoBehaviour {
 		feed.picture="pic url";
 		FBHelper.Instance.Share (feed);
 
-		WWW www = new WWW ("");
+		WWW www = new WWW ("http://static.kirara.happyelements.cn/Sheep/paper.png");
 		yield return www;
-		backGameObject.SetActive (false);
+
 	}
 
 

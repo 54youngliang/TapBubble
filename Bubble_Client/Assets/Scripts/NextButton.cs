@@ -8,7 +8,7 @@ public class NextButton : MonoBehaviour {
 
 	public void GoNextLevel()
 	{
-		Debug.Log ("Click to Next Level");
+
 		playAnimation.StopNormalPlay ();
 		GameObject earth = AppMain.Instance.HomeWindow.background.GetComponent<Background> ().earth;
 		float z = earth.transform.localEulerAngles.z;

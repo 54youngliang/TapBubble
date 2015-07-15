@@ -140,7 +140,7 @@ public class MissionMeta {
 				int num1 = Random.Range(0,10);
 				int num2 = Random.Range(0,10);
 				result = num1*num2;
-				view = num1+"*"+num2;
+				view = num1+"x"+num2;
 			} else if (opNum == 3) {
 				// ÷
 				int num1 = Random.Range(0,10);
@@ -150,7 +150,7 @@ public class MissionMeta {
 				}else{
 					result = 1.0f*num1/num2;
 				}
-				view = num1+"/"+num2;
+				view = num1+"÷"+num2;
 			}
 
 			bool containExclude=false;
@@ -189,7 +189,7 @@ public class MissionMeta {
 			if (opNum == 0) {
 				// +
 				int num1 = Random.Range(-10,11);
-				int num2 = Random.Range(-20,21);
+				int num2 = Random.Range(0,21);
 				result = num1+num2;
 				view = num1+"+"+num2;
 			} else if (opNum == 1) {
@@ -203,33 +203,37 @@ public class MissionMeta {
 						break;
 					}
 				}
-				int num2=0;
-				for(;;){
-					num2 = Random.Range(-20,21);
-					if(num2 == 0){
-						continue;
-					}else{
-						break;
-					}
-				}
+				int	num2 = Random.Range(0,21);
+					
 				result = num1-num2;
 				view = num1+"-"+num2;
 			} else if (opNum == 2) {
 				// *
 				int num1 = Random.Range(-10,11);
-				int num2 = Random.Range(-20,21);
+				int num2 =0;
+				for(;;){
+					num2 = Random.Range(-20,21);
+					if((num1 >0 && num2 < 0)){
+						continue;
+					}else{
+						break;
+					}
+				}
 				result = num1*num2;
-				view = num1+"*"+num2;
+				view = num1+"x"+num2;
 			} else if (opNum == 3) {
 				// ÷
 				int num1 = Random.Range(-10,11);
-				int num2 = Random.Range(-20,21);
-				if(num2 ==0){
-					result = double.MaxValue;
-				}else{
-					result = 1.0f * num1/num2;
+				int num2 = 0;
+				for(;;){
+					num2 = Random.Range(-20,21);
+					if(num2 == 0||(num1 > 0 && num2 < 0)){
+						continue;
+					}else{
+						break;
+					}
 				}
-				view = num1+"/"+num2;
+				view = num1+"÷"+num2;
 			}
 			if(alreadyMap.ContainsKey(result)){
 				continue;

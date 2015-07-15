@@ -36,6 +36,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &178596
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 432642}
+  - 114: {fileID: 11465770}
+  m_Layer: 5
+  m_Name: Radical
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!4 &427404
 Transform:
   m_ObjectHideFlags: 1
@@ -49,6 +65,18 @@ Transform:
   - {fileID: 468628}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &432642
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178596}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14, y: 23, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 468628}
+  m_RootOrder: 0
 --- !u!4 &468628
 Transform:
   m_ObjectHideFlags: 1
@@ -56,9 +84,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5999999, y: 36.4900017, z: 0}
+  m_LocalPosition: {x: 2, y: -12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 432642}
   m_Father: {fileID: 427404}
   m_RootOrder: 0
 --- !u!50 &5061426
@@ -131,18 +160,18 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: .00043252678, b: .00043252678, a: 1}
   mPivot: 4
-  mWidth: 112
-  mHeight: 38
+  mWidth: 136
+  mHeight: 124
   mDepth: 11
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.94736838
+  aspectRatio: 1.09677422
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11429844, guid: 17312af3df75f46f881a8221c670ec92, type: 2}
+  mTrueTypeFont: {fileID: 12800000, guid: 32ef1969ecf7c475c9458ab6ee41b322, type: 3}
+  mFont: {fileID: 0}
   mText: 11
-  mFontSize: 30
+  mFontSize: 94
   mFontStyle: 0
   mAlignment: 2
   mEncoding: 1
@@ -153,7 +182,7 @@ MonoBehaviour:
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 1
+  mApplyGradient: 0
   mGradientTop: {r: 1, g: 0, b: 0, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
@@ -166,6 +195,56 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &11465770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 134
+  mHeight: 136
+  mDepth: 12
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: .985294104
+  mType: 0
+  mFillDirection: 4
+  mFillAmount: 1
+  mInvert: 0
+  mFlip: 0
+  centerType: 1
+  leftType: 1
+  rightType: 1
+  bottomType: 1
+  topType: 1
+  mAtlas: {fileID: 11499182, guid: 8ffb01608f50f45a5adef5aa3a332baf, type: 2}
+  mSpriteName: reagan
+  mFillCenter: 1
 --- !u!114 &11475582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,6 +309,7 @@ MonoBehaviour:
   BubbleScaleTime: .0500000007
   sheepSprite: {fileID: 11475582}
   uiLabel: {fileID: 11424460}
+  radical: {fileID: 11465770}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -294,6 +374,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Radius
       value: 64.8499985
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mFontSize
+      value: 94
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -12,11 +12,12 @@ public class FBFeedParams
         picture: "https://example.com/myapp/assets/1/larch.jpg"
         //callback: LogCallback
     **/
-    public string link;
+	public string link="https://play.google.com/store/search?q=count%20the%20sheep";
     public string linkName;
     public string linkCaption;
     public string linkDescription;
     public string picture;
     public FacebookDelegate callback = null;
+
 
 }

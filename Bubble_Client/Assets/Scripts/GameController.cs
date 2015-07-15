@@ -117,7 +117,6 @@ public class GameController : MonoBehaviour {
 		
 		foreach (BubbleInit bubbleInit in bubbleInitList) {
 			// init bubble
-			Debug.Log("init bubble ,missionId:"+missionMeta.missionId+",result:"+bubbleInit.result+",view:"+bubbleInit.view);
 			Vector3 vector = new Vector3(-113,31,0);
 			GameObject gameObject = GameObjectUtil.CloneGameObjectWithScale(bubblePrefab,this.transform,new Vector3(1.0f,1.0f,1.0f));
 			Vector3 newPosition = new Vector3(position.x+Random.Range(-20,20),position.y+Random.Range(-20,20),0);
@@ -162,9 +161,12 @@ public class GameController : MonoBehaviour {
 		} else if (restGameTime >= missionMeta.level1) {
 			star = 1;
 		} 
-		Debug.Log ("MissionComplete" + missionMeta.missionId + ",star:" + star);
+	
 		AppMain.Instance.levelPassedWindow.Show (missionMeta.missionId, star);
-		AppMain.Instance.SetStar (missionMeta.missionId, star);
+		int starAlready = AppMain.Instance.GetStar(missionMeta.missionId);
+		if (starAlready < star) {
+			AppMain.Instance.SetStar (missionMeta.missionId, star);
+		}
 		AppMain.Instance.CurrentLevel += 1;
 		if (AppMain.Instance.CurrentLevel > AppMain.Instance.MaxLevel) 
 		{

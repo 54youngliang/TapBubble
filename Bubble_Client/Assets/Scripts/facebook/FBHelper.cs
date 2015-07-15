@@ -13,6 +13,9 @@ public class FBHelper : MonoBehaviour {
     }
     void Awake()
     {
+#if UNITY_EDITOR_64
+		return;
+#endif
 		Debug.Log("-------------0");
 		this.enabled = false;
         _Instance = this;
@@ -25,6 +28,7 @@ public class FBHelper : MonoBehaviour {
         {
             FB.Init(SetInit);  
         }
+		FB.Login("publish_actions", LoginCallback);
     }
 
 

@@ -53,7 +53,7 @@ public class PlayAnimation : MonoBehaviour {
 			}
 			spriteName="play_n_";
 		}
-		if (nowPic > 10) {
+		if (nowPic >= 10) {
 			spriteName = spriteName + "00" + nowPic;
 		} else {
 			spriteName = spriteName + "000" + nowPic;
@@ -81,6 +81,7 @@ public class PlayAnimation : MonoBehaviour {
 	private void RefreshDisppearPlay(){
 		if (disppearPic > 14) {
 			disppearPic=1;
+			sheepSprite.spriteName = "";
 			CancelInvoke ("RefreshDisppearPlay");
 			IsPlaying=false;
 		}
@@ -96,7 +97,7 @@ public class PlayAnimation : MonoBehaviour {
 			}
 			spriteName="next_n";
 		}
-		if (disppearPic > 10) {
+		if (disppearPic >= 10) {
 			spriteName = spriteName + "00" + disppearPic;
 		} else {
 			spriteName = spriteName + "000" + disppearPic;

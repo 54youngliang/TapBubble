@@ -9,6 +9,10 @@ public class DayNight : MonoBehaviour {
 
 
 	void Start(){
+		Refresh ();
+	}
+
+	void Refresh(){
 		uiSprite = this.gameObject.GetComponent<UISprite> ();
 		bool isDay = AppMain.Instance.IsDay ();
 		if(null != uiSprite && !isDay){
@@ -27,5 +31,13 @@ public class DayNight : MonoBehaviour {
 		}
 	}
 
+	int check=0;
+	void Update(){
+		if (check <= 50) {
+			check+=1;
+		}
+		Refresh ();
+		check = 0;
+	}
 
 }

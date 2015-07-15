@@ -550,6 +550,7 @@ MonoBehaviour:
   grid: {fileID: 407536}
   background: {fileID: 107844}
   levelProgress: {fileID: 162834}
+  progressLabel: {fileID: 11434650}
 --- !u!114 &11417024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -942,7 +943,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 141
   mHeight: 20
-  mDepth: 11
+  mDepth: 12
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0

@@ -103,7 +103,7 @@ public class AppMain : MonoBehaviour {
 		get
 		{
 			var level = PlayerPrefs.GetInt("MaxLevel",1);
-			return level;
+			return level >=50 ? 50:level;
 		}
 	}
 
@@ -126,7 +126,7 @@ public class AppMain : MonoBehaviour {
 		}
 		set
 		{
-			PlayerPrefs.SetInt("current_level", value);
+			PlayerPrefs.SetInt("current_level", value >=50 ? 50:value);
 		}
 	}
 
@@ -218,7 +218,7 @@ public class AppMain : MonoBehaviour {
 		if (hour < 6 || hour > 18) {
 			return false;
 		}
-		return true;
+		return false;
 
 	}
 

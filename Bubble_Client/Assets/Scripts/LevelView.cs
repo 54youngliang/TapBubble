@@ -15,7 +15,7 @@ public class LevelView : MonoBehaviour {
 
 	void OnEnable()
 	{
-		Star = AppMain.Instance.GetStar(MissionId);
+		_star = AppMain.Instance.GetStar(MissionId);
 		UpdateLevelStatus();
 	}
 
@@ -23,9 +23,10 @@ public class LevelView : MonoBehaviour {
 
 		AppMain.Instance.CurrentLevel = _missionId;
 		this.gameObject.GetComponent<UIButton> ().enabled = false;
-		Debug.Log ("map sheep " + _missionId+","+AppMain.Instance.CurrentLevel);
+
 		AppMain.Instance.LevelWindow.ShowHome ();
 		AppMain.Instance.HomeWindow.FirstBeginMission ();
+		this.gameObject.GetComponent<UIButton> ().enabled = true;
 	}
 
 	private int _missionId;
@@ -50,35 +51,26 @@ public class LevelView : MonoBehaviour {
 	}
 
 	private int _star;
-	public int Star
-	{
-		get
-		{
-			return _star;
+
+	public void UpdateStar(int star){
+		_star = star;
+		string _spriteName = "";
+		if(star == 1){
+			_spriteName="star_1";
+		}else if (star == 2){
+			_spriteName="star_2";
+		}else if (star == 3){
+			_spriteName="star_3";
+		}else{
+			_spriteName="star_0";
 		}
-		set
-		{
-			if (_star != value)
-			{
-				string _spriteName = "";
-				if(value == 1){
-					_spriteName="star_1";
-				}else if (value == 2){
-					_spriteName="star_2";
-				}else if (value == 3){
-					_spriteName="star_3";
-				}else{
-					_spriteName="star_0";
-				}
-				BackSprite.spriteName=_spriteName;
-			}
-		}
+		BackSprite.spriteName=_spriteName;
 	}
 
 	void OnClick()
 	{
 		int maxLevel = AppMain.Instance.MaxLevel;
-		if (Star > 0 || maxLevel == MissionId)
+		if (_star > 0 || maxLevel == MissionId)
 		{
 			if (OnItemClick != null)
 			{
@@ -93,6 +85,6 @@ public class LevelView : MonoBehaviour {
 
 	public void UpdateView()
 	{
-		Star = PlayerPrefs.GetInt("star_level_", -1);
+		_star = PlayerPrefs.GetInt("star_level_", -1);
 	}
 }

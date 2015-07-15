@@ -3,17 +3,13 @@ using System.Collections;
 
 public class MissionTitle : MonoBehaviour {
 
-	public UIFont count_d;
-	public UIFont count_n;
+	public Transform transform;
 
 	void Start(){
+		this.transform.localPosition = transform.localPosition;
 		bool isDay = AppMain.Instance.IsDay ();
-		UIFont font;
-		if (isDay) {
-			font= count_d;
-		} else {
-			font = count_n;
+		if (!isDay) {
+			this.gameObject.GetComponent<UILabel> ().color = new Color (2 / 255.0f, 135 / 255.0f, 135 / 255.0f);
 		}
-		this.gameObject.GetComponent<UILabel>().bitmapFont=font;
 	}
 }

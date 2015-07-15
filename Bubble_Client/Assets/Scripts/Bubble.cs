@@ -7,6 +7,7 @@ public class Bubble: MonoBehaviour {
 	public UISprite sheepSprite;
 	public UILabel uiLabel;
 	public BubbleInit bubbleInit;
+	public UISprite radical;
 
 	bool needDestory = false;
 	int destoryTime = int.MaxValue;
@@ -37,13 +38,23 @@ public class Bubble: MonoBehaviour {
 	
 	public void AppearNum(BubbleInit bubbleInit){
 		this.bubbleInit = bubbleInit;
-		uiLabel.text = bubbleInit.view;
+		if (!bubbleInit.view.Contains ("√")) {
+			radical.gameObject.SetActive(false);
+			uiLabel.text = bubbleInit.view;
+		} else {
+			radical.gameObject.SetActive(true);
+			uiLabel.text = bubbleInit.view.Replace("√","");
+			uiLabel.fontSize=68;
+		}
+
+
 	}
 	
 	int randomType = 0;
 	public void BeginDestory(){
 		AppMain.Instance.AudioController.PlaySheep ();
 		uiLabel.enabled = false;
+		radical.enabled = false;
 		float refreshTime = 0.04f;
 		randomType = Random.Range (1, 4);
 		InvokeRepeating("Disappear",0,refreshTime);

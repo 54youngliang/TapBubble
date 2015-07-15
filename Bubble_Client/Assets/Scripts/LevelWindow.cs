@@ -10,6 +10,7 @@ public class LevelWindow : MonoBehaviour {
 	//public GameObject levelBgPrefab;
 	public GameObject background;
 	public GameObject levelProgress;
+	public UILabel progressLabel;
 
 	private List<LevelView> viewList = new List<LevelView>();
 
@@ -23,32 +24,26 @@ public class LevelWindow : MonoBehaviour {
 	public void Init()
 	{
 		levelProgress.GetComponent<LevelProgress> ().Apprear ();
-		int totalStars = 0;
-		int alreadyStars = 0;
 		int maxLevel = AppMain.Instance.MaxLevel;
 		foreach (MissionMeta missionMeta in MissionConfig.GetAllMissionMeta()) {
 			int missionId = missionMeta.missionId;
-			totalStars+=3;
-			alreadyStars += AppMain.Instance.GetStar(missionId);
 			GameObject missionResult = GameObjectUtil.CloneGameObject(levelItemPrefab, background.transform);
 			int x = missionMeta.x;
 			int y =  missionMeta.y;
 			missionResult.transform.localPosition = new Vector3(x,y,0);
 			LevelView view = missionResult.GetComponent<LevelView>();
-			int level = AppMain.Instance.GetStar(missionId);
-			view.Star=level;
 			//view.OnItemClick = OnLevelClick;
 			view.MissionId=missionId;
 			viewList.Add(view);
 		}
 
-		levelProgress.GetComponent<UIProgressBar>().value = (alreadyStars/totalStars);
-		levelProgress.GetComponentInChildren<UILabel> ().text = alreadyStars+"/"+totalStars;
 		RefreshStatus ();
 	}
 
 	public void RefreshStatus(){
 		int maxLevel = AppMain.Instance.MaxLevel;
+
+		int alreadyStars = 0;
 		foreach(LevelView view in viewList){
 			int missionId = view.MissionId;
 			if (missionId > maxLevel) {
@@ -56,6 +51,10 @@ public class LevelWindow : MonoBehaviour {
 			}else{
 				view.GetComponent<UIButton>().enabled=true;
 			}
+			int missionStar = AppMain.Instance.GetStar(missionId);
+			alreadyStars += missionStar;
+			Debug.Log("Refresh map star,missionId:"+missionId+",star:"+missionStar);
+			view.UpdateStar(missionStar);
 			if(missionId == maxLevel){
 				view.Sheep.SetActive(true);
 			}else{
@@ -63,11 +62,21 @@ public class LevelWindow : MonoBehaviour {
 				view.Sheep.SetActive(false);
 			}
 		}
+
+		int totalStars = 0;
+		foreach (MissionMeta missionMeta in MissionConfig.GetAllMissionMeta()) {
+			int missionId = missionMeta.missionId;
+			totalStars+=3;
+		}
+		
+		levelProgress.GetComponent<UIProgressBar>().value = (1.0f*alreadyStars/totalStars);
+		progressLabel.text = alreadyStars+"/"+totalStars;
+
 	}
 
 	public void ShowHome()
 	{
-		Debug.Log ("Map click Home Button");
+
 		var width = AppMain.Instance.uiRoot.manualWidth;
 //		this.transform.localPosition = new Vector3(0, 0, 0);
 		AppMain.Instance.HomeWindow.ShowHomeWindow ();
@@ -93,7 +102,7 @@ public class LevelWindow : MonoBehaviour {
 		AppMain.Instance.CurrentLevel = level;
 		AppMain.Instance.HomeWindow.gameObject.transform.localPosition = Vector3.zero;
 		AppMain.Instance.HomeWindow.BeginMission ();
-		Debug.LogFormat("Click level:{0}" , level);
+
 	}
 
 }

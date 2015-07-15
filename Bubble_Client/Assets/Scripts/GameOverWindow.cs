@@ -8,7 +8,7 @@ public class GameOverWindow : MonoBehaviour {
 
 	public void ShowHome()
 	{
-		Debug.Log ("GameOver click home");
+	
 		AppMain.Instance.HomeWindow.ShowHomeWindow ();
 	}
 

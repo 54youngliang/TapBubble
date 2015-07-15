@@ -24,7 +24,7 @@ public class MusicController : MonoBehaviour {
 			spriteName += "_n";
 		}
 		uiSprite.spriteName = spriteName;
-		Debug.Log ("Music ===" + spriteName);
+
 		this.gameObject.GetComponent<UIButton> ().normalSprite = uiSprite.spriteName;
 	}
 
