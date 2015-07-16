@@ -53,7 +53,6 @@ public class LevelWindow : MonoBehaviour {
 			}
 			int missionStar = AppMain.Instance.GetStar(missionId);
 			alreadyStars += missionStar;
-			Debug.Log("Refresh map star,missionId:"+missionId+",star:"+missionStar);
 			view.UpdateStar(missionStar);
 			if(missionId == maxLevel){
 				view.Sheep.SetActive(true);

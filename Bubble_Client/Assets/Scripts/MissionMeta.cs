@@ -39,15 +39,19 @@ public class MissionMeta {
 
 		
 			for (int i = 0; i<positiveNum; i++) {
+
 				resultList.Add (PositiveNumberBubble (0, 9, tmpCache));
 			}
 			for (int i =0; i<negativeNum; i++) {
+
 				resultList.Add (NegativeNumberBubble (tmpCache));
 			}
 			for (int i=0; i<easyOperation; i++) {
+
 				resultList.Add (EasyOpBubble (tmpCache));
 			}
 			for (int i=0; i<hardOperation; i++) {
+
 				resultList.Add (HardOpBubble (tmpCache));
 			}
 			for (int i=0; i<radical; i++) {
@@ -194,45 +198,23 @@ public class MissionMeta {
 				view = num1+"+"+num2;
 			} else if (opNum == 1) {
 				// -
-				int num1=0;
-				for(;;){
-					num1 = Random.Range(-20,21);
-					if(num1 == 0){
-						continue;
-					}else{
-						break;
-					}
-				}
+				int num1=Random.Range(-20,21);
 				int	num2 = Random.Range(0,21);
 					
 				result = num1-num2;
 				view = num1+"-"+num2;
 			} else if (opNum == 2) {
 				// *
-				int num1 = Random.Range(-10,11);
-				int num2 =0;
-				for(;;){
-					num2 = Random.Range(-20,21);
-					if((num1 >0 && num2 < 0)){
-						continue;
-					}else{
-						break;
-					}
-				}
+				int num1 = Random.Range(-10,21);
+				int num2 =Random.Range(1,11);
+
 				result = num1*num2;
 				view = num1+"x"+num2;
 			} else if (opNum == 3) {
 				// ÷
 				int num1 = Random.Range(-10,11);
-				int num2 = 0;
-				for(;;){
-					num2 = Random.Range(-20,21);
-					if(num2 == 0||(num1 > 0 && num2 < 0)){
-						continue;
-					}else{
-						break;
-					}
-				}
+				int num2 = Random.Range(1,11);
+				result = 1.0d*num1/num2;
 				view = num1+"÷"+num2;
 			}
 			if(alreadyMap.ContainsKey(result)){

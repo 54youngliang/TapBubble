@@ -129,6 +129,7 @@ public class HomeWindow : MonoBehaviour {
 
 	public void BeginMission()
 	{
+		Debug.Log ("HomeWindow beginMission:"+AppMain.Instance.CurrentLevel);
 		AppMain.Instance.AudioController.PlaySheep ();
 		playButton.playLabel.enabled = false;
 		MissionTitle.SetActive (true);

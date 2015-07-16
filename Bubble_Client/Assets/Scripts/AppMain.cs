@@ -218,12 +218,14 @@ public class AppMain : MonoBehaviour {
 		if (hour < 6 || hour > 18) {
 			return false;
 		}
-		return false;
+		return true;
 
 	}
 
 	void Start(){
 		AppMain.Instance.AudioController.PlayBgm ();
+//		AppMain.Instance.CurrentLevel = 39;
+//		AppMain.Instance.MaxLevel = 39;
 	}
 
 	// Update is called once per frame

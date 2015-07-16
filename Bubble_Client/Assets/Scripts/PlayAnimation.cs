@@ -74,14 +74,13 @@ public class PlayAnimation : MonoBehaviour {
 			}
 		}
 		disppearPic = 1;
+		CancelInvoke ("RefreshDisppearPlay");
 		InvokeRepeating ("RefreshDisppearPlay", 0, 0.06f);
 	}
 
 	int disppearPic = 1;
 	private void RefreshDisppearPlay(){
 		if (disppearPic > 14) {
-			disppearPic=1;
-			sheepSprite.spriteName = "";
 			CancelInvoke ("RefreshDisppearPlay");
 			IsPlaying=false;
 		}

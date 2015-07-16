@@ -117,6 +117,7 @@ public class GameController : MonoBehaviour {
 		
 		foreach (BubbleInit bubbleInit in bubbleInitList) {
 			// init bubble
+			Debug.Log("Bubbles "+bubbleInit.result+",view:"+bubbleInit.view);
 			Vector3 vector = new Vector3(-113,31,0);
 			GameObject gameObject = GameObjectUtil.CloneGameObjectWithScale(bubblePrefab,this.transform,new Vector3(1.0f,1.0f,1.0f));
 			Vector3 newPosition = new Vector3(position.x+Random.Range(-20,20),position.y+Random.Range(-20,20),0);
